@@ -22,7 +22,7 @@ Features implemented in HawtSawce will allow users to do the following:
 
   Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
 
-![single sauce view](https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png | width=250px)
+![single sauce view](https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png | width=250)
 
 Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
 
