@@ -22,10 +22,13 @@ Logins and signups both occur on a static splash page/presentational component.
 <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Index.png" alt="Index View" width="400">
 #### Log-In
   An API call is sent out to the database to find the user. The user is then automatically logged in. The response from the API call will return user info as well as user checkins which will be persisted in the `UserCheckinsStore` until the user logs out.
+
   <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Login.png" alt="Login View" width="400">
-  #### Log-In
-    An API call is sent out to the database to create the user. The user is then automatically logged in. The response from the API call will return user info.
-    <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Sign%20Up.png" alt="Sign Up View" width="400">
+
+#### Sign-In
+  An API call is sent out to the database to create the user. The user is then automatically logged in. The response from the API call will return user info.
+  
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Sign%20Up.png" alt="Sign Up View" width="400">
 
 ### Create, view, update and delete hot sauces
 
