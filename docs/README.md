@@ -9,12 +9,20 @@ HawtSawce is a full-stack web app inspired by Untappd .  It utilizes Ruby on Rai
 ## Features & Implementation
 
 Features implemented in HawtSawce will allow users to do the following:
- 1. Create, view, update and delete hot sauces
- 2. Check-in and review hot sauces
- 3. Have a feed of all reviews
- 4. Maintain and view a personal profile
- 5. Search for their favourite hot sauces
- 6. Add bookmarks for hot sauces they want to try
+ 1. Log-In / Sign-Up
+ 2. Create, view, update and delete hot sauces
+ 3. Check-in and review hot sauces
+ 4. Have a feed of all reviews
+ 5. Maintain and view a personal profile
+ 6. Search for their favourite hot sauces
+ 7. Add bookmarks for hot sauces they want to try
+
+### Log-In / Sign-Up
+Logins and signups both occur on a static splash page/presentational component.
+
+#### Log-In
+  An API call is sent out to the database to find the user. The user is then automatically logged in. The response from the API call will return user info as well as user checkins which will be persisted in the `UserCheckinsStore` until the user logs out.
+<img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png" alt="Single Sauce View" width="400">
 
 ### Create, view, update and delete hot sauces
 
