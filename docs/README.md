@@ -24,6 +24,8 @@ Features implemented in HawtSawce will allow users to do the following:
 
 ![single sauce view](https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png | width=250)
 
+![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png =250x250)
+
 Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
 
 ### Notebooks
