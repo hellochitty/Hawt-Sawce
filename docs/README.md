@@ -19,6 +19,7 @@ Features implemented in HawtSawce will allow users to do the following:
 
 ### 1. Log-In / Sign-Up
 Logins and signups both occur on a static splash page/presentational component.
+
 <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Index.png" alt="Index View" width="400">
 #### Log-In
   An API call is sent out to the database to find the user. The user is then automatically logged in. The response from the API call will return user info as well as user checkins which will be persisted in the `UserCheckinsStore` until the user logs out.
@@ -31,8 +32,7 @@ Logins and signups both occur on a static splash page/presentational component.
   <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Sign%20Up.png" alt="Sign Up View" width="400">
 
 ### 2. Create, view, update and delete hot sauces
-
-  On the database side, the notes are stored in one table in the database, which contains columns for `id`, `user_id`, `content`, and `updated_at`.  Upon login, an API call is made to the database which joins the user table and the note table on `user_id` and filters by the current user's `id`.  These notes are held in the `NoteStore` until the user's session is destroyed.  
+  On the database side, the sauces are stored in one table in the database, which contains columns for `id`, `user_id`, `content`, and `updated_at`.  Upon login, an API call is made to the database which joins the user table and the note table on `user_id` and filters by the current user's `id`.  These notes are held in the `NoteStore` until the user's session is destroyed.  
 
   Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
 <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png" alt="Single Sauce View" width="400">
