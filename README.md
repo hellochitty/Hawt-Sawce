@@ -18,8 +18,9 @@ Features implemented in HawtSawce will allow users to do the following:
 ## Design Docs
   - [Views Overview][views]   
   - [Sketch Files][sketch]
-  - [Sample State Overview][state]
-  - [Schema Overview][schema]
+  - [Sample State][state]
+  - [API Endpoints][api]
+  - [DB Schema][schema]
 
 
 
@@ -28,3 +29,4 @@ Features implemented in HawtSawce will allow users to do the following:
 [sketch]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/mockups.sketch
 [schema]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/schema.md
 [state]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/sample-state.md
+[api]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/api-endpoints.md
