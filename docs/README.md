@@ -66,16 +66,20 @@ Logins and signups both occur on a static splash page/presentational component.
 ###  5. Maintain and view a personal profile
   The user's profile has summary numbers calculated from all of their checkins, and unique hot sauce reviews. It additionally shows a feed of the user's own checkins.
 
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Profile.png" alt="Profile View" width="400">
+
   A user is able to update their profile through the edit page. Through this page, the user is able to add a description that is visible on their profile. After a user edits their profile, an API call is made to update the user information on the backend.
+
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Edit_Profile.png" alt="Edit Profile View" width="400">
 
 ## Future Directions for the Project
 
-In addition to the features already implemented, I plan to continue work on this project.  The next steps for FresherNote are outlined below.
+In addition to the features already implemented, I plan to continue work on this project.  The next steps for HawtSawce are outlined below.
 
 ### Search
 
-Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks.  This search will look go through tags, note titles, notebook titles, and note content.  
+Searching notes is a standard feature of any rating/review app.  I plan to utilize the Fuse.js library to create a fuzzy search of hot sauces.
 
-### Direct Messaging
+### Bookmarking
 
-Although this is less essential functionality, I also plan to implement messaging between FresherNote users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  
+Bookmarking is not essential functionality in a review app, but as users encounter hot sauces they want to try in the future, they will need a way of keeping track of them.
