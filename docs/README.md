@@ -14,8 +14,7 @@ Features implemented in HawtSawce will allow users to do the following:
  3. Check-in and review hot sauces
  4. Have a feed of all reviews
  5. Maintain and view a personal profile
- 6. Search for their favourite hot sauces
- 7. Add bookmarks for hot sauces they want to try
+
 
 ### 1. Log-In / Sign-Up
 Logins and signups both occur on a static splash page/presentational component.
@@ -49,22 +48,25 @@ Logins and signups both occur on a static splash page/presentational component.
   <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Edit_Sawce.png" alt="Edit Sauce View" width="400">
 
 ###  3. Check-in and review hot sauces
+  Check-ins/reviews can be made/edited from either the user profile or the single sauce view. Check-ins are stored in the database, which as columns for `id`, `description`, `overall_rating`, `heat_rating`, `user_id`, and `sauce_id`.
 
-Check-ins/reviews can be made/edited from either the user profile or the single sauce view. Check-ins are stored in the database, which as columns for `id`, `description`, `overall_rating`, `heat_rating`, `user_id`, and `sauce_id`.
+  Adding a check-in is a separate view with a presentational form component. When a check-in is added, an API call is sent to update the backend with the sauce.
 
-Adding a check-in is a separate view with a presentational form component. When a check-in is added, an API call is sent to update the backend with the sauce.
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Check-In.png" alt="Add Sauce View" width="400">
 
-<img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Check-In.png" alt="Add Sauce View" width="400">
+  Editing a check-in is the same view as adding a check-in but with the form inputs pre-filled with values fetched for the specific check-in. When a check-in is added, an API call is sent to update the backend with the check-in.
 
-Editing a check-in is the same view as adding a check-in but with the form inputs pre-filled with values fetched for the specific check-in. When a check-in is added, an API call is sent to update the backend with the check-in.
-
-<img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Edit_Check_In.png" alt="Add Sauce View" width="400">
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Edit_Check_In.png" alt="Edit Sauce View" width="400">
 
 ###  4. Have a feed of all reviews
+  The feed is a presentational layer that shows all of the reviews that have been made recently. These are fetched from the store which is pre-filled with reviews after signup.
 
-The feed is a presentational layer that shows all of the reviews that have been made recently. These are fetched from the store which is pre-filled with reviews after signup.
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Feed.png" alt="Feed View" width="400">
 
-![tag screenshot](wireframes/tag-search.png)
+###  5. Maintain and view a personal profile
+  The user's profile has summary numbers calculated from all of their checkins, and unique hot sauce reviews. It additionally shows a feed of the user's own checkins.
+
+  A user is able to update their profile 
 
 ## Future Directions for the Project
 
