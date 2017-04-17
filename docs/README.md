@@ -40,7 +40,7 @@ Logins and signups both occur on a static splash page/presentational component.
 
   <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png" alt="Single Sauce View" width="400">
 
-  Adding a sauce is a separate view with a presentational form component.
+  Adding a sauce is a separate view with a presentational form component. When a sauce is added, an API call is sent to update the backend with the sauce.
 
   <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Add_Sawce.png" alt="Add Sauce View" width="400">
 
@@ -52,13 +52,17 @@ Logins and signups both occur on a static splash page/presentational component.
 
 Check-ins/reviews can be made/edited from either the user profile or the single sauce view. Check-ins are stored in the database, which as columns for `id`, `description`, `overall_rating`, `heat_rating`, `user_id`, and `sauce_id`.
 
+Adding a check-in is a separate view with a presentational form component. When a check-in is added, an API call is sent to update the backend with the sauce.
 
+<img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Check-In.png" alt="Add Sauce View" width="400">
+
+Editing a check-in is the same view as adding a check-in but with the form inputs pre-filled with values fetched for the specific check-in. When a check-in is added, an API call is sent to update the backend with the check-in.
+
+<img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Edit_Check_In.png" alt="Add Sauce View" width="400">
 
 ###  4. Have a feed of all reviews
 
-As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
-
-Tags are maintained on the frontend in the `TagStore`.  Because creating, editing, and destroying notes can potentially affect `Tag` objects, the `NoteIndex` and the `NotebookIndex` both listen to the `TagStore`.  It was not necessary to create a `Tag` component, as tags are simply rendered as part of the individual `Note` components.  
+The feed is a presentational layer that shows all of the reviews that have been made recently. These are fetched from the store which is pre-filled with reviews after signup.
 
 ![tag screenshot](wireframes/tag-search.png)
 
