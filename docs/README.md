@@ -66,7 +66,7 @@ Logins and signups both occur on a static splash page/presentational component.
 ###  5. Maintain and view a personal profile
   The user's profile has summary numbers calculated from all of their checkins, and unique hot sauce reviews. It additionally shows a feed of the user's own checkins.
 
-  A user is able to update their profile 
+  A user is able to update their profile through the edit page. Through this page, the user is able to add a description that is visible on their profile. After a user edits their profile, an API call is made to update the user information on the backend.
 
 ## Future Directions for the Project
 
