@@ -15,15 +15,26 @@ Features implemented in HawtSawce will allow users to do the following:
  4. Have a feed of all reviews
  5. Maintain and view a personal profile
 
+## Design Docs
+  - [Views Overview][views]   
+  - [Sketch Files][sketch]
+  - [Sample State Overview][state]
+  - [Schema Overview][schema]
+
 ## Views & Mockups
-[Views Overview][views]
+
+
 [Sketch Files][sketch]
 
-## Schema
+## Sample State
+[Sample State Overview][state]
+
+## DB Schema
 [Schema Overview][schema]
 
 
 
-[views]: http://www.herokuapp.com
-[sketch]: http://www.herokuapp.com
-[schema]: http://www.herokuapp.com
+[views]: https://github.com/hellochitty/Hawt-Sawce/tree/master/docs
+[sketch]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/mockups.sketch
+[schema]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/schema.md
+[state]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/sample-state.md
