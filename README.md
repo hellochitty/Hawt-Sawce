@@ -21,16 +21,6 @@ Features implemented in HawtSawce will allow users to do the following:
   - [Sample State Overview][state]
   - [Schema Overview][schema]
 
-## Views & Mockups
-
-
-[Sketch Files][sketch]
-
-## Sample State
-[Sample State Overview][state]
-
-## DB Schema
-[Schema Overview][schema]
 
 
 
