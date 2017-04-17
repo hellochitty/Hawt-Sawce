@@ -10,13 +10,13 @@ password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
 ## sauces
-| column name  | data type | details                    |
-|--------------|-----------|----------------------------|
-| id           | integer   | not null, primary key      |
-| title        | string    | not null,  indexed, unique |
-| manufacturer | string    | not null, indexed          |
-| description  | text      | not null                   |
-| image_url    | string    | not null                   |
+| column name | data type | details                   |
+|-------------|-----------|---------------------------|
+| id          | integer   | not null, primary key     |
+| title       | string    | not null, indexed, unique |
+| description | text      | not null                  |
+| image_url   | string    | not null                  |
+| maker_id    | integer   | not null, indexed         |
 
 
 ## checkins
@@ -29,3 +29,9 @@ session_token   | string    | not null, indexed, unique
 | image_url      | string    | not null              |
 | user_id        | integer   | not null, indexed     |
 | sauce_id       | integer   | not null, indexed     |
+
+## sauce makers
+| column name | data type | details                   |
+|-------------|-----------|---------------------------|
+| id          | integer   | not null, primary key     |
+| name        | string    | not null, indexed, unique |
