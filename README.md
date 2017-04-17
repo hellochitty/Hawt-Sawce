@@ -16,11 +16,14 @@ Features implemented in HawtSawce will allow users to do the following:
  5. Maintain and view a personal profile
 
 ## Views & Mockups
-[Views Overview][schema]
-[Sketch Files][schema]
+[Views Overview][views]
+[Sketch Files][sketch]
 
-##Schema
+## Schema
 [Schema Overview][schema]
 
 
+
+[views]: http://www.herokuapp.com
+[sketch]: http://www.herokuapp.com
 [schema]: http://www.herokuapp.com
