@@ -17,3 +17,15 @@ session_token   | string    | not null, indexed, unique
 | manufacturer | string    | not null, indexed          |
 | description  | text      | not null                   |
 | image_url    | string    | not null                   |
+
+
+## checkins
+| column name    | data type | details               |
+|----------------|-----------|-----------------------|
+| id             | integer   | not null, primary key |
+| overall_rating | integer   | not null, between 1-5 |
+| heat_rating    | integer   | not null, between 1-5 |
+| description    | text      | not null              |
+| image_url      | string    | not null              |
+| user_id        | integer   | not null, indexed     |
+| sauce_id       | integer   | not null, indexed     |
