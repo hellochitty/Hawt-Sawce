@@ -32,18 +32,29 @@ Logins and signups both occur on a static splash page/presentational component.
   <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Sign%20Up.png" alt="Sign Up View" width="400">
 
 ### 2. Create, view, update and delete hot sauces
+  All sauces are viewed on the main page.
+
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Main.png" alt="All Sauces" width="400">
+
   On the database side, the sauces are stored in one table in the database, which contains columns for `id`, `title`, `description`, `maker_id`. The `name` of the maker is then captured from the sauce_makers table.
-<img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png" alt="Single Sauce View" width="400">
 
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png" alt="Single Sauce View" width="400">
 
+  Adding a sauce is a separate view with a presentational form component.
+
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Add_Sawce.png" alt="Add Sauce View" width="400">
+
+  Editing a sauce is the same view as adding a sauce, but with the form inputs pre-filled with values for the specific sauce. An API call is then made to the database to update the backend with the updated sauce data. There is a button here to delete the sauce, which will generate an API call to delete the sauce in the backend database.
+
+  <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Edit_Sawce.png" alt="Edit Sauce View" width="400">
 
 ###  3. Check-in and review hot sauces
 
-Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
+Check-ins/reviews can be made/edited from either the user profile or the single sauce view. Check-ins are stored in the database, which as columns for `id`, `description`, `overall_rating`, `heat_rating`, `user_id`, and `sauce_id`.
 
-The React component structure for notebooks mirrored that of notes: the `NotebookIndex` component renders a list of `CondensedNotebook`s as subcomponents, along with one `ExpandedNotebook`, kept track of by `NotebookStore.selectedNotebook()`.  
 
-### Tags
+
+###  4. Have a feed of all reviews
 
 As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
 
