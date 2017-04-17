@@ -32,15 +32,12 @@ Logins and signups both occur on a static splash page/presentational component.
   <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Sign%20Up.png" alt="Sign Up View" width="400">
 
 ### 2. Create, view, update and delete hot sauces
-  On the database side, the sauces are stored in one table in the database, which contains columns for `id`, `user_id`, `content`, and `updated_at`.  Upon login, an API call is made to the database which joins the user table and the note table on `user_id` and filters by the current user's `id`.  These notes are held in the `NoteStore` until the user's session is destroyed.  
-
-  Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
+  On the database side, the sauces are stored in one table in the database, which contains columns for `id`, `title`, `description`, `maker_id`. The `name` of the maker is then captured from the sauce_makers table.
 <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/wireframes/Single_Sauce_View.png" alt="Single Sauce View" width="400">
 
 
-Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
 
-### Notebooks
+###  3. Check-in and review hot sauces
 
 Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
 
