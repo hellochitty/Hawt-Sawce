@@ -16,6 +16,7 @@ description     | text      | optional
 | id          | integer   | not null, primary key     |
 | title       | string    | not null, indexed, unique |
 | description | text      | not null                  |
+| scoville    | integer      | not null                  |
 | image_url   | string    | not null                  |
 | maker_id    | integer   | not null, indexed         |
 

@@ -60,3 +60,170 @@ puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendering /Users/Chithra/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/Chithra/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /Users/Chithra/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.8ms)
+Started GET "/" for ::1 at 2017-04-18 11:50:56 -0400
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/Chithra/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:7)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/Chithra/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:8)
+
+PG::ConnectionBad - FATAL:  database "hawtsawce_development" does not exist
+:
+  activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+  activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+  activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+  activerecord (5.0.2) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+  activerecord (5.0.2) lib/active_record/connection_handling.rb:91:in `connection'
+  activerecord (5.0.2) lib/active_record/migration.rb:559:in `connection'
+  activerecord (5.0.2) lib/active_record/migration.rb:546:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.2) lib/rails/engine.rb:522:in `call'
+  puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+  puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+  puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+  puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+  puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/294e7134acb5d336/variables" for ::1 at 2017-04-18 11:50:56 -0400
+Started GET "/" for ::1 at 2017-04-18 12:02:36 -0400
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/Chithra/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:7)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/Chithra/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:8)
+
+PG::ConnectionBad - FATAL:  database "hawtsawce_development" does not exist
+:
+  activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+  activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+  activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+  activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+  activerecord (5.0.2) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+  activerecord (5.0.2) lib/active_record/connection_handling.rb:91:in `connection'
+  activerecord (5.0.2) lib/active_record/migration.rb:559:in `connection'
+  activerecord (5.0.2) lib/active_record/migration.rb:546:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.2) lib/rails/engine.rb:522:in `call'
+  puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+  puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+  puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+  puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+  puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/b914e088ebc200e2/variables" for ::1 at 2017-04-18 12:02:36 -0400
+Started GET "/" for ::1 at 2017-04-18 12:03:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 942ms (Views: 939.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (46.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4617670556353612275);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170418160345)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (35.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170418160345"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-18 16:12:22 UTC], ["updated_at", 2017-04-18 16:12:22 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4617670556353612275)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gRMNG2b9b0aZwiJQT33VVQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chithra"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chithra@chithra.com"], ["LIMIT", 1]]
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "chithra"], ["email", "chithra@chithra.com"], ["session_token", "gRMNG2b9b0aZwiJQT33VVQ"], ["password_digest", "$2a$10$lZ1yqOJvychdWQS/3HxJu.gs/cZLVcV.c4kfVKWP99fXVHq9.BwB6"], ["created_at", 2017-04-18 16:28:32 UTC], ["updated_at", 2017-04-18 16:28:32 UTC]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iggHXhw8gRUByujY87CTjg"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chithra"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chithra@chithra.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kTqrDatmF2ADPULgOzgPCw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chithra"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chithra@chithra.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "chithra"], ["email", "chithra@chithra.com"], ["session_token", "kTqrDatmF2ADPULgOzgPCw"], ["password_digest", "$2a$10$059KDRO4INfbGtV57DJAKu6sSWn5SVBOinWGsKq/5yUdUPDNrVOU6"], ["description", ""], ["created_at", 2017-04-18 16:31:00 UTC], ["updated_at", 2017-04-18 16:31:00 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
