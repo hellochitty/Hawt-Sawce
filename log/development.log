@@ -2187,3 +2187,17 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 510ms (Views: 507.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-04-18 15:38:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 165ms (Views: 150.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-18 15:38:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
