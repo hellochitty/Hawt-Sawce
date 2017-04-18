@@ -7,10 +7,16 @@
     "doc": "docs",
     "test": "test"
   },
+  "engines": {
+   "node": "5.0.2",
+   "npm": "4.1.2"
+ },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "postinstall": "webpack"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hellochitty/Hawt-Sawce.git"
