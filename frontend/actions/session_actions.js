@@ -5,11 +5,11 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 const receiveCurrentUser = currentUser => ({
-  action: RECEIVE_CURRENT_USER,
+  type: RECEIVE_CURRENT_USER,
   currentUser
 });
 const receiveErrors = errors => ({
-  action: RECEIVE_ERRORS,
+  type: RECEIVE_ERRORS,
   errors
 });
 
