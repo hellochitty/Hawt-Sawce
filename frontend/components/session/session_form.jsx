@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
   //guest login
   guestLogin(){
     this.setState({
-      username: 'chithra',
+      username: 'SPICY',
       password: 'password',
     });
   }
@@ -110,8 +110,8 @@ class SessionForm extends React.Component {
 
           {emailInput}
           {guestLogin}
-          <section><p className="session-errors">{ this.props.errors.login}</p></section>
           <input type='submit' value='submit' />
+          <section><p className="session-errors">{ this.props.errors.login}</p></section>
         </form>
 
         <Link to={link}>{link.slice(1)} </Link>

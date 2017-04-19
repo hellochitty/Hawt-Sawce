@@ -8,3 +8,4 @@
 
 User.destroy_all
 User.create(username:"chithra", password:"password", email:"chithra@chithra.com");
+User.create(username:"SPICY", password:"password", email:"spicy@spicy.com");
