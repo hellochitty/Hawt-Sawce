@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import RaisedButton from 'material-ui/RaisedButton';
 const Nav = (props) => {
   if(props.currentUser){
     return (
@@ -12,7 +12,8 @@ const Nav = (props) => {
   }else{
     return (
       <div>
-        <Link to="/signup">Sign Up</Link>  or  <Link to="/login">Log In</Link>
+        <Link to="/signup"><RaisedButton label="Sign Up"/></Link>
+        <Link to="/login"><RaisedButton label="Log In"/></Link>
       </div>
     );
   }

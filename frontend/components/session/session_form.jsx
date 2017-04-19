@@ -1,6 +1,12 @@
+//util
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+//internal
+//ui
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
+import TextField from 'material-ui/TextField';
+
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -47,8 +53,7 @@ class SessionForm extends React.Component {
     };
   }
 
-  //show errors per error item
-  //guest login
+  //guest login (hardcoded)
   guestLogin(){
     this.setState({
       username: 'SPICY',
@@ -61,33 +66,58 @@ class SessionForm extends React.Component {
     let emailInput = null;
     if (this.props.formType !== 'login'){
       emailInput = (
-      <section>Email: <input type='text' value={this.state.email} onChange={this.update('email')} />
-      <p className="session-errors">{ this.props.errors.email}</p>
-      </section>);
+        <TextField
+          hintText=""
+          floatingLabelText="Email"
+          type="email"
+          value={this.state.email}
+          onChange={this.update('email')}
+          errorText={ this.props.errors.email }
+          />);
     }
     let guestLogin = null;
     if (this.props.formType === 'login'){
       guestLogin = (
-      <button onClick={this.guestLogin}>Guest</button>);
+      <FlatButton onClick={this.guestLogin} label="Login as Guest"  type="submit"/>
+      );
     }
     return(
-      <div>
+      <div id="session-form">
+      <div id="session-form-inputs">
         <h2>{text}</h2>
         <form onSubmit={this.handleSubmit}>
-          <section>Username: <input type='text' value={this.state.username} onChange={this.update('username')} />
-          <p className="session-errors">{ this.props.errors.username}</p></section>
 
-          <section>Password: <input type='password' value={this.state.password} onChange={this.update('password')} />
-          <p className="session-errors">{ this.props.errors.password}</p></section>
-
+          <TextField
+            hintText=""
+            floatingLabelText="Username"
+            type="username"
+            value={this.state.username}
+            onChange={this.update('username')}
+            errorText={ this.props.errors.username }
+            />
+          <br />
+          <TextField
+            hintText=""
+            floatingLabelText="Password"
+            type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            errorText={ this.props.errors.password }
+            />
+          <br />
           {emailInput}
+          <p className="session-errors">{ this.props.errors.login}</p>
+          <br />
+          <RaisedButton label="submit"  type="submit"/>
+          <br />
           {guestLogin}
-          <RaisedButton label="Default" />
-          <input type='submit' value='submit' />
-          <section><p className="session-errors">{ this.props.errors.login}</p></section>
+          <br/ >
+          <Link to={link}><FlatButton label={link.slice(1)} /> </Link>
+
         </form>
 
-        <Link to={link}>{link.slice(1)} </Link>
+
+      </div>
       </div>
     );
   }

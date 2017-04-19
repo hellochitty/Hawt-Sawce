@@ -1,0 +1,33 @@
+#session-form{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  background: transparent url(https://cdn.pixabay.com/photo/2014/04/08/21/14/yellow-lantern-chili-319665_960_720.jpg) top left no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  background-size: cover;
+
+}
+
+
+#session-form-inputs{
+  width: 20%;
+  min-width: 280px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.session-errors{
+  color: red;
+  font-size: 12px;
+}
