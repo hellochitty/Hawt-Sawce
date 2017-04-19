@@ -2,19 +2,31 @@ import React from 'react';
 import { Link } from 'react-router';
 import RaisedButton from 'material-ui/RaisedButton';
 const Nav = (props) => {
+
+
   if(props.currentUser){
     return (
-      <div>
-        <h3>Welcome, {props.currentUser.username}</h3>
-        <button onClick={props.logout}>Logout</button>
-      </div>
+      <nav>
+        <div id="nav-contents">
+          <h1 id="nav-title">HAWT SAWCE</h1>
+          <div id="nav-links">
+            <p id="nav-text">Hi, {props.currentUser.username}</p>
+            <RaisedButton label="Log Out" onClick={props.logout}/>
+          </div>
+        </div>
+      </nav>
     );
   }else{
     return (
-      <div>
-        <Link to="/signup"><RaisedButton label="Sign Up"/></Link>
-        <Link to="/login"><RaisedButton label="Log In"/></Link>
-      </div>
+      <nav>
+        <div id="nav-contents">
+          <h1 id="nav-title">HAWT SAWCE</h1>
+          <div id="nav-links">
+            <Link to="/signup" className="nav-link"><RaisedButton label="Sign Up" /></Link>
+            <Link to="/login" className="nav-link"><RaisedButton label="Log In" /></Link>
+          </div>
+        </div>
+      </nav>
     );
   }
 };

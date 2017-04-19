@@ -1,0 +1,39 @@
+nav{
+  background-color: $color-main;
+  color: $color-alt-text;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+
+}
+#nav-contents{
+  display: flex;
+  width: 900px;
+  margin: auto;
+  // margin-top: 1%;
+  justify-content: space-between;
+  align-items:center;
+}
+
+#nav-links {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+}
+
+.nav-link{
+  margin: 0px 5px;
+}
+
+#nav-title{
+  margin: 5px 0;
+  color: $color-alt-text;
+}
+
+#nav-text{
+  color: $color-alt-text;
+  margin: 0px;
+  padding: 0 10px;
+}

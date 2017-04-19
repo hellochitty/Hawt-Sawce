@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
+import Index from './index';
 import SessionFormContainer from './session/session_form_container';
 //material-ui
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -37,18 +38,31 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const Root = ({ store }) => (
-  <Provider store={ store }>
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <Router history = { hashHistory }>
-        <Route path ="/" component={ App }></Route>
-        <Route path="/login" component={ SessionFormContainer } />
-        <Route path="/signup" component={ SessionFormContainer } />
 
-      </Router>
-    </MuiThemeProvider>
-  </Provider>
-);
+
+const Root = ({ store }) => {
+  const _redirectIfLoggedIn = (nextState, replace) => {
+  let currentUser = store.getState().session.currentUser;
+    if (currentUser){
+      replace('/home');
+    }
+  };
+
+  return (
+    <Provider store={ store }>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <Router history = { hashHistory }>
+          <Route path ="/" component={ Index } onEnter={_redirectIfLoggedIn} />
+          <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+          <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+          <Route path ="/home" component={ App }>
+
+          </Route>
+        </Router>
+      </MuiThemeProvider>
+    </Provider>
+  );
+};
 
 
 export default Root;

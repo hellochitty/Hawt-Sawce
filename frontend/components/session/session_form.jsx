@@ -40,11 +40,12 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(()=> this.redirect());
+    this.props.processForm(user)
+      .then(()=> this.redirect());
   }
 
   redirect(){
-    this.props.router.push('/');
+    this.props.router.push('/home');
   }
 
   update(field){
@@ -76,9 +77,13 @@ class SessionForm extends React.Component {
           />);
     }
     let guestLogin = null;
+    let sessionErrors = null;
     if (this.props.formType === 'login'){
       guestLogin = (
       <FlatButton onClick={this.guestLogin} label="Login as Guest"  type="submit"/>
+      );
+      sessionErrors = (
+        <p className="session-errors">{ this.props.errors.login}</p>
       );
     }
     return(
@@ -106,7 +111,7 @@ class SessionForm extends React.Component {
             />
           <br />
           {emailInput}
-          <p className="session-errors">{ this.props.errors.login}</p>
+          {sessionErrors}
           <br />
           <RaisedButton label="submit"  type="submit"/>
           <br />

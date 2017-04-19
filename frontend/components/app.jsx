@@ -4,10 +4,7 @@ import NavContainer from './nav/nav_container';
 
 const App = ({ children }) => (
   <div>
-    <nav>
-      <h1>HAWT SAWCE</h1>
-      <NavContainer />
-    </nav>
+    <NavContainer />
     { children }
   </div>
 );

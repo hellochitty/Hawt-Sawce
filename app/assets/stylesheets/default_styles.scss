@@ -1,6 +1,7 @@
 body *{
   font-family: 'Roboto Condensed', sans-serif;
-  border: 1px solid red;
+  // border: 1px solid red;
+  color: $color-main-text;
 }
 
 body{
@@ -8,9 +9,5 @@ body{
 }
 
 h2{
-  color: $color-main
-}
-
-nav{
-  background-color: $color-main
+  color: $color-main;
 }
