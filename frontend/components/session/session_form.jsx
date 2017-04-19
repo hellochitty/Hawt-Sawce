@@ -93,7 +93,11 @@ class SessionForm extends React.Component {
       <p className="session-errors">{ this.props.errors.email}</p>
       </section>);
     }
-
+    let guestLogin = null;
+    if (this.props.formType === 'login'){
+      guestLogin = (
+      <button onClick={this.guestLogin}>Guest</button>);
+    }
     return(
       <div>
         <h2>{text}</h2>
@@ -105,10 +109,11 @@ class SessionForm extends React.Component {
           <p className="session-errors">{ this.props.errors.password}</p></section>
 
           {emailInput}
+          {guestLogin}
           <section><p className="session-errors">{ this.props.errors.login}</p></section>
           <input type='submit' value='submit' />
         </form>
-        <button onClick={this.guestLogin}>Guest</button>
+
         <Link to={link}>{link.slice(1)} </Link>
       </div>
     );
