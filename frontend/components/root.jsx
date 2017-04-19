@@ -48,6 +48,13 @@ const Root = ({ store }) => {
     }
   };
 
+  const _redirectUnlessLoggedIn = (nextState, replace) => {
+  let currentUser = store.getState().session.currentUser;
+    if (!currentUser){
+      replace('/');
+    }
+  };
+
   return (
     <Provider store={ store }>
       <MuiThemeProvider muiTheme={muiTheme}>
@@ -55,7 +62,7 @@ const Root = ({ store }) => {
           <Route path ="/" component={ Index } onEnter={_redirectIfLoggedIn} />
           <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
-          <Route path ="/home" component={ App }>
+          <Route path ="/home" component={ App } onEnter={_redirectUnlessLoggedIn}>
 
           </Route>
         </Router>
