@@ -1,10 +1,9 @@
-import React from 'react';
-import Greeting from './greeting';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import Greeting from './greeting.jsx';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+const mapStateToProps = state => ({
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -13,6 +13,12 @@ const receiveErrors = errors => ({
   errors
 });
 
+// export const login = function(user){
+//   return function(dispatch){
+//     return SessionAPIUtil.login(user);
+//   };
+// };
+
 export const login = user => dispatch => {
   return SessionAPIUtil.login(user)
     .then((res) => dispatch(receiveCurrentUser(res)),
