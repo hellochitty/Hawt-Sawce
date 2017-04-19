@@ -5,7 +5,10 @@ import NavContainer from './nav/nav_container';
 const App = ({ children }) => (
   <div>
     <NavContainer />
-    { children }
+    <div className="main">
+      <p>youre at home</p>
+      { children }
+    </div>
   </div>
 );
 
