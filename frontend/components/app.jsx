@@ -1,10 +1,13 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import NavContainer from './nav/nav_container';
+
 
 const App = ({ children }) => (
   <div>
-    <h1>HAWT SAWCE</h1>
-    <GreetingContainer />
+    <nav>
+      <h1>HAWT SAWCE</h1>
+      <NavContainer />
+    </nav>
     { children }
   </div>
 );

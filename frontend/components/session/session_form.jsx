@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -47,35 +48,6 @@ class SessionForm extends React.Component {
   }
 
   //show errors per error item
-  loginErrors(){
-    if (this.props.errors) {
-      if (this.props.errors.login){
-        return this.props.errors.login[0];
-      }
-    }
-  }
-
-  passwordErrors(){
-    if (this.props.errors) {
-      if (this.props.errors.password){
-        return this.props.errors.password[0];
-      }
-    }
-  }
-  usernameErrors(){
-    if (this.props.errors) {
-      if (this.props.errors.username){
-        return this.props.errors.username[0];
-      }
-    }
-  }
-  emailErrors(){
-    if (this.props.errors) {
-      if (this.props.errors.email){
-        return this.props.errors.email[0];
-      }
-    }
-  }
   //guest login
   guestLogin(){
     this.setState({
@@ -110,6 +82,7 @@ class SessionForm extends React.Component {
 
           {emailInput}
           {guestLogin}
+          <RaisedButton label="Default" />
           <input type='submit' value='submit' />
           <section><p className="session-errors">{ this.props.errors.login}</p></section>
         </form>
