@@ -26,8 +26,8 @@ const Nav = (props) => {
         <div id="nav-contents">
           <h1 id="nav-title">HAWT SAWCE</h1>
           <div id="nav-links">
-            <Link to="/signup" className="nav-link"><RaisedButton label="Sign Up" /></Link>
-            <Link to="/login" className="nav-link"><RaisedButton label="Log In" /></Link>
+            <Link to="/signup" className="nav-link">SIGN UP</Link>
+            <Link to="/login" className="nav-link">LOG IN</Link>
           </div>
         </div>
       </nav>
@@ -35,5 +35,7 @@ const Nav = (props) => {
   }
 };
 
+// <Link to="/signup" className="nav-link"><RaisedButton label="Sign Up" /></Link>
+// <Link to="/login" className="nav-link"><RaisedButton label="Log In" /></Link>
 
 export default withRouter(Nav);
