@@ -39,8 +39,9 @@
 ## Routes
 | Path                          | Component            |
 |-------------------------------|----------------------|
-| "/sign-up"                    | "AuthFormContainer"  |
-| "/log-in"                     | "AuthFormContainer"  |
+| "/"                           | "Splashpage"          |
+| "/signup"                    | "AuthFormContainer"  |
+| "/login"                     | "AuthFormContainer"  |
 | "/home"                       | "HomeContainer"      |
 | "/home/sauces/"               | "SaucesContainer"    |
 | "/home/sauces/:sauce_id"      | "ShowSauceContainer" |

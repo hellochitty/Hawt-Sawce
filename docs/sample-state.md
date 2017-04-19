@@ -5,6 +5,9 @@
     username: "meowth",
     description: "meowth",
   },
+  errors: {
+
+  },
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},

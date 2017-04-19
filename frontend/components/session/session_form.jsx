@@ -6,14 +6,23 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.passwordErrors = this.passwordErrors.bind(this);
-    this.usernameErrors = this.usernameErrors.bind(this);
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
+  componentWillReceiveProps(newProps){
+    if(this.props.processForm &&
+      (this.props.processForm !== newProps.processForm)){
+      this.props.clearErrors();
+    }
+  }
 
   handleSubmit(e){
     e.preventDefault();
@@ -31,6 +40,14 @@ class SessionForm extends React.Component {
     };
   }
 
+  loginErrors(){
+    if (this.props.errors) {
+      if (this.props.errors.login){
+        return this.props.errors.login[0];
+      }
+    }
+  }
+
   passwordErrors(){
     if (this.props.errors) {
       if (this.props.errors.password){
@@ -45,19 +62,36 @@ class SessionForm extends React.Component {
       }
     }
   }
+  emailErrors(){
+    if (this.props.errors) {
+      if (this.props.errors.email){
+        return this.props.errors.email[0];
+      }
+    }
+  }
+
 
   render(){
     const text = this.props.formType === 'login' ? "Log In" : "Sign Up";
     const link = this.props.formType === 'login' ? "/signup" : "/login";
+    let emailInput = null;
+    if (this.props.formType !== 'login'){
+      emailInput = (<section>Email: <input type='text' value={this.state.email} onChange={this.update('email')} />
+    <p className="session-errors">{ this.emailErrors()}</p></section>);
+    }
+
     return(
       <div>
         <h2>{text}</h2>
         <form onSubmit={this.handleSubmit}>
-          Username: <input type='text' value={this.state.username} onChange={this.update('username')} />
-          <p className="session-errors">{ this.usernameErrors()}</p>
+          <section>Username: <input type='text' value={this.state.username} onChange={this.update('username')} />
+          <p className="session-errors">{ this.usernameErrors()}</p></section>
 
-          Password: <input type='text' value={this.state.password} onChange={this.update('password')} />
-          <p className="session-errors">{ this.passwordErrors()}</p>
+          <section>Password: <input type='password' value={this.state.password} onChange={this.update('password')} />
+          <p className="session-errors">{ this.passwordErrors()}</p></section>
+
+          {emailInput}
+          <section><p className="session-errors">{ this.loginErrors()}</p></section>
           <input type='submit' value='submit' />
         </form>
         <Link to={link}>{link.slice(1)} </Link>
