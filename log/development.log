@@ -6132,3 +6132,615 @@ Processing by Api::SaucesController#index as JSON
 Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2017-04-20 10:29:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:29:24 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.6ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (8.2ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:29:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:29:25 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.5ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (8.0ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:29:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 594ms (Views: 592.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:29:27 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.7ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.7ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:29:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:29:27 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.7ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:29:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 938ms (Views: 936.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:29:52 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.5ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.8ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:30:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:07 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.6ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (8.4ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:30:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 624ms (Views: 622.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:09 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.4ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (6.1ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:30:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:30 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.5ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.6ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:30:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 623ms (Views: 621.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:32 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.4ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:30:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:33 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.7ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.9ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:30:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:34 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (8.6ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:45 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.3ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.4ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (5.5ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:45 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.5ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.1ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:46 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.5ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (5.6ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:30:47 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.4ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (6.2ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:31:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:31:51 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.6ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/index.json.jbuilder (8.0ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:31:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:31:52 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.5ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/index.json.jbuilder (8.0ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:31:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:31:53 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.4ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/index.json.jbuilder (7.0ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:31:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:31:54 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.6ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.5ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.4ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:31:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:31:55 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.6ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (8.2ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:31:57 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.3ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.3ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (5.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:31:59 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.6ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.7ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.4ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:32:05 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.8ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.4ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/index.json.jbuilder (7.2ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:32:13 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.3ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (6.3ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:32:14 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.3ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (5.2ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:32:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:32:16 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.6ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.7ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:33:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 646ms (Views: 643.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:33:52 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.7ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.8ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:34:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 85ms (Views: 82.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:34:04 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (8.3ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:34:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:34:24 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (7.3ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:34:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:34:51 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (8.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 10:34:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:34:52 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.6ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.2ms)
+  Rendered api/sauces/index.json.jbuilder (8.4ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-04-20 10:35:18 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GQTR9ifucNu-gaE8A9LXrA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GQTR9ifucNu-gaE8A9LXrA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "chithra"], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "chithra@chithra.com"], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "GQTR9ifucNu-gaE8A9LXrA"], ["updated_at", 2017-04-20 14:35:18 UTC], ["id", 18]]
+  [1m[35m (74.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 83ms (Views: 0.3ms | ActiveRecord: 76.9ms)
+
+
+Started POST "/api/session" for ::1 at 2017-04-20 10:35:23 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"SPICY", "password"=>"[FILTERED]", "email"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SPICY"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "B2Fear5JXxtUQ3YavaogFQ"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "B2Fear5JXxtUQ3YavaogFQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "SPICY"], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "spicy@spicy.com"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "B2Fear5JXxtUQ3YavaogFQ"], ["updated_at", 2017-04-20 14:35:23 UTC], ["id", 19]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 87ms (Views: 6.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 10:35:27 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (0.7ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.4ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (6.9ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 1.2ms)
+
+
