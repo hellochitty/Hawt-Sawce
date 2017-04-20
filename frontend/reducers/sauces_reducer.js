@@ -2,7 +2,7 @@ import { RECEIVE_ALL_SAUCES } from '../actions/sauce_actions';
 import { merge } from 'lodash';
 
 
-const SauceReducer = (oldState= {}, action) => {
+const SaucesReducer = (oldState= {}, action) => {
 
   Object.freeze(oldState);
 
@@ -14,4 +14,4 @@ const SauceReducer = (oldState= {}, action) => {
   }
 };
 
-export default SauceReducer;
+export default SaucesReducer;
