@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
   }
 
   redirect(){
-    this.props.router.push('/home');
+    this.props.router.push('/home/sauces');
   }
 
   update(field){
