@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { getSauces } from '../../actions/sauce_actions';
-import { clearErrors } from '../../actions/util_actions';
 import SauceIndex from './sauce_index.jsx';
 
 const mapStateToProps = ({sauces}) => {

@@ -35,9 +35,14 @@
       id: 5,
       name: "Habanero sauce",
       creator: "Secret Aardvark",
-      image_url: "/blah/habanero.jpg",
-      creator_id: 5
+      image_url: "/blah/habanero.jpg"
     }
+  },
+  sauce: {
+    id: 5,
+    name: "Habanero sauce",
+    creator: "Secret Aardvark",
+    image_url: "/blah/habanero.jpg"
   }
 }
 ```
