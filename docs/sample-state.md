@@ -22,19 +22,14 @@
       heat_rating: 5,
       image_url: "/blah/habanero_3.jpg",
       user_id: 1235,
-      sauce: {
-        id: 5,
-        name: "Habanero sauce",
-        creator: "Secret Aardvark",
-        image_url: "/blah/habanero.jpg"
-      }
+      sauce_id: 7
     }
   },
   sauces: {
     1: {
       id: 5,
       name: "Habanero sauce",
-      creator: "Secret Aardvark",
+      company: "Secret Aardvark",
       image_url: "/blah/habanero.jpg"
     }
   },
@@ -44,5 +39,6 @@
     creator: "Secret Aardvark",
     image_url: "/blah/habanero.jpg"
   }
+  companies: [{id: 2, name: Huy Fong}, {id: 3, name: TABASCO}]
 }
 ```

@@ -24,14 +24,24 @@
   text-align: center;
 }
 
+.sauce-index-header{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
 .sauce-index-item{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin: 10px 0px;
   background-color: white;
 }
 
 .sauce-index-item-profile > *{
   margin: 0;
+}
+
+#add-sauce-button{
+  align-self: center;
 }
