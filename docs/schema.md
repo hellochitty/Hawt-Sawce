@@ -16,9 +16,9 @@ description     | text      | optional
 | id          | integer   | not null, primary key     |
 | title       | string    | not null, indexed, unique |
 | description | text      | not null                  |
-| scoville    | integer      | not null                  |
+| scoville units | integer   | not null                  |
 | image_url   | string    | not null                  |
-| maker_id    | integer   | not null, indexed         |
+| company_id  | integer   | not null, indexed         |
 
 
 ## checkins
@@ -32,8 +32,8 @@ description     | text      | optional
 | user_id        | integer   | not null, indexed     |
 | sauce_id       | integer   | not null, indexed     |
 
-## sauce makers
+## sauce companies
 | column name | data type | details                   |
 |-------------|-----------|---------------------------|
 | id          | integer   | not null, primary key     |
-| name        | string    | not null, indexed, unique |
+| name        | string    | not null, unique          |
