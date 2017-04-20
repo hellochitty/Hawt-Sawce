@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resource :user, only: [:create]
     resource :session, only: [:create, :destroy, :show]
     resources :sauces, only: [:index, :show]
+    resources :sauce_companies, only: [:index]
   end
 end
