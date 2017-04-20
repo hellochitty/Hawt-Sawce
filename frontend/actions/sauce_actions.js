@@ -21,5 +21,5 @@ export const getSauces = () => dispatch => {
 
 export const getSauce = (sauceId) => dispatch => {
   return SauceAPIUtil.fetchSauce(sauceId)
-    .then((res) => dispatch(receiveSauces(res)));
+    .then((res) => dispatch(receiveSauce(res)));
 };

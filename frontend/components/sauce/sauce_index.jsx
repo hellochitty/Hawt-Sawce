@@ -9,12 +9,13 @@ class SauceIndex extends React.Component{
   componentDidMount(){
     this.props.getSauces();
   }
+  
   render(){
     return(
       <div>
         <h1>Sauces</h1>
         {this.props.sauces.map(sauce => (
-        <SauceIndexItem sauce={sauce} />
+        <SauceIndexItem sauce={sauce} key={sauce.id}/>
         ))}
       </div>
     );
