@@ -1,4 +1,4 @@
-import { RECEIVE_SAUCE} from '../actions/sauce_actions';
+import { RECEIVE_SAUCE } from '../actions/sauce_actions';
 import { merge } from 'lodash';
 
 const _defaultState = {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Spinner from '../ui/spinner';
+import { Link } from 'react-router';
 
 class Sauce extends React.Component{
   compoentWillReceiveProps(newProps){
@@ -50,6 +51,9 @@ class Sauce extends React.Component{
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div>
+              <Link to={`/home/sauces/${sauce.id}/edit`}>edit</Link>
             </div>
           </div>
           <div className="sauce-checkins">

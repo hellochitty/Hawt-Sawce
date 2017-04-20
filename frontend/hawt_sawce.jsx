@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 // import { login, logout, signup } from './util/session_api_util';
 // import { login, logout, signup } from './actions/session_actions';
-import { getSauces, getSauce } from './actions/sauce_actions';
+import { getSauces, getSauce, getSauceCompanies } from './actions/sauce_actions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   window.store = store;
   window.getSauces = getSauces;
   window.getSauce = getSauce;
+  window.getSauceCompanies = getSauceCompanies;
 
 });
 

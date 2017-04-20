@@ -12,3 +12,12 @@ export const fetchSauce = (sauceId) => {
     url: `/api/sauces/${sauceId}`
   });
 };
+
+
+
+export const fetchSauceCompanies = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/sauce_companies'
+  });
+};

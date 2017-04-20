@@ -6,6 +6,7 @@ import Index from './index';
 import SessionFormContainer from './session/session_form_container';
 import SauceIndexContainer from './sauce/sauce_index_container';
 import SauceContainer from './sauce/sauce_container';
+import SauceFormContainer from './sauce/sauce_form_container';
 //material-ui
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -66,7 +67,9 @@ const Root = ({ store }) => {
           <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
           <Route path ="/home" component={ App }>
             <Route path ="sauces" component={ SauceIndexContainer } />
+            <Route path ="sauces/new" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
             <Route path ="sauces/:sauce_id" component={ SauceContainer } />
+            <Route path ="sauces/:sauce_id/edit" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
           </Route>
         </Router>
       </MuiThemeProvider>

@@ -1,15 +1,20 @@
 import React from 'react';
 import SauceIndexItem from './sauce_index_item';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Link } from 'react-router';
+import { withRouter } from 'react-router';
 
 class SauceIndex extends React.Component{
   constructor(props){
     super(props);
+    this.redirect = this.redirect.bind(this);
   }
 
   componentDidMount(){
     this.props.getSauces();
+  }
+
+  redirect(){
+    this.props.router.push("/home/sauces/new");
   }
 
   render(){
@@ -18,7 +23,7 @@ class SauceIndex extends React.Component{
         <div className="sauce-index-header">
           <h1>Sauces</h1>
           <div id="add-sauce-button">
-            <RaisedButton  label="+ Sauce"/>
+            <RaisedButton onClick={this.redirect}  label="+ Sauce"/>
           </div>
         </div>
         {this.props.sauces.map(sauce => (
@@ -29,4 +34,4 @@ class SauceIndex extends React.Component{
   }
 }
 
-export default SauceIndex;
+export default withRouter(SauceIndex);
