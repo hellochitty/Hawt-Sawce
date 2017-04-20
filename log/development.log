@@ -5426,3 +5426,94 @@ Migrating to CreateSauces (20170420002952)
   [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT  "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "description", "scoville_units", "image_url", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Salsa Picante de Chile Habanero Green"], ["description", "From Merida, Yucatan, Mexico, this is the hotter of the two original El Yucateco colors. Elaborated with another of our classic recipes based on green habanero peppers, garlic and spices. This special blend of ingredients gives a fresh, home flavor to the meals."], ["scoville_units", 8910], ["image_url", "https://cdn3.volusion.com/pvqf3.cnxy3/v/vspfiles/photos/1117-2.jpg"], ["company_id", 21], ["created_at", 2017-04-20 03:17:47 UTC], ["updated_at", 2017-04-20 03:17:47 UTC]]
   [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2017-04-20 09:27:03 -0400
+Started GET "/" for ::1 at 2017-04-20 09:27:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (26.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (26.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (13.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 1755ms (Views: 1752.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1853ms (Views: 1849.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2017-04-20 09:27:12 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"SPICY", "password"=>"[FILTERED]", "email"=>""}}
+  [1m[36mUser Load (21.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SPICY"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sDFZPKkvwXa9N5hcOtqunQ"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sDFZPKkvwXa9N5hcOtqunQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "SPICY"], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "spicy@spicy.com"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (18.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sDFZPKkvwXa9N5hcOtqunQ"], ["updated_at", 2017-04-20 13:27:12 UTC], ["id", 19]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (8.1ms)
+Completed 200 OK in 220ms (Views: 17.7ms | ActiveRecord: 77.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-04-20 09:27:14 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sDFZPKkvwXa9N5hcOtqunQ"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v7i0Ch5AARkJz7VarmFEQw"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v7i0Ch5AARkJz7VarmFEQw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "SPICY"], ["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "spicy@spicy.com"], ["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "v7i0Ch5AARkJz7VarmFEQw"], ["updated_at", 2017-04-20 13:27:14 UTC], ["id", 19]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 09:39:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 457ms (Views: 455.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2017-04-20 09:40:11 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"chithra", "password"=>"[FILTERED]", "email"=>""}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chithra"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "chithra"], ["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "chithra@chithra.com"], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["updated_at", 2017-04-20 13:40:11 UTC], ["id", 18]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 103ms (Views: 8.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 09:40:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "51RM6rfFIgLvhzrmgVAYAQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/sauces" for ::1 at 2017-04-20 09:41:01 -0400
+Processing by Api::SaucesController#index as JSON
+  Rendering api/sauces/index.json.jbuilder
+  [1m[36mSauce Load (18.9ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[36mSauceCompany Load (13.4ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" IN (18, 15, 21)[0m
+  Rendered api/sauces/_sauce.json.jbuilder (0.6ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/_sauce.json.jbuilder (0.1ms)
+  Rendered api/sauces/index.json.jbuilder (97.2ms)
+Completed 200 OK in 108ms (Views: 52.2ms | ActiveRecord: 49.8ms)
+
+
