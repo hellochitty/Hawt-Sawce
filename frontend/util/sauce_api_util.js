@@ -21,3 +21,18 @@ export const fetchSauceCompanies = () => {
     url: '/api/sauce_companies'
   });
 };
+
+export const deleteSauce = (sauceId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/sauces/${sauceId}`
+  });
+};
+
+export const addSauce = (sauce) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/sauces',
+    data: {sauce}
+  });
+};

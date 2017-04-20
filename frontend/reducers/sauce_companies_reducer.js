@@ -9,7 +9,7 @@ const SauceCompaniesReducer = (oldState= _defaultState, action) => {
 
   switch(action.type){
     case RECEIVE_SAUCE_COMPANIES:
-      return action.companies;
+      return action.companies.map((company) => company.name);
     default:
       return oldState;
   }

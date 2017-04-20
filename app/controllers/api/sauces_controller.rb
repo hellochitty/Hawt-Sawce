@@ -10,4 +10,14 @@ class Api::SaucesController < ApplicationController
     render :show
   end
 
+  def destroy
+    @sauce = Sauce.find(params[:id])
+    if @sauce
+      @sauce.delete
+      render :show
+    else
+      render json: {delete:['Sauce Does Not Exist']}, status: 404
+    end
+  end
+
 end

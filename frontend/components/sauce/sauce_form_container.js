@@ -1,17 +1,24 @@
 import { connect } from 'react-redux';
-import { getSauces, createSauce, updateSauce } from '../../actions/sauce_actions';
+import { getSauceCompanies, createSauce, updateSauce, getSauce } from '../../actions/sauce_actions';
 import SauceForm from './sauce_form.jsx';
 
-const mapStateToProps = ({sauces}) => {
-  const holder = [];
-  Object.keys(sauces).forEach((key)=> holder.push(sauces[key]));
+const mapStateToProps = ({sauce, companies}, ownProps) => {
+
+  let formType = 'new';
+  if(ownProps.params.sauce_id){
+    formType = 'edit';
+  }
+
   return {
-    sauces: holder
+    sauce,
+    formType,
+    companies
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  getSauces: () => dispatch(getSauces())
+  getSauceCompanies: () => dispatch(getSauceCompanies()),
+  getSauce: (id) => dispatch(getSauce(id))
 });
 
 

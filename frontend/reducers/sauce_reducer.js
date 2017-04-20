@@ -4,7 +4,7 @@ import { merge } from 'lodash';
 const _defaultState = {
   name: "",
   description: "",
-  scoville_units: -1,
+  scoville_units: "",
   image_url: "",
   company: ""
 };

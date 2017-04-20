@@ -1,5 +1,5 @@
-import { RECEIVE_ERRORS } from '../actions/session_actions';
-import { CLEAR_ERRORS } from '../actions/util_actions';
+
+import { CLEAR_ERRORS, RECEIVE_ERRORS } from '../actions/util_actions';
 import { merge } from 'lodash';
 
 const _defaultState ={};
