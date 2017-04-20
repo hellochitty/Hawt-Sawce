@@ -5,4 +5,9 @@ class Api::SaucesController < ApplicationController
     render :index
   end
 
+  def show
+    @sauce = Sauce.find(params[:sauce_id])
+    render :show
+  end
+
 end
