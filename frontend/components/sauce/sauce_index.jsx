@@ -9,10 +9,10 @@ class SauceIndex extends React.Component{
   componentDidMount(){
     this.props.getSauces();
   }
-  
+
   render(){
     return(
-      <div>
+      <div className="col-2-3">
         <h1>Sauces</h1>
         {this.props.sauces.map(sauce => (
         <SauceIndexItem sauce={sauce} key={sauce.id}/>

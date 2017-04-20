@@ -1,11 +1,12 @@
 body *{
   font-family: 'Roboto Condensed', sans-serif;
-  // border: 1px solid red;
+  // border: 1px solid grey;
   color: $color-main-text;
 }
 
 body{
   margin: 0px;
+  background-color: $color-background-body;
 }
 
 h2{
@@ -19,4 +20,10 @@ h2{
 
 .button{
 
+}
+
+.col-2-3{
+  width: 590px;
+  height: auto;
+  margin-top: 10px;
 }

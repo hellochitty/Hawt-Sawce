@@ -2,3 +2,36 @@
   width: 100px;
   height: auto;
 }
+.sauce-main{
+  background-color: white;
+}
+.sauce-main-profile{
+  display: flex;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.sauce-main-profile-pic{
+  margin-top: 20px;
+}
+
+.sauce-main-profile-text > h1,h2,h3,h4{
+  margin: 0px 0px 5px 0px;
+}
+
+.sauce-stats{
+  width: 100%;
+  text-align: center;
+}
+
+.sauce-index-item{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.sauce-index-item-profile > *{
+  margin: 0;
+}
