@@ -10,4 +10,13 @@
 
 class SauceCompany < ApplicationRecord
   validates :name, presence: true, uniqueness: true
+
+  has_many :sauces,
+    class_name: 'Sauce',
+    foreign_key: :company_id,
+    primary_key: :id,
+    inverse_of: :company,
+    dependent: :destroy
+
+
 end

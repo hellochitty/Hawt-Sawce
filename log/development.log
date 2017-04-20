@@ -5193,3 +5193,236 @@ Migrating to CreateSauceCompanies (20170420001146)
   [1m[36mSauceCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Bravado Spice Co."], ["LIMIT", 1]]
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bravado Spice Co."], ["created_at", 2017-04-20 00:24:17 UTC], ["updated_at", 2017-04-20 00:24:17 UTC]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4617670556353612275);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSauces (20170420002952)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (34.9ms)[0m  [1m[35mCREATE TABLE "sauces" ("id" serial primary key, "name" character varying NOT NULL, "description" text, "scoville_units" integer, "image_url" character varying NOT NULL, "company_id" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_sauces_on_name_and_company_id" ON "sauces"  ("name", "company_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420002952"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4617670556353612275)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4617670556353612275);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSauces (20170420002952)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.2ms)[0m  [1m[35mDROP INDEX  "index_sauces_on_name_and_company_id"[0m
+  [1m[35m (4.6ms)[0m  [1m[35mDROP TABLE "sauces"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170420002952"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4617670556353612275)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4617670556353612275);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSauces (20170420002952)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE TABLE "sauces" ("id" serial primary key, "name" character varying NOT NULL, "description" text, "scoville_units" integer, "image_url" character varying NOT NULL, "company_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_sauces_on_name_and_company_id" ON "sauces"  ("name", "company_id")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420002952"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4617670556353612275)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5veFV7vQKX-ynVGBmGpzdQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chithra"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chithra@chithra.com"], ["LIMIT", 1]]
+  [1m[35mSQL (9.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "chithra"], ["email", "chithra@chithra.com"], ["session_token", "5veFV7vQKX-ynVGBmGpzdQ"], ["password_digest", "$2a$10$pW33cIjQdNVQAKxsz1J1w.cZU6DPAoeY4aSNJtoHOytgfiYYaCP2S"], ["description", ""], ["created_at", 2017-04-20 03:05:23 UTC], ["updated_at", 2017-04-20 03:05:23 UTC]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xruyPeTMZUvYWVf2AcHWug"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SPICY"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "spicy@spicy.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "SPICY"], ["email", "spicy@spicy.com"], ["session_token", "xruyPeTMZUvYWVf2AcHWug"], ["password_digest", "$2a$10$6/TS.8uoC7tijW6rfFU5jOtWFDHOHfBl6CHL3RYRkFTql/ZREP9QS"], ["description", ""], ["created_at", 2017-04-20 03:05:23 UTC], ["updated_at", 2017-04-20 03:05:23 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QnJxbdq95PCsu6mbrjjgTg"], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chithra"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chithra@chithra.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "chithra"], ["email", "chithra@chithra.com"], ["session_token", "QnJxbdq95PCsu6mbrjjgTg"], ["password_digest", "$2a$10$byu/z9AvYj6LOVRYZOz2Eu9UrqZW1.XEuezmYEqRIdA9iyfQxqSES"], ["description", ""], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y6rZ3GJKhbasEPA7-SzQkg"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SPICY"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "spicy@spicy.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "SPICY"], ["email", "spicy@spicy.com"], ["session_token", "Y6rZ3GJKhbasEPA7-SzQkg"], ["password_digest", "$2a$10$VBmKxFDKSArdFOEDIPAokOlOlJ/AOzaWvzSweDgTQjP2Vc3Z800Gu"], ["description", ""], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSauceCompany Load (0.5ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (17.7ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.6ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 4]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 5]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 6]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Secret Aardvark"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Secret Aardvark"], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "TABASCO"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "TABASCO"], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Cholula"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cholula"], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Tapatio"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tapatio"], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Huy Fong"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Huy Fong"], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Bravado Spice Co."], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bravado Spice Co."], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Nando's"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Nando's"], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauces" WHERE "sauces"."name" = $1 AND "sauces"."company_id" = $2 LIMIT $3[0m  [["name", "Sririacha"], ["company_id", 11], ["LIMIT", 1]]
+  [1m[36mSauceCompany Load (0.3ms)[0m  [1m[34mSELECT  "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "description", "scoville_units", "image_url", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sririacha"], ["description", "Our most popular sauce. Created from sun ripened chilies into a smooth paste we have captured its flavor in a convenient squeeze bottle that is easy to use."], ["scoville_units", 2500], ["image_url", "http://assets.bonappetit.com/photos/57e187987c2b8d7760781c75/master/w_1200,c_limit/maar-sriracha-recipes-intro-v.jpg"], ["company_id", 11], ["created_at", 2017-04-20 03:05:46 UTC], ["updated_at", 2017-04-20 03:05:46 UTC]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (10.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iEMqHFA47tKJBbBJGMqRbA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chithra"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chithra@chithra.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "chithra"], ["email", "chithra@chithra.com"], ["session_token", "iEMqHFA47tKJBbBJGMqRbA"], ["password_digest", "$2a$10$VoCz/FJuGl4A9.NylIpEEuZhrNqgLKBrURTMWS2lmyf4MXVPB9jPe"], ["description", ""], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gBzAw5BnnJXiBF5eiUUBJQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "SPICY"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "spicy@spicy.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "password_digest", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "SPICY"], ["email", "spicy@spicy.com"], ["session_token", "gBzAw5BnnJXiBF5eiUUBJQ"], ["password_digest", "$2a$10$rBknFn/919OZiNxsU5g7BO3TmU3SOkLj5GLiGTc5xtCNvYZnmcFR6"], ["description", ""], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSauceCompany Load (0.6ms)[0m  [1m[34mSELECT "sauce_companies".* FROM "sauce_companies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.5ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 7]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 7]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 8]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 8]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 9]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 10]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 11]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "sauces" WHERE "sauces"."id" = $1[0m  [["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 11]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.4ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 12]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 12]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Load (0.3ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces" WHERE "sauces"."company_id" = $1[0m  [["company_id", 13]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "sauce_companies" WHERE "sauce_companies"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Secret Aardvark"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Secret Aardvark"], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "TABASCO"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "TABASCO"], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Cholula"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cholula"], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Tapatio"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tapatio"], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Huy Fong"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Huy Fong"], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Bravado Spice Co."], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bravado Spice Co."], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "Nando's"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Nando's"], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauceCompany Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "sauce_companies" WHERE "sauce_companies"."name" = $1 LIMIT $2[0m  [["name", "El Yucateco"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauce_companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "El Yucateco"], ["created_at", 2017-04-20 03:17:46 UTC], ["updated_at", 2017-04-20 03:17:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSauce Load (0.2ms)[0m  [1m[34mSELECT "sauces".* FROM "sauces"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "sauces" WHERE "sauces"."name" = $1 AND "sauces"."company_id" = $2 LIMIT $3[0m  [["name", "Sriracha"], ["company_id", 18], ["LIMIT", 1]]
+  [1m[36mSauceCompany Load (0.3ms)[0m  [1m[34mSELECT  "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "description", "scoville_units", "image_url", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sriracha"], ["description", "Our most popular sauce. Created from sun ripened chilies into a smooth paste we have captured its flavor in a convenient squeeze bottle that is easy to use."], ["scoville_units", 2200], ["image_url", "http://assets.bonappetit.com/photos/57e187987c2b8d7760781c75/master/w_1200,c_limit/maar-sriracha-recipes-intro-v.jpg"], ["company_id", 18], ["created_at", 2017-04-20 03:17:47 UTC], ["updated_at", 2017-04-20 03:17:47 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sauces" WHERE "sauces"."name" = $1 AND "sauces"."company_id" = $2 LIMIT $3[0m  [["name", "Original Red"], ["company_id", 15], ["LIMIT", 1]]
+  [1m[36mSauceCompany Load (0.3ms)[0m  [1m[34mSELECT  "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "description", "scoville_units", "image_url", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Original Red"], ["description", "TABASCO® brand Original Red Sauce owes much of its unique, pungent flavor to the handcrafted way it’s been made for over 140 years. Equally important is the heart of the one family who created this world-famous sauce as a labor of love."], ["scoville_units", 2500], ["image_url", "http://images.selfridges.com/is/image/selfridges/554-78042186-200318_M?$PDP_M_ALL$"], ["company_id", 15], ["created_at", 2017-04-20 03:17:47 UTC], ["updated_at", 2017-04-20 03:17:47 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSauce Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sauces" WHERE "sauces"."name" = $1 AND "sauces"."company_id" = $2 LIMIT $3[0m  [["name", "Salsa Picante de Chile Habanero Green"], ["company_id", 21], ["LIMIT", 1]]
+  [1m[36mSauceCompany Load (0.4ms)[0m  [1m[34mSELECT  "sauce_companies".* FROM "sauce_companies" WHERE "sauce_companies"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sauces" ("name", "description", "scoville_units", "image_url", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Salsa Picante de Chile Habanero Green"], ["description", "From Merida, Yucatan, Mexico, this is the hotter of the two original El Yucateco colors. Elaborated with another of our classic recipes based on green habanero peppers, garlic and spices. This special blend of ingredients gives a fresh, home flavor to the meals."], ["scoville_units", 8910], ["image_url", "https://cdn3.volusion.com/pvqf3.cnxy3/v/vspfiles/photos/1117-2.jpg"], ["company_id", 21], ["created_at", 2017-04-20 03:17:47 UTC], ["updated_at", 2017-04-20 03:17:47 UTC]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m

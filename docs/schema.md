@@ -14,7 +14,7 @@ description     | text      | optional
 | column name | data type | details                   |
 |-------------|-----------|---------------------------|
 | id          | integer   | not null, primary key     |
-| title       | string    | not null, indexed, unique |
+| name        | string    | not null, indexed, unique |
 | description | text      | not null                  |
 | scoville units | integer   | not null                  |
 | image_url   | string    | not null                  |
