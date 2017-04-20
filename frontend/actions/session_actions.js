@@ -8,6 +8,8 @@ const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });
+
+
 const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
