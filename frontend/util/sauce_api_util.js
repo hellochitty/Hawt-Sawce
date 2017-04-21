@@ -29,13 +29,33 @@ export const deleteSauce = (sauceId) => {
   });
 };
 
-export const addSauce = (sauce) => {
+// export const addSauce = (sauce) => {
+//   return $.ajax({
+//     method: 'POST',
+//     url: '/api/sauces',
+//     data: {sauce}
+//   });
+// };
+
+export const addSauce = (formData) => {
   return $.ajax({
-    method: 'POST',
-    url: '/api/sauces',
-    data: {sauce}
+     url: '/api/sauces',
+     type: 'POST',
+     processData: false,
+     contentType: false,
+     dataType: 'json',
+     data: formData
   });
 };
+
+
+// export const updateSauce = (sauce) => {
+//   return $.ajax({
+//     method: 'PATCH',
+//     url: `/api/sauces/${sauce.id}`,
+//     data: {sauce}
+//   });
+// };
 
 export const updateSauce = (sauce) => {
   return $.ajax({

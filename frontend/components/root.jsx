@@ -69,7 +69,6 @@ const Root = ({ store }) => {
           <Route path ="/home" component={ App }>
             <Route path ="sauces" component={ SauceIndexContainer } />
             <Route path ="sauces/new" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
-
             <Route path ="sauces/:sauce_id" component={ SauceContainer } />
             <Route path ="sauces/:sauce_id/edit" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
           </Route>

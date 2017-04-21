@@ -13,12 +13,15 @@ class SauceForm extends React.Component{
       description: "",
       scoville_units: "",
       image_url: "",
-      company: ""
+      company: "",
+      imageFile: null,
+      imageUrl: null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleUpdateFile = this.handleUpdateFile.bind(this);
   }
 
   componentDidMount(){
@@ -35,7 +38,9 @@ class SauceForm extends React.Component{
         description: "",
         scoville_units: "",
         image_url: "",
-        company: ""});
+        company: "",
+        imageFile: null,
+        imageUrl: null});
     }else if (newProps.ready){
       this.setState(newProps.sauce);
     }else{
@@ -55,12 +60,33 @@ class SauceForm extends React.Component{
     this.setState({["company"]: searchText});
   }
 
+  handleUpdateFile(e){
+    let reader = new FileReader();
+    let file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ imageUrl: reader.result, imageFile: file});
+    }.bind(this);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
   handleSubmit(e){
     e.preventDefault();
+    let formData = new FormData();
+    formData.append("sauce[name]", this.state.name);
+    formData.append("sauce[description]", this.state.description);
+    formData.append("sauce[scoville_units]", this.state.description);
+    formData.append("sauce[image_url]", this.state.image_url);
+    formData.append("sauce[company]", this.state.company);
+    formData.append("sauce[image]", this.state.imageFile);
     if (this.props.formType === 'edit'){
-      this.props.submitAction(this.state).then(()=>this.props.router.push(`/home/sauces/${this.state.id}`));
+      this.props.submitAction(formData).then(()=>this.props.router.push(`/home/sauces/${this.state.id}`));
     }else{
-      this.props.submitAction(this.state).then(()=>this.props.router.push('/home/sauces'));
+      this.props.submitAction(formData).then(()=>this.props.router.push('/home/sauces'));
     }
   }
 
@@ -119,6 +145,8 @@ class SauceForm extends React.Component{
               value={this.state.image_url}
               onChange={this.handleChange("image_url")}
               /><br />
+          <input type="file" onChange={this.handleUpdateFile}/>
+          <img src={this.state.imageUrl}/>
             <div className="form-buttons">
               <RaisedButton type='submit' label={buttonText} />
               {deleteButton}

@@ -6,3 +6,6 @@ bundle.js.map
 npm-debug.log
 log/
 tmp/
+
+# Ignore application configuration
+/config/application.yml
