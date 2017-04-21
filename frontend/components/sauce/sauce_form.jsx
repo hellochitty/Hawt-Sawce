@@ -29,7 +29,7 @@ class SauceForm extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    if (newProps.formType === 'new'){
+    if (newProps.formType === 'new' && this.props.errors !== {}){
       this.setState({
         name: "",
         description: "",
@@ -41,6 +41,10 @@ class SauceForm extends React.Component{
     }else{
       this.props.getSauce(newProps.params.sauce_id);
     }
+  }
+
+  componentWillUnmount(){
+    this.props.clearErrors();
   }
 
   handleChange(text){
@@ -78,6 +82,7 @@ class SauceForm extends React.Component{
             value={this.state.name}
             fullWidth={true}
             onChange={this.handleChange("name")}
+            errorText={this.props.errors.name}
             /><br />
           <AutoComplete
             floatingLabelText="Company"
@@ -86,6 +91,7 @@ class SauceForm extends React.Component{
             dataSource={companies}
             filter={(searchText, key) => (key.indexOf(searchText) !== -1)}
             filter={AutoComplete.caseInsensitiveFilter}
+            errorText={this.props.errors.company_id}
             openOnFocus={true}
             /><br />
           <TextField
@@ -94,12 +100,14 @@ class SauceForm extends React.Component{
             multiLine={true}
             fullWidth={true}
             onChange={this.handleChange("description")}
+            errorText={this.props.errors.description}
             />
           <TextField
             floatingLabelText="Scoville Units (SHU)"
             hintText="average"
             value={this.state.scoville_units}
             onChange={this.handleChange("scoville_units")}
+            errorText={this.props.errors.scoville_units}
             /><br />
 
           <TextField

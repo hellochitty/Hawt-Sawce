@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { getSauceCompanies, addSauce, updateSauce, getSauce, deleteSauce } from '../../actions/sauce_actions';
 import SauceForm from './sauce_form.jsx';
+import { clearErrors } from '../../actions/util_actions';
 
 const mapStateToProps = ({sauce, companies, errors}, ownProps) => {
   let formType = 'new';
@@ -32,7 +33,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     addSauce: (sauce) => dispatch(addSauce(sauce)),
     deleteSauce: (sauceId) => dispatch(deleteSauce(sauceId)),
     updateSauce: (sauce) => dispatch(updateSauce(sauce)),
-    submitAction: (sauce) => dispatch(submitAction(sauce))
+    submitAction: (sauce) => dispatch(submitAction(sauce)),
+    clearErrors: () => dispatch(clearErrors())
   });
 };
 

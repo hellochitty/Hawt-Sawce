@@ -39,7 +39,7 @@ export const addSauce = (sauce) => {
 
 export const updateSauce = (sauce) => {
   return $.ajax({
-    method: 'POST',
+    method: 'PATCH',
     url: `/api/sauces/${sauce.id}`,
     data: {sauce}
   });

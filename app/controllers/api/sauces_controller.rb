@@ -12,13 +12,16 @@ class Api::SaucesController < ApplicationController
 
   def create
     params = sauce_params.permit(:name, :description, :scoville_units, :image_url)
-    params["company_id"] = SauceCompany.find_by_name(sauce_params["company"]).id
+    if sauce_params['company'] == ''
+      params['company_id'] = nil
+    else
+      params['company_id'] = SauceCompany.find_by_name(sauce_params['company']).id
+    end
     @sauce = Sauce.new(params)
 
     if @sauce.save
       render :show
     else
-      debugger
       render json: @sauce.errors.messages, status: 422
     end
   end
@@ -28,7 +31,7 @@ class Api::SaucesController < ApplicationController
     params = sauce_params.permit(:name, :description, :scoville_units, :image_url)
     params["company_id"] = SauceCompany.find_by_name(sauce_params["company"]).id
 
-    if @sauce.update(@sauc)
+    if @sauce.update(params)
       render :show
     else
       render json: @sauce.errors.messages, status: 422
