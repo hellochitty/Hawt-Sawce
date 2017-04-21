@@ -13,7 +13,7 @@ class Api::SaucesController < ApplicationController
   def create
     params = sauce_params.permit(:name, :description, :scoville_units, :image_url)
     params["company_id"] = SauceCompany.find_by_name(sauce_params["company"]).id
-    @sauce = Sauce.new(sauce_params)
+    @sauce = Sauce.new(params)
 
     if @sauce.save
       render :show

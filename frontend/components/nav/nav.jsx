@@ -12,7 +12,10 @@ const Nav = (props) => {
     return (
       <nav>
         <div id="nav-contents">
-          <h1 id="nav-title">HAWT SAWCE</h1>
+          <div id="nav-left-links">
+            <Link to="/home"><h1 id="nav-title">HAWT SAWCE</h1></Link>
+            <Link to="/home/sauces"><h2 id="nav-title">SAWCES</h2></Link>
+          </div>
           <div id="nav-links">
             <p id="nav-text">Hi, {props.currentUser.username}</p>
             <RaisedButton label="Log Out" onClick={onLogout}/>

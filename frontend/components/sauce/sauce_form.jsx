@@ -53,12 +53,14 @@ class SauceForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.addSauce(this.state).then(()=> this.props.router.push('/home/sauces'));
+    this.props.addSauce(this.state).then(this.props.router.push('/home/sauces'));
   }
 
   handleDelete(e){
     e.preventDefault();
-    this.props.deleteSauce(this.state.id).then(()=> this.props.router.push("/home/sauces"));
+    this.props.deleteSauce(this.state.id);
+    this.props.router.push("/home/sauces");
+
   }
 
   render(){
