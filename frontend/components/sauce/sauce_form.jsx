@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import AutoComplete from 'material-ui/AutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import {hashHistory} from 'react-router';
 
 class SauceForm extends React.Component{
   constructor(props){
@@ -17,6 +18,7 @@ class SauceForm extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -54,12 +56,19 @@ class SauceForm extends React.Component{
     this.props.addSauce(this.state).then(()=> this.props.router.push('/home/sauces'));
   }
 
+  handleDelete(e){
+    e.preventDefault();
+    this.props.deleteSauce(this.state.id).then(()=> this.props.router.push("/home/sauces"));
+  }
+
   render(){
     const sauce = this.props.sauce;
     const companies = this.props.companies;
     const text = (this.props.formType === 'edit') ? 'Edit' : 'New';
     const buttonText = (this.props.formType === 'edit') ? 'Update' : 'Add';
-    const deleteButton = (this.props.formType === 'edit') ? <FlatButton  label="Delete"  type="submit"/>  : null;
+    const deleteButton = (this.props.formType === 'edit') ?
+      <FlatButton  label="Delete" onClick={this.handleDelete}  type="submit"/>  : null;
+
     return (
       <div id="sauce-form">
         <form onSubmit={this.handleSubmit}>

@@ -44,7 +44,8 @@ export const getSauce = (sauceId) => dispatch => {
 
 export const deleteSauce = (sauceId) => dispatch => {
   return SauceAPIUtil.deleteSauce(sauceId)
-    .then((sauce) => dispatch(removeSauce(sauce)));
+    .then((res) => dispatch(removeSauce(res)),
+    (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const addSauce = (sauce) => dispatch => {

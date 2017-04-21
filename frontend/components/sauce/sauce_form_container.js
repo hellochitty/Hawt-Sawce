@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getSauceCompanies, addSauce, updateSauce, getSauce } from '../../actions/sauce_actions';
+import { getSauceCompanies, addSauce, updateSauce, getSauce, deleteSauce } from '../../actions/sauce_actions';
 import SauceForm from './sauce_form.jsx';
 
 const mapStateToProps = ({sauce, companies}, ownProps) => {
@@ -23,7 +23,8 @@ const mapStateToProps = ({sauce, companies}, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   getSauceCompanies: () => dispatch(getSauceCompanies()),
   getSauce: (id) => dispatch(getSauce(id)),
-  addSauce: (sauce) => dispatch(addSauce(sauce))
+  addSauce: (sauce) => dispatch(addSauce(sauce)),
+  deleteSauce: (sauceId) => dispatch(deleteSauce(sauceId))
 });
 
 

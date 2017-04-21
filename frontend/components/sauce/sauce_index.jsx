@@ -13,6 +13,8 @@ class SauceIndex extends React.Component{
     this.props.getSauces();
   }
 
+
+
   redirect(){
     this.props.router.push("/home/sauces/new");
   }
