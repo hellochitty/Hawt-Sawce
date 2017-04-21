@@ -57,7 +57,11 @@ class SauceForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.submitAction(this.state).then(()=>this.props.router.push('/home/sauces'));
+    if (this.props.formType === 'edit'){
+      this.props.submitAction(this.state).then(()=>this.props.router.push(`/home/sauces/${this.state.id}`));
+    }else{
+      this.props.submitAction(this.state).then(()=>this.props.router.push('/home/sauces'));
+    }
   }
 
   handleDelete(e){
