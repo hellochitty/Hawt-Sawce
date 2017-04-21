@@ -11,6 +11,7 @@ class Api::SaucesController < ApplicationController
   end
 
   def create
+
     params = sauce_params.permit(:name, :description, :scoville_units, :image_url, :image)
     if sauce_params['company'] == ''
       params['company_id'] = nil
@@ -18,7 +19,7 @@ class Api::SaucesController < ApplicationController
       params['company_id'] = SauceCompany.find_by_name(sauce_params['company']).id
     end
     @sauce = Sauce.new(params)
-    debugger
+
     if @sauce.save
       render :show
     else
@@ -27,6 +28,7 @@ class Api::SaucesController < ApplicationController
   end
 
   def update
+    debugger
     @sauce = Sauce.find(params[:id])
     params = sauce_params.permit(:name, :description, :scoville_units, :image_url, :image)
     params["company_id"] = SauceCompany.find_by_name(sauce_params["company"]).id

@@ -57,10 +57,13 @@ export const addSauce = (formData) => {
 //   });
 // };
 
-export const updateSauce = (sauce) => {
+export const updateSauce = (formData, id) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/sauces/${sauce.id}`,
-    data: {sauce}
+    url: `/api/sauces/${id}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   });
 };

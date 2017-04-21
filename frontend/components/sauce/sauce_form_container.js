@@ -30,10 +30,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     getSauceCompanies: () => dispatch(getSauceCompanies()),
     getSauce: (id) => dispatch(getSauce(id)),
-    addSauce: (sauce) => dispatch(addSauce(sauce)),
+    // addSauce: (sauce) => dispatch(addSauce(sauce)),
     deleteSauce: (sauceId) => dispatch(deleteSauce(sauceId)),
-    updateSauce: (sauce) => dispatch(updateSauce(sauce)),
-    submitAction: (sauce) => dispatch(submitAction(sauce)),
+    // updateSauce: (sauce) => dispatch(updateSauce(sauce)),
+    submitAction: (sauce, id) => dispatch(submitAction(sauce, id)),
     clearErrors: () => dispatch(clearErrors())
   });
 };

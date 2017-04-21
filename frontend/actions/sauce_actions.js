@@ -54,8 +54,8 @@ export const addSauce = (sauce) => dispatch => {
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 
-export const updateSauce = (sauce) => dispatch => {
-  return SauceAPIUtil.updateSauce(sauce)
+export const updateSauce = (sauce, id) => dispatch => {
+  return SauceAPIUtil.updateSauce(sauce, id)
     .then((res) => dispatch(receiveSauce(res)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
