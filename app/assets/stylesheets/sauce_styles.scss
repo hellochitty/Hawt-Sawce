@@ -45,3 +45,19 @@
 #add-sauce-button{
   align-self: center;
 }
+
+#sauce-form{
+  width: 500px;
+  margin: 20px auto;
+  background-color: white;
+}
+
+#sauce-form > form{
+  padding: 20px;
+}
+
+.form-buttons{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

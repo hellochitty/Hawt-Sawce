@@ -3,7 +3,7 @@ import Spinner from '../ui/spinner';
 import { Link } from 'react-router';
 
 class Sauce extends React.Component{
-  compoentWillReceiveProps(newProps){
+  componentWillReceiveProps(newProps){
     if (this.props.params.sauce_id !== newProps.params.sauce_id){
       this.props.getSauce(newProps.params.sauce_id);
     }
