@@ -34,9 +34,10 @@ class SauceForm extends React.Component{
         scoville_units: "",
         image_url: "",
         company: ""});
-    }else if (this.props.sauce.id !== newProps.params.sauce_id){
-      this.props.getSauce(newProps.params.sauce_id);
+    }else if (newProps.ready){
       this.setState(newProps.sauce);
+    }else{
+      this.props.getSauce(newProps.params.sauce_id);
     }
   }
 
@@ -57,6 +58,7 @@ class SauceForm extends React.Component{
     const sauce = this.props.sauce;
     const companies = this.props.companies;
     const text = (this.props.formType === 'edit') ? 'Edit' : 'New';
+    const buttonText = (this.props.formType === 'edit') ? 'Update' : 'Add';
     const deleteButton = (this.props.formType === 'edit') ? <FlatButton  label="Delete"  type="submit"/>  : null;
     return (
       <div id="sauce-form">
@@ -97,7 +99,7 @@ class SauceForm extends React.Component{
               onChange={this.handleChange("image_url")}
               /><br />
             <div className="form-buttons">
-              <RaisedButton type='submit' label={text} />
+              <RaisedButton type='submit' label={buttonText} />
               {deleteButton}
             </div>
         </form>

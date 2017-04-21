@@ -3,16 +3,20 @@ import { getSauceCompanies, addSauce, updateSauce, getSauce } from '../../action
 import SauceForm from './sauce_form.jsx';
 
 const mapStateToProps = ({sauce, companies}, ownProps) => {
-
   let formType = 'new';
-  if(ownProps.params.sauce_id){
+  let ready = false;
+  if(ownProps.params.sauce_id > 0){
     formType = 'edit';
+  }
+  if(ownProps.params.sauce_id == sauce.id){
+    ready = true;
   }
 
   return {
     sauce,
     formType,
-    companies
+    companies,
+    ready
   };
 };
 
