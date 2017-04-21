@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_SAUCES } from '../actions/sauce_actions';
+import { RECEIVE_ALL_SAUCES, RECEIVE_SAUCE } from '../actions/sauce_actions';
 import { merge } from 'lodash';
 
 
@@ -9,6 +9,11 @@ const SaucesReducer = (oldState= {}, action) => {
   switch(action.type){
     case RECEIVE_ALL_SAUCES:
       return merge({}, oldState, action.sauces);
+    case RECEIVE_SAUCE:{
+      let newState = merge({}, oldState);
+      newState[action.sauce.id] = action.sauce;
+      return newState;
+    }
     default:
       return oldState;
   }

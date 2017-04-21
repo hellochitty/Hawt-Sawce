@@ -10,6 +10,18 @@ class Api::SaucesController < ApplicationController
     render :show
   end
 
+  def create
+    params = sauce_params.permit(:name, :description, :scoville_units, :image_url)
+    params["company_id"] = SauceCompany.find_by_name(sauce_params["company"]).id
+    @sauce = Sauce.new(sauce_params)
+
+    if @sauce.save
+      render :show
+    else
+      render json: @sauce.errors.messages, status: 422
+    end
+  end
+
   def destroy
     @sauce = Sauce.find(params[:id])
     if @sauce
@@ -20,4 +32,8 @@ class Api::SaucesController < ApplicationController
     end
   end
 
+  private
+  def sauce_params
+    params.require(:sauce).permit(:name, :company, :description, :scoville_units, :image_url)
+  end
 end

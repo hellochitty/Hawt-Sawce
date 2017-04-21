@@ -1,4 +1,5 @@
 import * as SauceAPIUtil from '../util/sauce_api_util';
+import {receiveErrors} from './util_actions';
 
 export const RECEIVE_ALL_SAUCES= 'RECEIVE_ALL_SAUCES';
 export const RECEIVE_SAUCE= 'RECEIVE_SAUCE';
@@ -47,5 +48,7 @@ export const deleteSauce = (sauceId) => dispatch => {
 };
 
 export const addSauce = (sauce) => dispatch => {
-  return SauceAPIUtil.addSauce(sauce);
+  return SauceAPIUtil.addSauce(sauce)
+    .then((res) => dispatch(receiveSauce(res)),
+    (err) => dispatch(receiveErrors(err.responseJSON)));
 };

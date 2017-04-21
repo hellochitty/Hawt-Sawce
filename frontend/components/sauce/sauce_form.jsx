@@ -12,10 +12,12 @@ class SauceForm extends React.Component{
       scoville_units: "",
       image_url: "",
       company: ""};
-    if (this.props.sauce.id > 0){
+    if (this.props.params.sauce_id > 0){
       this.state = this.props.sauce;
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdateInput = this.handleUpdateInput.bind(this);
   }
 
   componentDidMount(){
@@ -26,11 +28,29 @@ class SauceForm extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    this.setState(newProps.sauce);
+    if (this.props.params.sauce_id !== newProps.params.sauce_id){
+      this.setState(newProps.sauce);
+    }else if (this.props.formType !== newProps.formType){
+      this.state = {
+        name: "",
+        description: "",
+        scoville_units: "",
+        image_url: "",
+        company: ""};
+    }
   }
 
   handleChange(text){
-    return (e) => this.setState({[text]: e.target.value});
+    return (e) => this.setState({[text]: e.currentTarget.value});
+  }
+
+  handleUpdateInput(searchText){
+    this.setState({["company"]: searchText});
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.addSauce(this.state).then(()=> this.props.router.push('/home/sauces'));
   }
 
   render(){
@@ -39,12 +59,21 @@ class SauceForm extends React.Component{
     return (
       <div id="sauce-form">
         <h1>{this.props.formType} Sauce</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <TextField
             floatingLabelText="Sauce Name"
             value={this.state.name}
             fullWidth={true}
             onChange={this.handleChange("name")}
+            /><br />
+          <AutoComplete
+            floatingLabelText="Company"
+            searchText={this.state.company}
+            onUpdateInput={this.handleUpdateInput}
+            dataSource={companies}
+            filter={(searchText, key) => (key.indexOf(searchText) !== -1)}
+            filter={AutoComplete.caseInsensitiveFilter}
+            openOnFocus={true}
             /><br />
           <TextField
             floatingLabelText="Description"
@@ -59,9 +88,14 @@ class SauceForm extends React.Component{
             value={this.state.scoville_units}
             onChange={this.handleChange("scoville_units")}
             /><br />
-          <RaisedButton type='submit' label='test' />
+
+          <TextField
+              floatingLabelText="Image URL"
+              value={this.state.image_url}
+              onChange={this.handleChange("image_url")}
+              /><br />
+            <RaisedButton type='submit' label='Add' />
         </form>
-        {companies.join(",")}
       </div>
     );
   }
@@ -69,12 +103,3 @@ class SauceForm extends React.Component{
 
 
 export default SauceForm;
-
-
-// <AutoComplete
-//   floatingLabelText="Company"
-//   filter={AutoComplete.caseInsensitiveFilter}
-//   onUpdateInput={this.handleChange("company")}
-//   dataSource={companies}
-//   maxSearchResults={5}
-//   />
