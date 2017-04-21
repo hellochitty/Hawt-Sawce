@@ -27,16 +27,16 @@ class SauceForm extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    if (this.props.sauce.id !== newProps.params.sauce_id){
-      this.props.getSauce(newProps.params.sauce_id);
-      this.setState(newProps.sauce);
-    }else if (newProps.formType === 'new'){
+    if (newProps.formType === 'new'){
       this.setState({
         name: "",
         description: "",
         scoville_units: "",
         image_url: "",
         company: ""});
+    }else if (this.props.sauce.id !== newProps.params.sauce_id){
+      this.props.getSauce(newProps.params.sauce_id);
+      this.setState(newProps.sauce);
     }
   }
 
