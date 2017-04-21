@@ -4,7 +4,7 @@ import {receiveErrors} from './util_actions';
 export const RECEIVE_ALL_SAUCES= 'RECEIVE_ALL_SAUCES';
 export const RECEIVE_SAUCE= 'RECEIVE_SAUCE';
 export const RECEIVE_SAUCE_COMPANIES= 'RECEIVE_SAUCE_COMPANIES';
-export const REMOVE_SAUCE= 'RECEIVE_SAUCE_COMPANIES';
+export const REMOVE_SAUCE= 'REMOVE_SAUCE';
 
 
 const receiveSauces = sauces => ({
@@ -23,7 +23,7 @@ const receiveSauce = sauce => ({
 });
 
 const removeSauce = sauce => ({
-  type: RECEIVE_SAUCE,
+  type: REMOVE_SAUCE,
   sauce
 });
 
@@ -50,6 +50,12 @@ export const deleteSauce = (sauceId) => dispatch => {
 
 export const addSauce = (sauce) => dispatch => {
   return SauceAPIUtil.addSauce(sauce)
+    .then((res) => dispatch(receiveSauce(res)),
+    (err) => dispatch(receiveErrors(err.responseJSON)));
+};
+
+export const updateSauce = (sauce) => dispatch => {
+  return SauceAPIUtil.updateSauce(sauce)
     .then((res) => dispatch(receiveSauce(res)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };

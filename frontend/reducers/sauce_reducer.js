@@ -15,14 +15,7 @@ const SauceReducer = (oldState= _defaultState, action) => {
 
   switch(action.type){
     case RECEIVE_SAUCE:
-      return merge({}, oldState, action.sauce);
-    case REMOVE_SAUCE:{
-      let newState = merge({}, oldState);
-      if (action.sauce){
-        delete newState[action.sauce.id];
-      }
-      return newState;
-    }
+      return action.sauce;
     default:
       return oldState;
   }

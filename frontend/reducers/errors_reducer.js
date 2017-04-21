@@ -11,7 +11,7 @@ const ErrorsReducer = (oldState= _defaultState, action) => {
     case RECEIVE_ERRORS:
       return action.errors;
     case CLEAR_ERRORS:
-      return action.errors;
+      return {};
     default:
       return oldState;
   }

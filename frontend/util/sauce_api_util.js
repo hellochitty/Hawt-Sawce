@@ -36,3 +36,11 @@ export const addSauce = (sauce) => {
     data: {sauce}
   });
 };
+
+export const updateSauce = (sauce) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/sauces/${sauce.id}`,
+    data: {sauce}
+  });
+};

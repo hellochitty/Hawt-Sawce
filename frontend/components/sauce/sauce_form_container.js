@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { getSauceCompanies, addSauce, updateSauce, getSauce, deleteSauce } from '../../actions/sauce_actions';
 import SauceForm from './sauce_form.jsx';
 
-const mapStateToProps = ({sauce, companies}, ownProps) => {
+const mapStateToProps = ({sauce, companies, errors}, ownProps) => {
   let formType = 'new';
   let ready = false;
   if(ownProps.params.sauce_id > 0){
@@ -16,16 +16,25 @@ const mapStateToProps = ({sauce, companies}, ownProps) => {
     sauce,
     formType,
     companies,
-    ready
+    ready,
+    errors
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  getSauceCompanies: () => dispatch(getSauceCompanies()),
-  getSauce: (id) => dispatch(getSauce(id)),
-  addSauce: (sauce) => dispatch(addSauce(sauce)),
-  deleteSauce: (sauceId) => dispatch(deleteSauce(sauceId))
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  let submitAction = addSauce;
+  if(ownProps.params.sauce_id > 0){
+    submitAction = updateSauce;
+  }
+  return ({
+    getSauceCompanies: () => dispatch(getSauceCompanies()),
+    getSauce: (id) => dispatch(getSauce(id)),
+    addSauce: (sauce) => dispatch(addSauce(sauce)),
+    deleteSauce: (sauceId) => dispatch(deleteSauce(sauceId)),
+    updateSauce: (sauce) => dispatch(updateSauce(sauce)),
+    submitAction: (sauce) => dispatch(submitAction(sauce))
+  });
+};
 
 
 export default connect(

@@ -18,6 +18,19 @@ class Api::SaucesController < ApplicationController
     if @sauce.save
       render :show
     else
+      debugger
+      render json: @sauce.errors.messages, status: 422
+    end
+  end
+
+  def update
+    @sauce = Sauce.find(params[:id])
+    params = sauce_params.permit(:name, :description, :scoville_units, :image_url)
+    params["company_id"] = SauceCompany.find_by_name(sauce_params["company"]).id
+
+    if @sauce.update(@sauc)
+      render :show
+    else
       render json: @sauce.errors.messages, status: 422
     end
   end
