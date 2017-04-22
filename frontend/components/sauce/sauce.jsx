@@ -30,6 +30,8 @@ class Sauce extends React.Component{
                       tooltip="Edit Sauce"
                       className="testing"
                       iconClassName="fa fa-pencil fa-2x"
+                      touch={true}
+                      tooltipPosition="bottom-center"
                       iconStyle={{
                         width: 20,
                         height: 20
@@ -66,7 +68,7 @@ class Sauce extends React.Component{
               </table>
             </div>
             <div className="sauce-main-buttons">
-              
+
             </div>
           </div>
           <div className="sauce-checkins">
