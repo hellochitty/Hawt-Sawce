@@ -1,4 +1,4 @@
-#session-form{
+.session-form{
   display: flex;
   justify-content: center;
   width: 100%;
@@ -15,7 +15,7 @@
 }
 
 
-#session-form-inputs{
+.session-form-inputs{
   width: 20%;
   min-width: 280px;
 
@@ -30,4 +30,8 @@
 .session-errors{
   color: red;
   font-size: 12px;
+}
+
+.session-form h2{
+  margin: 20px;
 }
