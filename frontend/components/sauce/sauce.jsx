@@ -36,16 +36,16 @@ class Sauce extends React.Component{
               <table className="sauce-stats">
                 <tbody>
                   <tr>
-                    <td>5</td>
-                    <td>3.5</td>
-                    <td>130</td>
-                    <td>2</td>
+                    <td>{sauce.average_overall}</td>
+                    <td>{sauce.average_heat}</td>
+                    <td>{sauce.total_reviews}</td>
+                    <td>{sauce.created_at}</td>
                   </tr>
                   <tr>
                     <td>Overall</td>
                     <td>Heat</td>
                     <td>Checkins</td>
-                    <td>Ranking</td>
+                    <td>Add On</td>
                   </tr>
                 </tbody>
               </table>

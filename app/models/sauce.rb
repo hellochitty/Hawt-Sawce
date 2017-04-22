@@ -43,7 +43,7 @@ class Sauce < ApplicationRecord
     checkins.average(:heat_rating)
   end
 
-  def total_reivews
+  def total_reviews
     checkins.count(:overall_rating)
   end
 end
