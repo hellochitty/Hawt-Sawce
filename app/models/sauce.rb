@@ -35,7 +35,6 @@ class Sauce < ApplicationRecord
     inverse_of: :sauce,
     dependent: :destroy
 
-
   def average_overall
     checkins.average(:overall_rating)
   end
