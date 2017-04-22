@@ -17,6 +17,7 @@ class Api::SaucesController < ApplicationController
     else
       params['company_id'] = SauceCompany.find_by_name(sauce_params['company']).id
     end
+    debugger
     @sauce = Sauce.new(params)
     if @sauce.save
       render :show
