@@ -39,6 +39,9 @@ const muiTheme = getMuiTheme({
   },
   raisedButton: {
     color: yellow600
+  },
+  icon:{
+    color: yellow600
   }
 });
 

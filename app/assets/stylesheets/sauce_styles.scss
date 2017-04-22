@@ -8,15 +8,21 @@
 .sauce-main-profile{
   display: flex;
   background-color: white;
-  margin-top: 20px;
+}
+.sauce-main-profile > *{
+  padding: 20px;
 }
 
 .sauce-main-profile-pic{
-  margin-top: 20px;
 }
 
 .sauce-main-profile-text > h1,h2,h3,h4{
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 3px 0px;
+}
+.sauce-main-profile-text-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .sauce-stats{

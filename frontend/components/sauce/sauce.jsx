@@ -24,7 +24,24 @@ class Sauce extends React.Component{
                 <img className="sauce-thumbnail" src={sauce.image_url} />
               </div>
               <div className="sauce-main-profile-text">
-                <h1>{sauce.name}</h1>
+                <div className="sauce-main-profile-text-header">
+                  <h1>{sauce.name}</h1>
+                    <IconButton
+                      tooltip="Edit Sauce"
+                      className="testing"
+                      iconClassName="fa fa-pencil fa-2x"
+                      iconStyle={{
+                        width: 20,
+                        height: 20
+                      }}
+                      style={{
+                        width: 25,
+                        height: 25,
+                        padding: 0
+                      }}
+                      containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
+                      />
+                  </div>
                 <h2>{sauce.company}</h2>
                 <h3>{sauce.scoville_units} SHU</h3>
                 <h4>{sauce.description}</h4>
@@ -49,18 +66,6 @@ class Sauce extends React.Component{
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <div>
-
-
-                <IconButton
-                  tooltip="Edit Sauce"
-                  href={`/home/sauces/${sauce.id}/edit`}
-                  iconClassName="fa fa-pencil fa-2x"
-                  containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
-                  />
-
-
             </div>
           </div>
           <div className="sauce-checkins">
