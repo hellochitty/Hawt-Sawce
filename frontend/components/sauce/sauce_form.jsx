@@ -42,7 +42,6 @@ class SauceForm extends React.Component{
         imageFile: null,
         imageUrl: null});
     }else if (newProps.ready){
-      debugger;
       this.setState(newProps.sauce);
     }else{
       this.props.getSauce(newProps.params.sauce_id);
@@ -80,10 +79,12 @@ class SauceForm extends React.Component{
     let formData = new FormData();
     formData.append("sauce[name]", this.state.name);
     formData.append("sauce[description]", this.state.description);
-    formData.append("sauce[scoville_units]", this.state.description);
-    formData.append("sauce[image_url]", this.state.image_url);
+    formData.append("sauce[scoville_units]", this.state.scoville_units);
     formData.append("sauce[company]", this.state.company);
-    formData.append("sauce[image]", this.state.imageFile);
+    if (this.state.imageFile){
+      formData.append("sauce[image_url]", this.state.image_url);
+      formData.append("sauce[image]", this.state.imageFile);
+    }
 
     if (this.props.formType === 'edit'){
       formData.append("sauce[id]", this.state.id);
