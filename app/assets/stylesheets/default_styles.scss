@@ -43,3 +43,12 @@ h2{
 .hover-yellow :hover{
   background-color: #fdd835;
 }
+
+img {
+    display: none;
+}
+
+
+img[src] {
+   display: block;
+ }

@@ -15,6 +15,8 @@ class Sauce extends React.Component{
 
   render(){
     const sauce = this.props.sauce;
+    let scoville_units;
+    scoville_units = (sauce.scoville_units) ? (<h3>{sauce.scoville_units} SHU</h3>) : null;
 
       return(
         <div className="col-2-3">
@@ -24,28 +26,9 @@ class Sauce extends React.Component{
                 <img className="sauce-thumbnail" src={sauce.image_url} />
               </div>
               <div className="sauce-main-profile-text">
-                <div className="sauce-main-profile-text-header">
-                  <h1>{sauce.name}</h1>
-                    <IconButton
-                      tooltip="Edit Sauce"
-                      className="testing"
-                      iconClassName="fa fa-pencil fa-2x"
-                      touch={true}
-                      tooltipPosition="bottom-center"
-                      iconStyle={{
-                        width: 20,
-                        height: 20
-                      }}
-                      style={{
-                        width: 25,
-                        height: 25,
-                        padding: 0
-                      }}
-                      containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
-                      />
-                  </div>
+                <h1>{sauce.name}</h1>
                 <h2>{sauce.company}</h2>
-                <h3>{sauce.scoville_units} SHU</h3>
+                {scoville_units}
                 <h4>{sauce.description}</h4>
               </div>
             </div>
@@ -68,7 +51,23 @@ class Sauce extends React.Component{
               </table>
             </div>
             <div className="sauce-main-buttons">
-
+              <IconButton
+                tooltip="Edit Sauce"
+                className="edit-icon"
+                iconClassName="fa fa-pencil fa-2x"
+                touch={true}
+                tooltipPosition="bottom-center"
+                iconStyle={{
+                  width: 20,
+                  height: 20
+                }}
+                style={{
+                  width: 25,
+                  height: 25,
+                  padding: 0
+                }}
+                containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
+                />
             </div>
           </div>
           <div className="sauce-checkins">

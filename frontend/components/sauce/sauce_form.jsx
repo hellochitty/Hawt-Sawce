@@ -17,11 +17,14 @@ class SauceForm extends React.Component{
       imageFile: null,
       imageUrl: null
     };
+    //note: image_url is coming in from jbuilder view
+    //imageFile and imageUrl are from current upload pic file
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleUpdateFile = this.handleUpdateFile.bind(this);
+    this.removeImage = this.removeImage.bind(this);
   }
 
   componentDidMount(){
@@ -74,6 +77,10 @@ class SauceForm extends React.Component{
     }
   }
 
+  removeImage(){
+    this.setState({ imageUrl: null, image_url: "", imageFile: null,});
+  }
+
   handleSubmit(e){
     e.preventDefault();
     let formData = new FormData();
@@ -105,7 +112,23 @@ class SauceForm extends React.Component{
     const text = (this.props.formType === 'edit') ? 'Edit' : 'New';
     const buttonText = (this.props.formType === 'edit') ? 'Update' : 'Add';
     const deleteButton = (this.props.formType === 'edit') ?
-      <FlatButton  label="Delete" onClick={this.handleDelete}  type="submit"/>  : null;
+      <FlatButton
+        label="Delete"
+        onClick={this.handleDelete}
+        type="submit"/>  : null;
+    const removeImageButton = (this.state.imageUrl !== null || this.state.image_url !== "" )  ?
+      <FlatButton  label="remove" onClick={this.removeImage}/> : null;
+
+    let previewImage;
+    if (this.state.image_url !== ""){
+      previewImage =   <img className="img-upload-preview" src={this.state.image_url}/>;
+    }else if (this.state.imageUrl !== null){
+      previewImage =   <img className="img-upload-preview" src={this.state.imageUrl}/>;
+    }
+    // const previousImagePreview = (this.state.image_url !== null) ?
+    // <img className="img-upload-preview" src={this.state.image_url}/> : null;
+    // const currentImagePreview = (this.state.imageUrl !== null) ?
+    //   <img className="img-upload-preview" src={this.state.imageUrl}/> : null;
 
     return (
       <div id="sauce-form">
@@ -143,12 +166,13 @@ class SauceForm extends React.Component{
             onChange={this.handleChange("scoville_units")}
             errorText={this.props.errors.scoville_units}
             /><br />
+          <div id="sauce-form-preview-images">
+            {previewImage}
+            {removeImageButton}
+          </div>
 
-          
           <input type="file" onChange={this.handleUpdateFile}/>
 
-          <img className="img-upload-preview" src={this.state.imageUrl}/>
-          <img className="img-upload-preview" src={this.state.image_url}/>
             <div className="form-buttons">
               <RaisedButton type='submit' label={buttonText} />
               {deleteButton}
