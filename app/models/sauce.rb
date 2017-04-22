@@ -34,4 +34,17 @@ class Sauce < ApplicationRecord
     primary_key: :id,
     inverse_of: :sauce,
     dependent: :destroy
+
+
+  def average_overall
+    checkins.average(:overall_rating)
+  end
+
+  def average_heat
+    checkins.average(:heat_rating)
+  end
+
+  def total_reivews
+    checkins.count(:overall_rating)
+  end
 end
