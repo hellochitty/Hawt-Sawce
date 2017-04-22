@@ -51,21 +51,22 @@ class Sauce extends React.Component{
               <table className="sauce-stats">
                 <tbody>
                   <tr>
-                    <td>
-                      Overall
-                    </td>
-                    <td>
-                      Heat
-                    </td>
-                    <td>
-                      Checkins
-                    </td>
-                    <td>
-                      Ranking
-                    </td>
+                    <td>5</td>
+                    <td>3.5</td>
+                    <td>130</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>Overall</td>
+                    <td>Heat</td>
+                    <td>Checkins</td>
+                    <td>Ranking</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div className="sauce-main-buttons">
+              
             </div>
           </div>
           <div className="sauce-checkins">
