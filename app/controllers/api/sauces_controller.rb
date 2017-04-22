@@ -26,7 +26,6 @@ class Api::SaucesController < ApplicationController
   end
 
   def update
-    debugger
     @sauce = Sauce.find(params[:id])
     params = sauce_params.permit(:name, :description, :scoville_units, :image_url, :image)
     if sauce_params['company'] == ''
@@ -56,4 +55,5 @@ class Api::SaucesController < ApplicationController
   def sauce_params
     params.require(:sauce).permit(:name, :company, :description, :scoville_units, :image_url, :image)
   end
+  
 end
