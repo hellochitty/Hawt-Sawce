@@ -8,6 +8,7 @@ const mapStateToProps = ({sauce, companies, errors}, ownProps) => {
   let ready = false;
   if(ownProps.params.sauce_id > 0){
     formType = 'edit';
+
   }
   if(ownProps.params.sauce_id == sauce.id){
     ready = true;
@@ -30,9 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     getSauceCompanies: () => dispatch(getSauceCompanies()),
     getSauce: (id) => dispatch(getSauce(id)),
-    // addSauce: (sauce) => dispatch(addSauce(sauce)),
     deleteSauce: (sauceId) => dispatch(deleteSauce(sauceId)),
-    // updateSauce: (sauce) => dispatch(updateSauce(sauce)),
     submitAction: (sauce, id) => dispatch(submitAction(sauce, id)),
     clearErrors: () => dispatch(clearErrors())
   });

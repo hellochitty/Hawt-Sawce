@@ -32,7 +32,7 @@ class SauceForm extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    if (newProps.formType === 'new' && this.props.errors !== {}){
+    if (newProps.formType === 'new' && newProps.errors === {}){
       this.setState({
         name: "",
         description: "",
@@ -150,7 +150,9 @@ class SauceForm extends React.Component{
               onChange={this.handleChange("image_url")}
               /><br />
           <input type="file" onChange={this.handleUpdateFile}/>
-          <img src={this.state.imageUrl}/>
+
+          <img className="img-upload-preview" src={this.state.imageUrl}/>
+          <img className="img-upload-preview" src={this.state.image_url}/>
             <div className="form-buttons">
               <RaisedButton type='submit' label={buttonText} />
               {deleteButton}
