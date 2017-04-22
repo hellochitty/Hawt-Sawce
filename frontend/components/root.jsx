@@ -32,7 +32,7 @@ const muiTheme = getMuiTheme({
   },
   textField: {
     textColor: darkBlack,
-     hintStyle: {color: darkBlack}
+
   },
   appBar: {
     height: 50,

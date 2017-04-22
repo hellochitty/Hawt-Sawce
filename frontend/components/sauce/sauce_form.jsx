@@ -144,11 +144,7 @@ class SauceForm extends React.Component{
             errorText={this.props.errors.scoville_units}
             /><br />
 
-          <TextField
-              floatingLabelText="Image URL"
-              value={this.state.image_url}
-              onChange={this.handleChange("image_url")}
-              /><br />
+          
           <input type="file" onChange={this.handleUpdateFile}/>
 
           <img className="img-upload-preview" src={this.state.imageUrl}/>

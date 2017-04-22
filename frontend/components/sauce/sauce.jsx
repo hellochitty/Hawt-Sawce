@@ -1,5 +1,5 @@
 import React from 'react';
-import Spinner from '../ui/spinner';
+import IconButton from 'material-ui/IconButton';
 import { Link } from 'react-router';
 
 class Sauce extends React.Component{
@@ -15,9 +15,7 @@ class Sauce extends React.Component{
 
   render(){
     const sauce = this.props.sauce;
-    if (sauce.name === ""){
-      return (<Spinner />);
-    }else{
+
       return(
         <div className="col-2-3">
           <div className="sauce-main">
@@ -53,7 +51,16 @@ class Sauce extends React.Component{
               </table>
             </div>
             <div>
-              <Link to={`/home/sauces/${sauce.id}/edit`}>edit</Link>
+
+
+                <IconButton
+                  tooltip="Edit Sauce"
+                  href={`/home/sauces/${sauce.id}/edit`}
+                  iconClassName="fa fa-pencil fa-2x"
+                  containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
+                  />
+
+
             </div>
           </div>
           <div className="sauce-checkins">
@@ -61,9 +68,8 @@ class Sauce extends React.Component{
           </div>
         </div>
       );
-    }
-    }
 
+    }
 }
 
 

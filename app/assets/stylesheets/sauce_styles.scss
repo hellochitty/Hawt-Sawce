@@ -28,6 +28,13 @@
   background-color: white;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+}
+.sauce-index-header > * {
+  padding: 20px;
+}
+.sauce-index-header-text > h1{
+  margin-bottom: 5px;
 }
 
 .sauce-index-item{
@@ -38,8 +45,12 @@
   background-color: white;
 }
 
+.sauce-index-item > *{
+  padding: 20px;
+}
+
 .sauce-index-item-profile > *{
-  margin: 0;
+  margin: 0 0 2px;
 }
 
 #add-sauce-button{

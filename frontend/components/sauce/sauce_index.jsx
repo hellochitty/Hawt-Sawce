@@ -19,14 +19,26 @@ class SauceIndex extends React.Component{
   }
 
   render(){
+    let addSauceButton;
+    if (this.props.session.currentUser){
+      addSauceButton =  (
+        <div id="add-sauce-button">
+          <RaisedButton onClick={this.redirect}  label="+ Sauce"/>
+        </div>
+      );
+    }
+
+
     return(
       <div className="col-2-3">
         <div className="sauce-index-header">
-          <h1>Sauces</h1>
-          <div id="add-sauce-button">
-            <RaisedButton onClick={this.redirect}  label="+ Sauce"/>
+          <div className="sauce-index-header-text">
+            <h1>Sauces</h1>
+            <h5>Check out our sauces!</h5>
           </div>
+          {addSauceButton}
         </div>
+
         {this.props.sauces.map(sauce => (
         <SauceIndexItem sauce={sauce} key={sauce.id}/>
         ))}
