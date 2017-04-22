@@ -16,6 +16,7 @@ import { redA700, darkBlack, white, grey300, cyan500, yellow500, yellow600 } fro
 
 injectTapEventPlugin();
 const muiTheme = getMuiTheme({
+  fontFamily: 'Roboto Condensed, sans-serif',
   palette: {
     primary1Color: redA700,
     primary2Color: redA700,

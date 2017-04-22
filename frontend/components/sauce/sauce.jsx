@@ -16,7 +16,7 @@ class Sauce extends React.Component{
   render(){
     const sauce = this.props.sauce;
     let scoville_units;
-    scoville_units = (sauce.scoville_units) ? (<h3>{sauce.scoville_units} SHU</h3>) : null;
+    scoville_units = (sauce.scoville_units) ? (<h3>{sauce.scoville_units} Scoville (SHU)</h3>) : null;
 
       return(
         <div className="col-2-3">

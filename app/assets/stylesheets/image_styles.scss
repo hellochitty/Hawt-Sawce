@@ -1,5 +1,5 @@
 .input-file + label {
-    color: $color-main-text;
+    color: $color-main;
     background-color: $color-alt-text;
     display: inline-block;
     cursor: pointer;
@@ -13,6 +13,7 @@
 .input-file:focus + label,
 .input-file + label:hover {
     background-color: $color-main-highlight;
+    color: $color-main-text;
 }
 
 .img-upload-preview{
