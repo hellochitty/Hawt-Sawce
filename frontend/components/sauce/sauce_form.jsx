@@ -116,14 +116,25 @@ class SauceForm extends React.Component{
         label="Delete"
         onClick={this.handleDelete}
         type="submit"/>  : null;
-    const removeImageButton = (this.state.imageUrl !== null || this.state.image_url !== "" )  ?
-      <FlatButton  label="remove" onClick={this.removeImage}/> : null;
-
-    let previewImage;
+    let addImage;
     if (this.state.image_url !== ""){
-      previewImage =   <img className="img-upload-preview" src={this.state.image_url}/>;
+      addImage =(
+        <div>
+          <img className="img-upload-preview" src={this.state.image_url}/>
+          <FlatButton  label="remove" onClick={this.removeImage}/>
+        </div>);
     }else if (this.state.imageUrl !== null){
-      previewImage =   <img className="img-upload-preview" src={this.state.imageUrl}/>;
+      addImage =(
+        <div>
+          <img className="img-upload-preview" src={this.state.imageUrl}/>
+          <FlatButton  label="remove" onClick={this.removeImage}/>
+        </div>);
+    }else {
+      addImage = (
+        <div >
+        <input type="file" id="upload-image" className="input-file" onChange={this.handleUpdateFile}/>
+        <label htmlFor="upload-image" for="file">+ Image</label>
+        </div>);
     }
     // const previousImagePreview = (this.state.image_url !== null) ?
     // <img className="img-upload-preview" src={this.state.image_url}/> : null;
@@ -167,12 +178,8 @@ class SauceForm extends React.Component{
             errorText={this.props.errors.scoville_units}
             /><br />
           <div id="sauce-form-preview-images">
-            {previewImage}
-            {removeImageButton}
+            {addImage}
           </div>
-
-          <input type="file" onChange={this.handleUpdateFile}/>
-
             <div className="form-buttons">
               <RaisedButton type='submit' label={buttonText} />
               {deleteButton}

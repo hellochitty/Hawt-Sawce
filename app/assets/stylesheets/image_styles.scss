@@ -1,0 +1,32 @@
+.input-file + label {
+    color: $color-main-text;
+    background-color: $color-alt-text;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 200;
+    margin: 10px 0px;
+    border-radius: 3px;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+}
+
+.input-file:focus + label,
+.input-file + label:hover {
+    background-color: $color-main-highlight;
+}
+
+.img-upload-preview{
+  width: 100px;
+  height: auto;
+
+}
+
+
+.input-file {
+ width: 0.1px;
+ height: 0.1px;
+ opacity: 0;
+ overflow: hidden;
+ position: absolute;
+ z-index: -1;
+}
