@@ -17,6 +17,16 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :checkins,
+    class_name: 'Checkin',
+    foreign_key: :user_id,
+    primary_key: :id,
+    inverse_of: :user,
+    dependent: :destroy
+
+  has_many :sauces,
+    through: :checkins,
+    source: :sauce
 
   attr_reader :password
   after_initialize :ensure_session_token

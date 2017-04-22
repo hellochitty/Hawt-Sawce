@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-User.create(username: 'chithra', password: 'password', email: 'chithra@chithra.com')
-User.create(username: 'SPICY', password: 'password', email:'spicy@spicy.com')
+chithra =User.create(username: 'chithra', password: 'password', email: 'chithra@chithra.com')
+guest = User.create(username: 'SPICY', password: 'password', email:'spicy@spicy.com')
 
 SauceCompany.destroy_all
 secret_aardvark = SauceCompany.create(name: 'Secret Aardvark')
@@ -27,3 +27,9 @@ sriracha = Sauce.create(name: "Sriracha", description: "Our most popular sauce. 
 tabasco = Sauce.create(name: "Original Red", description: "TABASCO® brand Original Red Sauce owes much of its unique, pungent flavor to the handcrafted way it’s been made for over 140 years. Equally important is the heart of the one family who created this world-famous sauce as a labor of love.", scoville_units: 2500, image_url: "http://images.selfridges.com/is/image/selfridges/554-78042186-200318_M?$PDP_M_ALL$", company_id: tabasco.id)
 
 yucateco_green = Sauce.create(name: "Salsa Picante de Chile Habanero Green", description: "From Merida, Yucatan, Mexico, this is the hotter of the two original El Yucateco colors. Elaborated with another of our classic recipes based on green habanero peppers, garlic and spices. This special blend of ingredients gives a fresh, home flavor to the meals.", scoville_units:  8910, image_url: "https://cdn3.volusion.com/pvqf3.cnxy3/v/vspfiles/photos/1117-2.jpg", company_id: el_yucateco.id)
+
+Checkin.destroy_all
+Checkin.create(user_id: guest.id, sauce_id: sriracha.id, overall_rating: 5, heat_rating: 2, comment: "i like it" )
+Checkin.create(user_id: guest.id, sauce_id: tabasco.id, overall_rating: 3, heat_rating: 1, comment: "too vinegary" )
+Checkin.create(user_id: chithra.id, sauce_id: tabasco.id, overall_rating: 2, heat_rating: 1, comment: "ugh so basic" )
+Checkin.create(user_id: chithra.id, sauce_id: sriracha.id, overall_rating: 3, heat_rating: 2, comment: "pretty basic" )
