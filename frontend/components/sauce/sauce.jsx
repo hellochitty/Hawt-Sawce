@@ -2,6 +2,8 @@ import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import { Link } from 'react-router';
 var Rating = require('react-rating');
+import CheckinIndexItem from '../checkin/checkin_index_item';
+
 
 class Sauce extends React.Component{
   componentWillReceiveProps(newProps){
@@ -12,6 +14,7 @@ class Sauce extends React.Component{
 
   componentDidMount(){
     this.props.getSauce(this.props.params.sauce_id);
+    this.props.getCheckins();
   }
 
   render(){
@@ -88,7 +91,9 @@ class Sauce extends React.Component{
             </div>
           </div>
           <div className="sauce-checkins">
-            'Placeholder for checkins'
+            {this.props.checkins.map(checkin => (
+            <CheckinIndexItem checkin={checkin} key={checkin.id}/>
+            ))}
           </div>
         </div>
       );
