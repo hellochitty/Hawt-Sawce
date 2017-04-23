@@ -90,7 +90,7 @@ class Sauce extends React.Component{
             </div>
           </div>
           <div className="sauce-checkins">
-            <h2 id="subsection-heading">Checkins</h2>
+            <h2 id="subsection-heading">Check-Ins</h2>
             {this.props.checkins.map(checkin => (
             <CheckinIndexItem checkin={checkin} key={checkin.id}/>
             ))}
