@@ -24,15 +24,12 @@ const CheckinIndexItem = ({checkin}) => {
 
   return (
 
-      <div className='sauce-index-item'>
-        <div className='sauce-index-item-profile'>
+      <div className='checkin-index-item'>
+        <div className='checkin-index-item-profile'>
           <h3><h2 className="inline-link" >{checkin.user}</h2>{ _.sample(commentary)}<Link to={`/home/sauces/${checkin.sauce_id}`}>
             <h2 className="inline-link" >{checkin.sauce}</h2></Link></h3>
           <h4>{`"`}<i>{checkin.comment}</i>{`"`}</h4>
-
-
           {comments}
-
           <table className="sauce-stats">
             <tbody>
               <tr>

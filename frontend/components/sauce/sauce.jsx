@@ -57,7 +57,7 @@ class Sauce extends React.Component{
                       full="fa fa-thermometer-full fa-2x heat-full"
                       />
                     </td>
-                    <td><h1>{sauce.total_reviews}</h1></td>
+                    <td><h3>{sauce.total_reviews}</h3></td>
                     <td><h3><FormattedDate value={sauce.created_at}/></h3></td>
                   </tr>
                   <tr>
