@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { lodash } from 'lodash';
+import {Rating} from  'react-rating';
 
 const CheckinIndexItem = ({checkin}) => {
   const commentary = [
@@ -17,6 +18,7 @@ const CheckinIndexItem = ({checkin}) => {
     <Link className="no-underline hover-yellow" to={`/home/checkins/${checkin.id}`}>
       <div className='sauce-index-item'>
         <div className='sauce-index-item-profile'>
+          
           <h4>{checkin.user} { _.sample(commentary)} </h4>
           <h1>{checkin.sauce}</h1>
           <h1>{checkin.user} is gettin spicy!</h1>

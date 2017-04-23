@@ -1,6 +1,7 @@
 import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import { Link } from 'react-router';
+var Rating = require('react-rating');
 
 class Sauce extends React.Component{
   componentWillReceiveProps(newProps){
@@ -36,8 +37,24 @@ class Sauce extends React.Component{
               <table className="sauce-stats">
                 <tbody>
                   <tr>
-                    <td>{sauce.average_overall}</td>
-                    <td>{sauce.average_heat}</td>
+
+                    <td>
+                      <Rating
+                      initialRate={sauce.average_overall}
+                      readonly
+                      empty="fa fa-star-o fa-1x empty"
+                      full="fa fa-star fa-1x overall-full"
+                      className="overall-icon"
+                      />
+                    </td>
+                    <td>
+                      <Rating
+                      initialRate={sauce.average_heat}
+                      readonly
+                      empty="fa fa-thermometer-empty fa-2x empty"
+                      full="fa fa-thermometer-full fa-2x heat-full"
+                      />
+                    </td>
                     <td>{sauce.total_reviews}</td>
                     <td>{sauce.created_at}</td>
                   </tr>
@@ -45,7 +62,7 @@ class Sauce extends React.Component{
                     <td>Overall</td>
                     <td>Heat</td>
                     <td>Checkins</td>
-                    <td>Add On</td>
+                    <td>Added On</td>
                   </tr>
                 </tbody>
               </table>
