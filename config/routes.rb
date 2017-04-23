@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :sauces, only: [:index, :show, :create, :update, :destroy]
     resources :sauce_companies, only: [:index]
-    resources :checkins, only: [:index, :show, :destroy]
+    resources :checkins, only: [:index, :show, :destroy, :create]
   end
 end

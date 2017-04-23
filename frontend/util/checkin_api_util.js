@@ -20,3 +20,12 @@ export const removeCheckin = (checkinId) => {
     url: `/api/checkins/${checkinId}`
   });
 };
+
+
+export const addCheckin = (checkin) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/checkins',
+    data: {checkin}
+  });
+};

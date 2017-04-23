@@ -16,7 +16,7 @@ class Sauce extends React.Component{
     super(props);
     this.state = {
       open: false,
-      description: "",
+      comment: "",
       heat_rating: null,
       overall_rating: null,
       errors: {
@@ -51,7 +51,7 @@ class Sauce extends React.Component{
   handleClose(){
     this.setState({
       open: false,
-      description: "",
+      comment: "",
       heat_rating: null,
       overall_rating: null,
       errors: {
@@ -63,7 +63,7 @@ class Sauce extends React.Component{
 
   handleChange(e){
     this.setState({
-      description: e.target.value,
+      comment: e.target.value,
     });
   }
 
@@ -73,12 +73,13 @@ class Sauce extends React.Component{
 
   handleSubmit(){
     const checkin = {};
-    checkin["description"] = this.state.description;
+    checkin["comment"] = this.state.comment;
     checkin["heat_rating"] = this.state.heat_rating;
     checkin["overall_rating"] = this.state.overall_rating;
     checkin["sauce_id"] = this.props.sauce.id;
     checkin["user_id"] = this.props.session.currentUser.id;
     console.log(checkin);
+    this.props.addCheckin(checkin);
   }
 
   handleSubmitAttempt(){
@@ -217,7 +218,7 @@ class Sauce extends React.Component{
               <TextField
                 onChange
                 floatingLabelText="Description"
-                value={this.state.description}
+                value={this.state.comment}
                 onChange={this.handleChange}
                 fullWidth={true}
                 />

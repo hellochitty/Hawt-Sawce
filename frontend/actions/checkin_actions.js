@@ -35,3 +35,9 @@ export const deleteCheckin = (checkinId) => dispatch => {
     .then((res) => dispatch(removeCheckin(res)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
+
+export const addCheckin = (checkin) => dispatch => {
+  return CheckinAPIUtil.addCheckin(checkin)
+    .then((res) => dispatch(receiveCheckin(res)),
+    (err) => dispatch(receiveErrors(err.responseJSON)));
+};

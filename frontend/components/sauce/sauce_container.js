@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { clearErrors } from '../../actions/util_actions';
 import { getSauce } from '../../actions/sauce_actions';
-import { getCheckins } from '../../actions/checkin_actions';
+import { getCheckins, addCheckin } from '../../actions/checkin_actions';
 import Sauce from './sauce.jsx';
 
 const mapStateToProps = ({sauce, checkins, session}, ownProps)=> {
@@ -21,7 +21,8 @@ const mapStateToProps = ({sauce, checkins, session}, ownProps)=> {
 
 const mapDispatchToProps = dispatch =>({
   getSauce: (sauceId) => dispatch(getSauce(sauceId)),
-  getCheckins: () => dispatch(getCheckins())
+  getCheckins: () => dispatch(getCheckins()),
+  addCheckin: (checkin) => dispatch(addCheckin(checkin))
 });
 
 
