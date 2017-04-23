@@ -2,14 +2,15 @@ import { connect } from 'react-redux';
 import { getCheckin } from '../../actions/checkin_actions';
 import Checkin from './checkin.jsx';
 
-const mapStateToProps = ({checkin}) => {
+const mapStateToProps = ({checkin, session}) => {
   return {
-    checkin
+    checkin,
+    session
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  getCheckin: () => dispatch(getCheckin())
+  getCheckin: (id) => dispatch(getCheckin(id))
 });
 
 
