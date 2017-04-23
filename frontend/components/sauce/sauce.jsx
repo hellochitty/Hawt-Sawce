@@ -6,6 +6,13 @@ import CheckinIndexItem from '../checkin/checkin_index_item';
 import {FormattedDate} from 'react-intl';
 
 class Sauce extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
+  
   componentWillReceiveProps(newProps){
     if (this.props.params.sauce_id !== newProps.params.sauce_id){
       this.props.getSauce(newProps.params.sauce_id);
