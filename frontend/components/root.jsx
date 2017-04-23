@@ -8,6 +8,7 @@ import SauceIndexContainer from './sauce/sauce_index_container';
 import SauceContainer from './sauce/sauce_container';
 import SauceFormContainer from './sauce/sauce_form_container';
 import CheckinIndexContainer from './checkin/checkin_index_container';
+import { IntlProvider } from 'react-intl';
 //material-ui
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -66,20 +67,22 @@ const Root = ({ store }) => {
 
   return (
     <Provider store={ store }>
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <Router history = { hashHistory }>
-          <Route path ="/" component={ Index } onEnter={_redirectIfLoggedIn} />
-          <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
-          <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
-          <Route path ="/home" component={ App }>
-            <IndexRoute component={CheckinIndexContainer} />
-            <Route path ="sauces" component={ SauceIndexContainer } />
-            <Route path ="sauces/new" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
-            <Route path ="sauces/:sauce_id" component={ SauceContainer } />
-            <Route path ="sauces/:sauce_id/edit" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
-          </Route>
-        </Router>
-      </MuiThemeProvider>
+      <IntlProvider locale="en">
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <Router history = { hashHistory }>
+            <Route path ="/" component={ Index } onEnter={_redirectIfLoggedIn} />
+            <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+            <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+            <Route path ="/home" component={ App }>
+              <IndexRoute component={CheckinIndexContainer} />
+              <Route path ="sauces" component={ SauceIndexContainer } />
+              <Route path ="sauces/new" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
+              <Route path ="sauces/:sauce_id" component={ SauceContainer } />
+              <Route path ="sauces/:sauce_id/edit" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
+            </Route>
+          </Router>
+        </MuiThemeProvider>
+      </IntlProvider>
     </Provider>
   );
 };

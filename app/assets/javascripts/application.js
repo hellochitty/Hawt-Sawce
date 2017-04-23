@@ -13,3 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// import react_time_ago from 'react-time-ago';
+//
+// // Load locale specific relative date/time messages
+// //
+// import javascript_time_ago from 'javascript-time-ago';
+// javascript_time_ago.locale(require('javascript-time-ago/locales/en'));
+// javascript_time_ago.locale(require('javascript-time-ago/locales/ru'));
+//
+// // Load number pluralization functions for the locales.
+// // (the ones that decide if a number is gonna be
+// //  "zero", "one", "two", "few", "many" or "other")
+// // http://cldr.unicode.org/index/cldr-spec/plural-rules
+// // https://github.com/eemeli/make-plural.js
+// // http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+// //
+// require('javascript-time-ago/intl-messageformat-global');
+// require('intl-messageformat/dist/locale-data/en');
+// require('intl-messageformat/dist/locale-data/ru');

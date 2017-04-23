@@ -3,7 +3,7 @@ import IconButton from 'material-ui/IconButton';
 import { Link } from 'react-router';
 var Rating = require('react-rating');
 import CheckinIndexItem from '../checkin/checkin_index_item';
-
+import {FormattedDate} from 'react-intl';
 
 class Sauce extends React.Component{
   componentWillReceiveProps(newProps){
@@ -57,14 +57,14 @@ class Sauce extends React.Component{
                       full="fa fa-thermometer-full fa-2x heat-full"
                       />
                     </td>
-                    <td>{sauce.total_reviews}</td>
-                    <td>{sauce.created_at}</td>
+                    <td><h1>{sauce.total_reviews}</h1></td>
+                    <td><h3><FormattedDate value={sauce.created_at}/></h3></td>
                   </tr>
                   <tr>
-                    <td>Overall</td>
-                    <td>Heat</td>
-                    <td>Checkins</td>
-                    <td>Added On</td>
+                    <td><h5>Overall</h5></td>
+                    <td><h5>Heat</h5></td>
+                    <td><h5>Checkins</h5></td>
+                    <td><h5>Added On</h5></td>
                   </tr>
                 </tbody>
               </table>
