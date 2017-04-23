@@ -36,7 +36,7 @@ class Checkin extends React.Component {
 
     let removalButton = (this.props.session.currentUser.username === this.props.checkin.user) ?
       <RaisedButton
-        icon={<i class="fa fa-minus-circle" aria-hidden="true"></i>}
+        icon={<i className="fa fa-minus-circle" aria-hidden="true"></i>}
         label="Delete"
         onTouchTap={this.handleClick}
         /> : null;
