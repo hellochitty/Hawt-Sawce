@@ -18,13 +18,19 @@ class Sauce extends React.Component{
       open: false,
       description: "",
       heat_rating: null,
-      overall_rating: null
+      overall_rating: null,
+      errors: {
+        overall_rating: null,
+        heat_rating: null
+      }
     };
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleRatingChange = this.handleRatingChange.bind(this);
+    this.handleSubmitAttempt = this.handleSubmitAttempt.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -44,7 +50,14 @@ class Sauce extends React.Component{
 
   handleClose(){
     this.setState({
-      open: false
+      open: false,
+      description: "",
+      heat_rating: null,
+      overall_rating: null,
+      errors: {
+        overall_rating: null,
+        heat_rating: null
+      }
     });
   }
 
@@ -56,6 +69,34 @@ class Sauce extends React.Component{
 
   handleRatingChange(rate, text){
     this.setState({[text]: rate});
+  }
+
+  handleSubmit(){
+    const checkin = {};
+    checkin["description"] = this.state.description;
+    checkin["heat_rating"] = this.state.heat_rating;
+    checkin["overall_rating"] = this.state.overall_rating;
+    checkin["sauce_id"] = this.props.sauce.id;
+    checkin["user_id"] = this.props.session.currentUser.id;
+    console.log(checkin);
+  }
+
+  handleSubmitAttempt(){
+    if (this.state.heat_rating === null && this.state.overall_rating === null ){
+      this.setState({errors:
+        {
+          heat_rating: "please provide a heat rating!",
+          overall_rating: "please provide an overall rating!"
+        }
+      });
+    }else if (this.state.heat_rating === null){
+      this.setState({errors: {heat_rating: "please provide a heat rating!"}});
+    }else if (this.state.overall_rating === null){
+      this.setState({errors: {overall_rating: "please provide an overall rating!"}});
+    }else{
+      this.handleSubmit();
+      this.handleClose();
+    }
   }
 
   render(){
@@ -72,7 +113,7 @@ class Sauce extends React.Component{
         label="Submit"
         primary={true}
         keyboardFocused={true}
-        onTouchTap={this.handleClose}
+        onTouchTap={this.handleSubmitAttempt}
       />,
     ];
       return(
@@ -160,16 +201,19 @@ class Sauce extends React.Component{
               <Rating
                 empty="fa fa-star-o fa-1x empty"
                 full="fa fa-star fa-1x overall-full"
+                className="overall-icon"
                 initialRate={this.state.overall_rating}
                 onChange={(rate) => this.handleRatingChange(rate, "overall_rating")}
                 />
+              <p className="custom-errors">{this.state.errors.overall_rating}</p>
+              <br />
               <Rating
                 empty="fa fa-thermometer-empty fa-2x empty"
                 full="fa fa-thermometer-full fa-2x heat-full"
                 initialRate={this.state.heat_rating}
                 onChange={(rate) => this.handleRatingChange(rate, "heat_rating")}
                 />
-
+              <p className="custom-errors">{this.state.errors.heat_rating}</p>
               <TextField
                 onChange
                 floatingLabelText="Description"

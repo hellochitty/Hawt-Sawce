@@ -4,7 +4,7 @@ import { getSauce } from '../../actions/sauce_actions';
 import { getCheckins } from '../../actions/checkin_actions';
 import Sauce from './sauce.jsx';
 
-const mapStateToProps = ({sauce, checkins}, ownProps)=> {
+const mapStateToProps = ({sauce, checkins, session}, ownProps)=> {
   const holder = [];
   Object.keys(checkins).forEach((key)=> {
       if (sauce.name === checkins[key].sauce){
@@ -13,7 +13,8 @@ const mapStateToProps = ({sauce, checkins}, ownProps)=> {
     });
   return({
     sauce,
-    checkins: holder
+    checkins: holder,
+    session
   });
 };
 

@@ -83,11 +83,11 @@ class SessionForm extends React.Component {
       <FlatButton onClick={this.guestLogin} label="Login as Guest"  type="submit"/>
       );
       sessionErrors = (
-        <p className="session-errors">{ this.props.errors.login}</p>
+        <p className="custom-errors">{ this.props.errors.login}</p>
       );
     }
 
-    
+
 
     return(
       <div className="session-form">
