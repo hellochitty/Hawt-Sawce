@@ -8,6 +8,7 @@ import SauceIndexContainer from './sauce/sauce_index_container';
 import SauceContainer from './sauce/sauce_container';
 import SauceFormContainer from './sauce/sauce_form_container';
 import CheckinIndexContainer from './checkin/checkin_index_container';
+import CheckinContainer from './checkin/checkin_container';
 import { IntlProvider } from 'react-intl';
 //material-ui
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -79,6 +80,7 @@ const Root = ({ store }) => {
               <Route path ="sauces/new" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
               <Route path ="sauces/:sauce_id" component={ SauceContainer } />
               <Route path ="sauces/:sauce_id/edit" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
+              <Route path ="checkins/:checkin_id" component={ CheckinContainer } />
             </Route>
           </Router>
         </MuiThemeProvider>

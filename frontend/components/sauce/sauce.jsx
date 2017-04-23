@@ -105,6 +105,13 @@ class Sauce extends React.Component{
     const sauce = this.props.sauce;
     let scoville_units;
     scoville_units = (sauce.scoville_units) ? (<h3>{sauce.scoville_units} Scoville (SHU)</h3>) : null;
+    let checkinButton = (this.props.session.currentUser) ?
+      <RaisedButton
+        icon={<i className="fa fa-check-circle fa-1x" aria-hidden="true"></i>}
+        label="Check-In"
+        onTouchTap={this.handleOpen}/> : null;
+
+    //actions for modal
     const actions = [
       <FlatButton
         label="Cancel"
@@ -167,11 +174,9 @@ class Sauce extends React.Component{
             </div>
             <div className="sauce-main-buttons">
               <IconButton
-                tooltip="Edit Sauce"
                 className="edit-icon"
-                iconClassName="fa fa-pencil fa-2x"
+                iconClassName="fa fa-pencil fa-3x"
                 touch={true}
-                tooltipPosition="bottom-center"
                 iconStyle={{
                   width: 20,
                   height: 20
@@ -183,7 +188,8 @@ class Sauce extends React.Component{
                 }}
                 containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
                 />
-              <FlatButton  label="Check-In" onTouchTap={this.handleOpen}/>
+              <FlatButton style={{width: '5px', padding: '0'}}  icon={<i className="fa fa-pencil fa-2x" aria-hidden="true"></i>} onTouchTap={this.handleOpen}/>
+              {checkinButton}
             </div>
           </div>
           <div className="sauce-checkins">
