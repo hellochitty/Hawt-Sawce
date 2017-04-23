@@ -40,7 +40,6 @@ class Sauce extends React.Component{
               <table className="sauce-stats">
                 <tbody>
                   <tr>
-
                     <td>
                       <Rating
                       initialRate={sauce.average_overall}
@@ -91,6 +90,7 @@ class Sauce extends React.Component{
             </div>
           </div>
           <div className="sauce-checkins">
+            <h2 id="subsection-heading">Checkins</h2>
             {this.props.checkins.map(checkin => (
             <CheckinIndexItem checkin={checkin} key={checkin.id}/>
             ))}

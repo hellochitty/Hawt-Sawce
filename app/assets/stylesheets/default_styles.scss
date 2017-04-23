@@ -13,6 +13,9 @@ body{
 h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
 }
+a {
+  text-decoration: none;
+}
 
 h2{
   color: $color-main;
@@ -53,3 +56,26 @@ img {
 img[src] {
    display: block;
  }
+ .inline-link{
+   display:inline-block;
+ }
+
+#basic-link{
+  text-align: right;
+  text-decoration: underline;
+}
+#basic-link:hover{
+  color: $color-main-highlight;
+}
+
+h2#subsection-heading{
+  padding: 20px 10px 0px;
+  color: $color-main-text;
+}
+
+#flex-row{
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 20px;
+}
