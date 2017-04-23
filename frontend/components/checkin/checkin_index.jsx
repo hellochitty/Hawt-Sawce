@@ -13,15 +13,11 @@ class CheckinIndex extends React.Component{
     this.props.getCheckins();
   }
 
-
   redirect(){
     this.props.router.push("/home/sauces/new");
   }
 
   render(){
-
-
-
     return(
       <div className="col-2-3">
         <div className="sauce-index-header">
@@ -29,9 +25,7 @@ class CheckinIndex extends React.Component{
             <h1>Checkins</h1>
             <h5>Global Checkins</h5>
           </div>
-        
         </div>
-
         {this.props.checkins.map(checkin => (
         <CheckinIndexItem checkin={checkin} key={checkin.id}/>
         ))}
