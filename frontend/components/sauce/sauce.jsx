@@ -79,7 +79,9 @@ class Sauce extends React.Component{
     checkin["sauce_id"] = this.props.sauce.id;
     checkin["user_id"] = this.props.session.currentUser.id;
     console.log(checkin);
-    this.props.addCheckin(checkin);
+    this.props.addCheckin(checkin)
+    .then(()=> this.handleClose())
+    .then(()=> this.props.getSauce(this.props.params.sauce_id));
   }
 
   handleSubmitAttempt(){
@@ -96,7 +98,6 @@ class Sauce extends React.Component{
       this.setState({errors: {overall_rating: "please provide an overall rating!"}});
     }else{
       this.handleSubmit();
-      this.handleClose();
     }
   }
 
