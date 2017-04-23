@@ -19,14 +19,7 @@ class CheckinIndex extends React.Component{
   }
 
   render(){
-    let addCheckin;
-    if (this.props.session.currentUser){
-      addCheckin =  (
-        <div id="add-sauce-button">
-          <RaisedButton onClick={this.redirect}  label="+ Checkin"/>
-        </div>
-      );
-    }
+
 
 
     return(
@@ -36,7 +29,7 @@ class CheckinIndex extends React.Component{
             <h1>Checkins</h1>
             <h5>Global Checkins</h5>
           </div>
-          {addCheckin}
+        
         </div>
 
         {this.props.checkins.map(checkin => (

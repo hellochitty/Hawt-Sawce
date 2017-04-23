@@ -1,4 +1,5 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 import { Link } from 'react-router';
 var Rating = require('react-rating');
@@ -7,6 +8,7 @@ import {FormattedDate} from 'react-intl';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
+import {merge} from 'lodash';
 
 
 class Sauce extends React.Component{
@@ -14,9 +16,15 @@ class Sauce extends React.Component{
     super(props);
     this.state = {
       open: false,
+      description: "",
+      heat_rating: null,
+      overall_rating: null
     };
+
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleRatingChange = this.handleRatingChange.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -35,7 +43,19 @@ class Sauce extends React.Component{
   }
 
   handleClose(){
-    this.setState({open: false});
+    this.setState({
+      open: false
+    });
+  }
+
+  handleChange(e){
+    this.setState({
+      description: e.target.value,
+    });
+  }
+
+  handleRatingChange(rate, text){
+    this.setState({[text]: rate});
   }
 
   render(){
@@ -130,13 +150,34 @@ class Sauce extends React.Component{
             ))}
           </div>
           <Dialog
-            title="Dialog With Actions"
+            title="Add Checkin"
             actions={actions}
             modal={false}
             open={this.state.open}
             onRequestClose={this.handleClose}
-          >
-            The actions in this window were passed in as an array of React objects.
+            >
+            <form>
+              <Rating
+                empty="fa fa-star-o fa-1x empty"
+                full="fa fa-star fa-1x overall-full"
+                initialRate={this.state.overall_rating}
+                onChange={(rate) => this.handleRatingChange(rate, "overall_rating")}
+                />
+              <Rating
+                empty="fa fa-thermometer-empty fa-2x empty"
+                full="fa fa-thermometer-full fa-2x heat-full"
+                initialRate={this.state.heat_rating}
+                onChange={(rate) => this.handleRatingChange(rate, "heat_rating")}
+                />
+
+              <TextField
+                onChange
+                floatingLabelText="Description"
+                value={this.state.description}
+                onChange={this.handleChange}
+                fullWidth={true}
+                />
+            </form>
           </Dialog>
         </div>
       );

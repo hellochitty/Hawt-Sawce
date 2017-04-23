@@ -60,7 +60,7 @@ const CheckinIndexItem = ({checkin}) => {
           </table>
           <div id="flex-row">
             <FormattedRelative value={time} />
-            <Link to={`/home/checkins/${checkin.id}`}><h5 id="basic-link">View Detailed Checkin</h5></Link>
+            <Link to={`/home/checkins/${checkin.id}`}><h5 id="basic-link">View Detailed Check-In</h5></Link>
           </div>
         </div>
         <div className='sauce-index-item-pic'>
