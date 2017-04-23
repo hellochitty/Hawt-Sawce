@@ -86,6 +86,9 @@ class SessionForm extends React.Component {
         <p className="session-errors">{ this.props.errors.login}</p>
       );
     }
+
+    
+
     return(
       <div className="session-form">
       <div className="session-form-inputs">

@@ -4,6 +4,10 @@ import { Link } from 'react-router';
 var Rating = require('react-rating');
 import CheckinIndexItem from '../checkin/checkin_index_item';
 import {FormattedDate} from 'react-intl';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
+
 
 class Sauce extends React.Component{
   constructor(props){
@@ -11,8 +15,10 @@ class Sauce extends React.Component{
     this.state = {
       open: false,
     };
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
-  
+
   componentWillReceiveProps(newProps){
     if (this.props.params.sauce_id !== newProps.params.sauce_id){
       this.props.getSauce(newProps.params.sauce_id);
@@ -23,12 +29,32 @@ class Sauce extends React.Component{
     this.props.getSauce(this.props.params.sauce_id);
     this.props.getCheckins();
   }
+  //for modal
+  handleOpen(){
+    this.setState({open: true});
+  }
+
+  handleClose(){
+    this.setState({open: false});
+  }
 
   render(){
     const sauce = this.props.sauce;
     let scoville_units;
     scoville_units = (sauce.scoville_units) ? (<h3>{sauce.scoville_units} Scoville (SHU)</h3>) : null;
-
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+      />,
+      <FlatButton
+        label="Submit"
+        primary={true}
+        keyboardFocused={true}
+        onTouchTap={this.handleClose}
+      />,
+    ];
       return(
         <div className="col-2-3">
           <div className="sauce-main">
@@ -70,7 +96,7 @@ class Sauce extends React.Component{
                   <tr>
                     <td><h5>Overall</h5></td>
                     <td><h5>Heat</h5></td>
-                    <td><h5>Checkins</h5></td>
+                    <td><h5>Check-Ins</h5></td>
                     <td><h5>Added On</h5></td>
                   </tr>
                 </tbody>
@@ -94,6 +120,7 @@ class Sauce extends React.Component{
                 }}
                 containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
                 />
+              <FlatButton  label="Check-In" onTouchTap={this.handleOpen}/>
             </div>
           </div>
           <div className="sauce-checkins">
@@ -102,6 +129,15 @@ class Sauce extends React.Component{
             <CheckinIndexItem checkin={checkin} key={checkin.id}/>
             ))}
           </div>
+          <Dialog
+            title="Dialog With Actions"
+            actions={actions}
+            modal={false}
+            open={this.state.open}
+            onRequestClose={this.handleClose}
+          >
+            The actions in this window were passed in as an array of React objects.
+          </Dialog>
         </div>
       );
 
