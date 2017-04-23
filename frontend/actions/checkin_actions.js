@@ -15,7 +15,7 @@ const receiveCheckin = checkin => ({
   checkin
 });
 
-const removeCheckin = checkin => ({
+const deleteCheckin = checkin => ({
   type: REMOVE_CHECKIN,
   checkin
 });
@@ -30,9 +30,9 @@ export const getCheckin = (checkinId) => dispatch => {
     .then((res) => dispatch(receiveCheckin(res)));
 };
 
-export const deleteCheckin = (checkinId) => dispatch => {
+export const removeCheckin = (checkinId) => dispatch => {
   return CheckinAPIUtil.removeCheckin(checkinId)
-    .then((res) => dispatch(removeCheckin(res)),
+    .then((res) => dispatch(deleteCheckin(res)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 

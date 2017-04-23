@@ -7,6 +7,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 
 class Checkin extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
   componentWillReceiveProps(newProps){
     if (this.props.params.checkin_id !== newProps.params.checkin_id){
       this.props.getCheckin(newProps.params.checkin_id);
@@ -15,6 +19,11 @@ class Checkin extends React.Component {
 
   componentDidMount(){
     this.props.getCheckin(this.props.params.checkin_id);
+  }
+
+  handleClick(){
+    this.props.removeCheckin(this.props.params.checkin_id)
+    .then(()=> this.props.router.push("/home"));
   }
 
   render(){
@@ -29,6 +38,7 @@ class Checkin extends React.Component {
       <RaisedButton
         icon={<i class="fa fa-minus-circle" aria-hidden="true"></i>}
         label="Delete"
+        onTouchTap={this.handleClick}
         /> : null;
 
     return(
