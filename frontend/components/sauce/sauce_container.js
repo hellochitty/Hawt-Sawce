@@ -6,16 +6,19 @@ import Sauce from './sauce.jsx';
 
 const mapStateToProps = ({sauce, checkins, session}, ownProps)=> {
   const holder = [];
+  const userImages = [];
   Object.keys(checkins).forEach((key)=> {
       if (sauce.name === checkins[key].sauce){
         holder.push(checkins[key]);
+        userImages.push(checkins[key].image_url);
       }
     });
   return({
     sauce,
     checkins: holder.sort(function(a, b) {
     return b.id - a.id;}),
-    session
+    session,
+    userImages
   });
 };
 

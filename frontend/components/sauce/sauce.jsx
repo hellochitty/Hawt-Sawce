@@ -9,6 +9,8 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 import {merge} from 'lodash';
+import SidebarContainer from '../sidebar/sidebar_container';
+import Carousel from '../ui/carousel';
 
 
 class Sauce extends React.Component{
@@ -198,122 +200,133 @@ class Sauce extends React.Component{
         </div>);
     }
 
+    let carousel;
+    // if(this.props.userImages){
+    //   carousel = <Carousel images={this.props.userImages} />;
+    // }
+
 
       return(
-        <div className="col-2-3">
-          <div className="sauce-main">
-            <div className="sauce-main-profile">
-              <div className="sauce-main-profile-pic">
-                <img className="sauce-thumbnail" src={sauce.image_url} />
-              </div>
-              <div className="sauce-main-profile-text">
-                <div className="sauce-main-profile-edit">
-                  <h1>{sauce.name}</h1>
-                  {editSauceButton}
+        <div className="main">
+          <div className="col-2-3">
+            <div className="sauce-main">
+              <div className="sauce-main-profile">
+                <div className="sauce-main-profile-pic">
+                  <img className="sauce-thumbnail" src={sauce.image_url} />
                 </div>
-                <h2>{sauce.company}</h2>
-                {scoville_units}
-                <h4>{sauce.description}</h4>
+                <div className="sauce-main-profile-text">
+                  <div className="sauce-main-profile-edit">
+                    <h1>{sauce.name}</h1>
+                    {editSauceButton}
+                  </div>
+                  <h2>{sauce.company}</h2>
+                  {scoville_units}
+                  <h4>{sauce.description}</h4>
+                </div>
               </div>
-            </div>
-            <div className="sauce-main-stats">
-              <table className="sauce-stats">
-                <tbody>
-                  <tr>
-                    <td>
-                      <Rating
-                      initialRate={sauce.average_overall}
-                      readonly
-                      empty="fa fa-star-o fa-1x empty"
-                      full="fa fa-star fa-1x overall-full"
-                      className="overall-icon"
-                      />
-                    </td>
-                    <td>
-                      <Rating
-                      initialRate={sauce.average_heat}
-                      readonly
-                      empty="fa fa-thermometer-empty fa-2x empty"
-                      full="fa fa-thermometer-full fa-2x heat-full"
-                      />
-                    </td>
-                    <td><h3>{sauce.total_reviews}</h3></td>
-                    <td><h3><FormattedDate value={sauce.created_at}/></h3></td>
-                  </tr>
-                  <tr>
-                    <td><h5>Overall</h5></td>
-                    <td><h5>Heat</h5></td>
-                    <td><h5>Check-Ins</h5></td>
-                    <td><h5>Added On</h5></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="sauce-main-buttons">
-              {checkinButton}
-            </div>
-          </div>
-          <div className="sauce-checkins">
-            <h2 id="subsection-heading">Check-Ins</h2>
-            {this.props.checkins.map(checkin => (
-            <CheckinIndexItem checkin={checkin} key={checkin.id}/>
-            ))}
-          </div>
-          <Dialog
-            actions={actions}
-            modal={false}
-            open={this.state.open}
-            onRequestClose={this.handleClose}
-            contentStyle={{
-              width: '400px',
-              maxWidth: 'none',
-            }}
-            >
-            <form>
-              <h2 className="text-center dialog-title">Check-In!</h2>
-              <table className="sauce-stats">
-                <tbody>
-                  <tr>
-                    <td><h4>Overall Rating</h4></td>
-                    <td><h4>Heat Rating</h4></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Rating
+              <div className="sauce-main-stats">
+                <table className="sauce-stats">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <Rating
+                        initialRate={sauce.average_overall}
+                        readonly
                         empty="fa fa-star-o fa-1x empty"
                         full="fa fa-star fa-1x overall-full"
                         className="overall-icon"
-                        initialRate={this.state.overall_rating}
-                        onChange={(rate) => this.handleRatingChange(rate, "overall_rating")}
                         />
-                    </td>
-                    <td>
-                      <Rating
+                      </td>
+                      <td>
+                        <Rating
+                        initialRate={sauce.average_heat}
+                        readonly
                         empty="fa fa-thermometer-empty fa-2x empty"
                         full="fa fa-thermometer-full fa-2x heat-full"
-                        initialRate={this.state.heat_rating}
-                        onChange={(rate) => this.handleRatingChange(rate, "heat_rating")}
                         />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><p className="custom-errors">{this.state.errors.overall_rating}</p></td>
-                    <td><p className="custom-errors">{this.state.errors.heat_rating}</p></td>
-                  </tr>
-                </tbody>
-              </table>
-              <TextField
-                onChange
-                floatingLabelText="Description"
-                value={this.state.comment}
-                onChange={this.handleChange}
-                fullWidth={true}
-                />
-                <div id="sauce-form-preview-images">
-                  {addImage}
-                </div>
-            </form>
-          </Dialog>
+                      </td>
+                      <td><h3>{sauce.total_reviews}</h3></td>
+                      <td><h3><FormattedDate value={sauce.created_at}/></h3></td>
+                    </tr>
+                    <tr>
+                      <td><h5>Overall</h5></td>
+                      <td><h5>Heat</h5></td>
+                      <td><h5>Check-Ins</h5></td>
+                      <td><h5>Added On</h5></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              {carousel}
+              <div className="sauce-main-buttons">
+                {checkinButton}
+              </div>
+            </div>
+            <div className="sauce-checkins">
+              <h2 id="subsection-heading">Check-Ins</h2>
+              {this.props.checkins.map(checkin => (
+              <CheckinIndexItem checkin={checkin} key={checkin.id} />
+              ))}
+            </div>
+            <Dialog
+              actions={actions}
+              modal={false}
+              open={this.state.open}
+              onRequestClose={this.handleClose}
+              contentStyle={{
+                width: '400px',
+                maxWidth: 'none',
+              }}
+              >
+              <form>
+                <h2 className="text-center dialog-title">Check-In!</h2>
+                <table className="sauce-stats">
+                  <tbody>
+                    <tr>
+                      <td><h4>Overall Rating</h4></td>
+                      <td><h4>Heat Rating</h4></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Rating
+                          empty="fa fa-star-o fa-1x empty"
+                          full="fa fa-star fa-1x overall-full"
+                          className="overall-icon"
+                          initialRate={this.state.overall_rating}
+                          onChange={(rate) => this.handleRatingChange(rate, "overall_rating")}
+                          />
+                      </td>
+                      <td>
+                        <Rating
+                          empty="fa fa-thermometer-empty fa-2x empty"
+                          full="fa fa-thermometer-full fa-2x heat-full"
+                          initialRate={this.state.heat_rating}
+                          onChange={(rate) => this.handleRatingChange(rate, "heat_rating")}
+                          />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><p className="custom-errors">{this.state.errors.overall_rating}</p></td>
+                      <td><p className="custom-errors">{this.state.errors.heat_rating}</p></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <TextField
+                  onChange
+                  floatingLabelText="Description"
+                  value={this.state.comment}
+                  onChange={this.handleChange}
+                  fullWidth={true}
+                  />
+                  <div id="sauce-form-preview-images">
+                    {addImage}
+                  </div>
+              </form>
+            </Dialog>
+          </div>
+          <div className="col-1-3">
+            <SidebarContainer />
+          </div>
         </div>
       );
 

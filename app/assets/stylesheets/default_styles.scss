@@ -67,6 +67,12 @@ img[src] {
  }
  .inline-link{
    display:inline-block;
+   color: $color-main;
+   font-size: 24px;
+ }
+
+ .inline-link:hover{
+   color: $color-main-highlight;
  }
 
  .custom-errors{
