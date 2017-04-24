@@ -16,12 +16,17 @@
 .sauce-main-profile-pic{
 }
 
+.sauce-main-profile-edit{
+  display: flex;
+  justify-content: space-between;
+}
 .sauce-main-profile-text > h1,h2,h3,h4{
   margin: 0px 0px 3px 0px;
 }
 
 .edit-icon{
-  align-self: flex-end;
+  align-self: flex-start;
+
 }
 .sauce-main-buttons{
   padding: 5px 20px 20px 20px;

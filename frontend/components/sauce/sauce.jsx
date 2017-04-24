@@ -111,6 +111,26 @@ class Sauce extends React.Component{
         label="Check-In"
         onTouchTap={this.handleOpen}/> : null;
 
+      let editSauceButton;
+      if (this.props.session.currentUser){
+        editSauceButton =  (
+          <IconButton
+            className="edit-icon"
+            iconClassName="fa fa-pencil fa-3x"
+            touch={true}
+            iconStyle={{
+              width: 20,
+              height: 20
+            }}
+            style={{
+              width: 25,
+              height: 25,
+              padding: 0
+            }}
+            containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
+            />
+        );
+      }
     //actions for modal
     const actions = [
       <FlatButton
@@ -133,7 +153,10 @@ class Sauce extends React.Component{
                 <img className="sauce-thumbnail" src={sauce.image_url} />
               </div>
               <div className="sauce-main-profile-text">
-                <h1>{sauce.name}</h1>
+                <div className="sauce-main-profile-edit">
+                  <h1>{sauce.name}</h1>
+                  {editSauceButton}
+                </div>
                 <h2>{sauce.company}</h2>
                 {scoville_units}
                 <h4>{sauce.description}</h4>
@@ -173,22 +196,6 @@ class Sauce extends React.Component{
               </table>
             </div>
             <div className="sauce-main-buttons">
-              <IconButton
-                className="edit-icon"
-                iconClassName="fa fa-pencil fa-3x"
-                touch={true}
-                iconStyle={{
-                  width: 20,
-                  height: 20
-                }}
-                style={{
-                  width: 25,
-                  height: 25,
-                  padding: 0
-                }}
-                containerElement={<Link to={`/home/sauces/${sauce.id}/edit`} />}
-                />
-              <FlatButton style={{width: '5px', padding: '0'}}  icon={<i className="fa fa-pencil fa-2x" aria-hidden="true"></i>} onTouchTap={this.handleOpen}/>
               {checkinButton}
             </div>
           </div>
