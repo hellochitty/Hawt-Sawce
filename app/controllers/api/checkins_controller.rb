@@ -30,6 +30,6 @@ class Api::CheckinsController < ApplicationController
 
   private
   def checkin_params
-    params.require(:checkin).permit(:user_id, :sauce_id, :comment, :heat_rating, :overall_rating)
+    params.require(:checkin).permit(:user_id, :sauce_id, :comment, :heat_rating, :overall_rating, :image)
   end
 end

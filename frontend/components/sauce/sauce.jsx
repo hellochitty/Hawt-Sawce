@@ -19,6 +19,9 @@ class Sauce extends React.Component{
       comment: "",
       heat_rating: null,
       overall_rating: null,
+      image_url: "",
+      imageFile: null,
+      imageUrl: null,
       errors: {
         overall_rating: null,
         heat_rating: null
@@ -31,6 +34,8 @@ class Sauce extends React.Component{
     this.handleRatingChange = this.handleRatingChange.bind(this);
     this.handleSubmitAttempt = this.handleSubmitAttempt.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdateFile = this.handleUpdateFile.bind(this);
+    this.removeImage = this.removeImage.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -54,6 +59,9 @@ class Sauce extends React.Component{
       comment: "",
       heat_rating: null,
       overall_rating: null,
+      image_url: "",
+      imageFile: null,
+      imageUrl: null,
       errors: {
         overall_rating: null,
         heat_rating: null
@@ -72,15 +80,19 @@ class Sauce extends React.Component{
   }
 
   handleSubmit(){
-    const checkin = {};
-    checkin["comment"] = this.state.comment;
-    checkin["heat_rating"] = this.state.heat_rating;
-    checkin["overall_rating"] = this.state.overall_rating;
-    checkin["sauce_id"] = this.props.sauce.id;
-    checkin["user_id"] = this.props.session.currentUser.id;
-    console.log(checkin);
-    this.props.addCheckin(checkin)
-    .then(()=> this.handleClose())
+    this.handleClose();
+    let formData = new FormData();
+    formData.append("checkin[comment]", this.state.comment);
+    formData.append("checkin[heat_rating]", this.state.heat_rating);
+    formData.append("checkin[overall_rating]", this.state.overall_rating);
+    formData.append("checkin[sauce_id]", this.props.sauce.id);
+    formData.append("checkin[user_id]", this.props.session.currentUser.id);
+    if (this.state.imageFile){
+      formData.append("checkin[image_url]", this.state.image_url);
+      formData.append("checkin[image]", this.state.imageFile);
+    }
+
+    this.props.addCheckin(formData)
     .then(()=> this.props.getSauce(this.props.params.sauce_id));
   }
 
@@ -101,6 +113,24 @@ class Sauce extends React.Component{
     }
   }
 
+  //image related handlers
+  handleUpdateFile(e){
+    let reader = new FileReader();
+    let file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ imageUrl: reader.result, imageFile: file});
+    }.bind(this);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
+  removeImage(){
+    this.setState({ imageUrl: null, image_url: "", imageFile: null,});
+  }
   render(){
     const sauce = this.props.sauce;
     let scoville_units;
@@ -145,6 +175,30 @@ class Sauce extends React.Component{
         onTouchTap={this.handleSubmitAttempt}
       />,
     ];
+
+    //variables for adding image
+    let addImage;
+    if (this.state.image_url !== ""){
+      addImage =(
+        <div>
+          <img className="img-upload-preview" src={this.state.image_url}/>
+          <FlatButton  label="remove" onClick={this.removeImage}/>
+        </div>);
+    }else if (this.state.imageUrl !== null){
+      addImage =(
+        <div>
+          <img className="img-upload-preview" src={this.state.imageUrl}/>
+          <FlatButton  label="remove" onClick={this.removeImage}/>
+        </div>);
+    }else {
+      addImage = (
+        <div >
+        <input type="file" id="upload-image" className="input-file" onChange={this.handleUpdateFile}/>
+        <label htmlFor="upload-image" for="file">+ Image</label>
+        </div>);
+    }
+
+
       return(
         <div className="col-2-3">
           <div className="sauce-main">
@@ -255,6 +309,9 @@ class Sauce extends React.Component{
                 onChange={this.handleChange}
                 fullWidth={true}
                 />
+                <div id="sauce-form-preview-images">
+                  {addImage}
+                </div>
             </form>
           </Dialog>
         </div>

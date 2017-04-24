@@ -22,10 +22,21 @@ export const removeCheckin = (checkinId) => {
 };
 
 
-export const addCheckin = (checkin) => {
+// export const addCheckin = (checkin) => {
+//   return $.ajax({
+//     method: 'POST',
+//     url: '/api/checkins',
+//     data: {checkin}
+//   });
+// };
+
+export const addCheckin = (formData) => {
   return $.ajax({
     method: 'POST',
     url: '/api/checkins',
-    data: {checkin}
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   });
 };
