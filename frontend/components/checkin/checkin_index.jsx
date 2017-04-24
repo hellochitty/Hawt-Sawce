@@ -2,6 +2,7 @@ import React from 'react';
 import CheckinIndexItem from './checkin_index_item';
 import RaisedButton from 'material-ui/RaisedButton';
 import { withRouter } from 'react-router';
+import SidebarContainer from '../sidebar/sidebar_container';
 
 class CheckinIndex extends React.Component{
   constructor(props){
@@ -19,16 +20,21 @@ class CheckinIndex extends React.Component{
 
   render(){
     return(
-      <div className="col-2-3">
-        <div className="sauce-index-header">
-          <div className="sauce-index-header-text">
-            <h1>Check-Ins</h1>
-            <h5>Global Check-Ins</h5>
+      <div className="main">
+        <div className="col-2-3">
+          <div className="sauce-index-header">
+            <div className="sauce-index-header-text">
+              <h1>Check-Ins</h1>
+              <h5>Global Check-Ins</h5>
+            </div>
           </div>
+          {this.props.checkins.map(checkin => (
+            <CheckinIndexItem checkin={checkin} key={checkin.id}/>
+          ))}
         </div>
-        {this.props.checkins.map(checkin => (
-        <CheckinIndexItem checkin={checkin} key={checkin.id}/>
-        ))}
+        <div className="col-1-3">
+          <SidebarContainer />
+        </div>
       </div>
     );
   }
