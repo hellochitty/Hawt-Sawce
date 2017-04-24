@@ -6,7 +6,8 @@ const mapStateToProps = ({checkins}) => {
   const holder = [];
   Object.keys(checkins).forEach((key)=> holder.push(checkins[key]));
   return {
-    checkins: holder
+    checkins: holder.sort(function(a, b) {
+    return b.id - a.id;})
   };
 };
 

@@ -13,7 +13,8 @@ const mapStateToProps = ({sauce, checkins, session}, ownProps)=> {
     });
   return({
     sauce,
-    checkins: holder,
+    checkins: holder.sort(function(a, b) {
+    return b.id - a.id;}),
     session
   });
 };
