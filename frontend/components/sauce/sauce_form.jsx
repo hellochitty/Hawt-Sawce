@@ -116,6 +116,7 @@ class SauceForm extends React.Component{
         label="Delete"
         onClick={this.handleDelete}
         type="submit"/>  : null;
+    
     let addImage;
     if (this.state.image_url !== ""){
       addImage =(

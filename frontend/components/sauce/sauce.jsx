@@ -199,29 +199,48 @@ class Sauce extends React.Component{
             ))}
           </div>
           <Dialog
-            title="Add Checkin"
             actions={actions}
             modal={false}
             open={this.state.open}
             onRequestClose={this.handleClose}
+            contentStyle={{
+              width: '400px',
+              maxWidth: 'none',
+            }}
             >
             <form>
-              <Rating
-                empty="fa fa-star-o fa-1x empty"
-                full="fa fa-star fa-1x overall-full"
-                className="overall-icon"
-                initialRate={this.state.overall_rating}
-                onChange={(rate) => this.handleRatingChange(rate, "overall_rating")}
-                />
-              <p className="custom-errors">{this.state.errors.overall_rating}</p>
-              <br />
-              <Rating
-                empty="fa fa-thermometer-empty fa-2x empty"
-                full="fa fa-thermometer-full fa-2x heat-full"
-                initialRate={this.state.heat_rating}
-                onChange={(rate) => this.handleRatingChange(rate, "heat_rating")}
-                />
-              <p className="custom-errors">{this.state.errors.heat_rating}</p>
+              <h2 className="text-center dialog-title">Check-In!</h2>
+              <table className="sauce-stats">
+                <tbody>
+                  <tr>
+                    <td><h4>Overall Rating</h4></td>
+                    <td><h4>Heat Rating</h4></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Rating
+                        empty="fa fa-star-o fa-1x empty"
+                        full="fa fa-star fa-1x overall-full"
+                        className="overall-icon"
+                        initialRate={this.state.overall_rating}
+                        onChange={(rate) => this.handleRatingChange(rate, "overall_rating")}
+                        />
+                    </td>
+                    <td>
+                      <Rating
+                        empty="fa fa-thermometer-empty fa-2x empty"
+                        full="fa fa-thermometer-full fa-2x heat-full"
+                        initialRate={this.state.heat_rating}
+                        onChange={(rate) => this.handleRatingChange(rate, "heat_rating")}
+                        />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><p className="custom-errors">{this.state.errors.overall_rating}</p></td>
+                    <td><p className="custom-errors">{this.state.errors.heat_rating}</p></td>
+                  </tr>
+                </tbody>
+              </table>
               <TextField
                 onChange
                 floatingLabelText="Description"

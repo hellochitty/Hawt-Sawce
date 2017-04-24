@@ -14,6 +14,9 @@ const Nav = (props) => {
         <div id="nav-contents">
           <div id="nav-left-links">
             <Link to="/home"><h1 id="nav-title">HAWT SAWCE</h1></Link>
+            <div className="logo">
+            </div>
+
             <div className="sub-nav-link"><Link to="/home/sauces" activeClassName="active">SAWCES</Link></div>
           </div>
           <div id="nav-links">
