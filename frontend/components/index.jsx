@@ -7,7 +7,7 @@ const Index = ({ children }) => (
     <NavContainer />
     <section className="index">
       <p>SLASH PAGE</p>
-
+      <img src="" />
     </section>
     { children }
   </div>
