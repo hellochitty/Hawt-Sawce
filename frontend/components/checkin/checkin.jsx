@@ -62,6 +62,7 @@ class Checkin extends React.Component {
             />
           <FormattedRelative value={time} />
           <Link to={`/home/sauces/${this.props.checkin.sauce_id}`}><h2 className="inline-link" >{this.props.checkin.sauce}</h2></Link>
+          <img className="sauce-thumbnail" src={this.props.checkin.image_url} />
           {removalButton}
         </div>
       </div>
