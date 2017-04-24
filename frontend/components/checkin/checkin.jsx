@@ -55,7 +55,7 @@ class Checkin extends React.Component {
             className="overall-icon"
             />
           <Rating
-            initialRate={this.props.checkin.overall_heat}
+            initialRate={this.props.checkin.heat_rating}
             readonly
             empty="fa fa-thermometer-empty fa-2x empty"
             full="fa fa-thermometer-full fa-2x heat-full"
