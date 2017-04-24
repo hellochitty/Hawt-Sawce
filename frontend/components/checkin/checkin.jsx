@@ -40,6 +40,10 @@ class Checkin extends React.Component {
         label="Delete"
         onTouchTap={this.handleClick}
         /> : null;
+    let comment;
+    if (this.props.checkin.comment){
+      comment = <h4><i>{'"'}{this.props.checkin.comment}{'"'}</i></h4>;
+    }
 
     return(
       <div id="sauce-form">
@@ -50,7 +54,7 @@ class Checkin extends React.Component {
               <div className="checkin-details-content-text">
                 <p className="inline-link" >{this.props.checkin.user}</p> got spicy with some <Link to={`/home/sauces/${this.props.checkin.sauce_id}`}>
                   <p className="inline-link" >{this.props.checkin.sauce}</p></Link>
-                <h4><i>{'"'}{this.props.checkin.comment}{'"'}</i></h4>
+                  {comment}
                 <table className="sauce-stats">
                   <tbody>
                     <tr>
