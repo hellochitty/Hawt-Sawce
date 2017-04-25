@@ -142,6 +142,7 @@ class Sauce extends React.Component{
         icon={<i className="fa fa-check-circle fa-1x" aria-hidden="true"></i>}
         label="Check-In"
         onTouchTap={this.handleOpen}/> : null;
+
     let checkinsHeader;
       checkinsHeader= (this.props.checkins.length > 0) ? "Check-Ins" : "Be the first to check-in!";
       let editSauceButton;
@@ -313,7 +314,7 @@ class Sauce extends React.Component{
                 </table>
                 <TextField
                   onChange
-                  floatingLabelText="Description"
+                  floatingLabelText="Comment"
                   value={this.state.comment}
                   onChange={this.handleChange}
                   fullWidth={true}
