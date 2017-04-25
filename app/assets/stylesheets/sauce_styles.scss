@@ -4,6 +4,7 @@
 }
 .sauce-main{
   background-color: white;
+  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.30);
 }
 .sauce-main-profile{
   display: flex;
@@ -45,6 +46,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.30);
 }
 
 
@@ -69,6 +71,7 @@
 .sauce-index-item{
   background-color: white;
   margin: 10px 0px;
+  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.30);
 }
 .sauce-index-item-stats{
   padding-bottom: 20px;
@@ -82,6 +85,7 @@
   width: 500px;
   margin: 80px auto;
   background-color: white;
+  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.30);
 }
 
 #sauce-form > form{

@@ -6,6 +6,8 @@ import {FormattedDate} from 'react-intl';
 const SauceIndexItem = ({sauce}) => {
   let scoville_units;
   scoville_units = (sauce.scoville_units) ? (<h3>{sauce.scoville_units} Scoville (SHU)</h3>) : null;
+
+  let time = sauce.created_at || "12-12-2016";
   return (
     <Link className="no-underline hover-yellow" to={`/home/sauces/${sauce.id}`}>
 
@@ -42,7 +44,7 @@ const SauceIndexItem = ({sauce}) => {
                   />
                 </td>
                 <td><h3>{sauce.total_reviews}</h3></td>
-                <td><h3><FormattedDate value={sauce.created_at}/></h3></td>
+                <td><h3><FormattedDate value={time}/></h3></td>
               </tr>
               <tr>
                 <td><h5>Overall</h5></td>

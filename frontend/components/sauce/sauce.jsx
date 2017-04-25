@@ -201,7 +201,7 @@ class Sauce extends React.Component{
         <label htmlFor="upload-image" for="file">+ Image</label>
         </div>);
     }
-
+    let time = sauce.created_at || "12-12-2016";
     let carousel;
     // if(this.props.userImages){
     //   carousel = <Carousel images={this.props.userImages} />;
@@ -247,7 +247,7 @@ class Sauce extends React.Component{
                         />
                       </td>
                       <td><h3>{sauce.total_reviews}</h3></td>
-                      <td><h3><FormattedDate value={sauce.created_at}/></h3></td>
+                      <td><h3><FormattedDate value={time}/></h3></td>
                     </tr>
                     <tr>
                       <td><h5>Overall</h5></td>
