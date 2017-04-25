@@ -63,7 +63,11 @@
   padding-top: 10px;
 }
 
-
+.user-profile-stats{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
 
 
 .body-1-3{

@@ -129,26 +129,23 @@ class User extends React.Component {
                 {editButton}
                 <h2>{this.props.user.username}</h2>
                 <p>placeholder for description</p>
-                  <table className="">
-                    <tbody>
-                      <tr>
-                        <td onClick={() => this.handleTabSwitch("checkins")}>
-                          {this.props.user.num_checkins}
-                        </td>
-                        <td onClick={() => this.handleTabSwitch("sauces")}>
-                          {this.props.user.num_sauces}
-                        </td>
-                        <td><h3></h3></td>
-                        <td><h3></h3></td>
-                      </tr>
-                      <tr>
-                        <td><h5>Total Checkins</h5></td>
-                        <td><h5>Sauces</h5></td>
-                        <td><h5>Bookmarks</h5></td>
-                        <td><h5>Saucy Since</h5></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div className="user-profile-stats">
+                    <div onClick={() => this.handleTabSwitch("checkins")}>
+                      <h4>{this.props.user.num_checkins}</h4>
+                      <h4>Total Checkins</h4>
+                    </div>
+                    <div onClick={() => this.handleTabSwitch("sauces")}>
+                      <h4>{this.props.user.num_sauces}</h4>
+                      <h4>Sauces</h4>
+                    </div>
+                    <div>
+                      <h4>Bookmarks</h4>
+                    </div>
+                    <div>
+                      <h4>Saucy Since</h4>
+                    </div>
+                  </div>
+
 
               </div>
             </div>
