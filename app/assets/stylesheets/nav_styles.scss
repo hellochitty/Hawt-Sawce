@@ -94,18 +94,62 @@ nav{
 }
 
 
-.index{
+.index-background{
   margin: 0 auto;
+  min-width: 900px;
+  min-height: 700px;
+ background: url("https://cdn.gearpatrol.com/wp-content/uploads/2015/07/Hot-Sauce-Test-Gear-Patrol-Lead-1440.jpg");
+ background-size: cover;
+ background-repeat: no-repeat;
+ -webkit-filter: blur(2px);
+-moz-filter: blur(2px);
+-o-filter: blur(2px);
+-ms-filter: blur(2px);
+filter: blur(2px);
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: -1;
 }
 
-.index > img{
-  margin: 0 auto;
+.index-background-color{
+  min-width: 900px;
+  min-height: 700px;
+  background: rgba(0, 0, 0, 0.7);
+  background-size: cover;
 }
-#test{
-  width: 100%;
-  height: 100%;
-  background-color: black;
+
+#index-text-title{
+  color: white;
+  font-size: 200px;
+  text-align: center;
 }
+
+#index-text-subtitle{
+  color: $color-main-highlight;
+  font-size: 150px;
+  text-align: center;
+}
+
+#index-text{
+  margin: 100px auto;
+}
+#index-text > img{
+  margin: 10px auto;
+  width: 100px;
+  height: auto;
+}
+
+#index-nav-contents{
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 // .logo{
 //   width: 150px;
 //   height: 50px;

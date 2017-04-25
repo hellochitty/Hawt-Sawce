@@ -205,7 +205,6 @@ class Sauce extends React.Component{
     //   carousel = <Carousel images={this.props.userImages} />;
     // }
 
-
       return(
         <div className="main">
           <div className="col-2-3">
@@ -329,11 +328,7 @@ class Sauce extends React.Component{
           </div>
         </div>
       );
-
     }
 }
-
-
-
 
 export default Sauce;
