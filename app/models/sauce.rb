@@ -19,7 +19,7 @@
 class Sauce < ApplicationRecord
   validates :name, uniqueness: { scope: :company_id }
   validates :name, :company_id, presence: true
-  has_attached_file :image, default_url: "doge.jpeg"
+  has_attached_file :image, default_url: "doge.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :company,
