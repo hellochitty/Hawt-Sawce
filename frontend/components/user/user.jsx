@@ -26,6 +26,7 @@ class User extends React.Component {
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleTabSwitch = this.handleTabSwitch.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -56,6 +57,14 @@ class User extends React.Component {
     this.setState({
       description: e.target.value,
     });
+  }
+
+  handleTabSwitch(text){
+    if (text === "checkins"){
+      this.setState({activeTab: "checkins"});
+    }else if (text === "sauces"){
+      this.setState({activeTab: "sauces"});
+    }
   }
 
   render(){
@@ -110,21 +119,42 @@ class User extends React.Component {
 
     return(
       <div className= "user-profile-outer">
-          <div className= "user-profile-background">
-            <div className="profile-picture">
-              <img src="https://s-media-cache-ak0.pinimg.com/736x/eb/5c/78/eb5c78657282a7c7715939aac4553dcb.jpg" />
-            </div>
-            <div className= "user-profile">
+        <div className= "user-profile-background">
+          <div className="profile-picture">
+            <img src="https://s-media-cache-ak0.pinimg.com/736x/eb/5c/78/eb5c78657282a7c7715939aac4553dcb.jpg" />
+          </div>
+          <div className= "user-profile">
             <div className= "user-header">
               <div className="profile-text">
+                {editButton}
                 <h2>{this.props.user.username}</h2>
                 <p>placeholder for description</p>
-                {editButton}
+                  <table className="">
+                    <tbody>
+                      <tr>
+                        <td onClick={() => this.handleTabSwitch("checkins")}>
+                          {this.props.user.num_checkins}
+                        </td>
+                        <td onClick={() => this.handleTabSwitch("sauces")}>
+                          {this.props.user.num_sauces}
+                        </td>
+                        <td><h3></h3></td>
+                        <td><h3></h3></td>
+                      </tr>
+                      <tr>
+                        <td><h5>Total Checkins</h5></td>
+                        <td><h5>Sauces</h5></td>
+                        <td><h5>Bookmarks</h5></td>
+                        <td><h5>Saucy Since</h5></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
               </div>
             </div>
+          </div>
         </div>
 
-        </div>
         <div className="user-profile-body">
           <div className="body-2-3">
             {body}
