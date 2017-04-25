@@ -1,10 +1,8 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_signup_params)
-
     if @user.save
       login(@user)
-
       render 'api/users/show'
     else
       render json: @user.errors.messages, status: 422
@@ -15,7 +13,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     @checkins = @user.checkins if @user.checkins
     @sauces = @user.sauces.uniq if @user.sauces
-    render :show
+    render 'api/users/show_one'
   end
 
   def user_signup_params

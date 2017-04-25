@@ -5,7 +5,7 @@ export const RECEIVE_ALL_CHECKINS= 'RECEIVE_ALL_CHECKINS';
 export const RECEIVE_CHECKIN= 'RECEIVE_CHECKIN';
 export const REMOVE_CHECKIN= 'REMOVE_CHECKIN';
 
-const receiveCheckins = checkins => ({
+export const receiveCheckins = checkins => ({
   type: RECEIVE_ALL_CHECKINS,
   checkins
 });

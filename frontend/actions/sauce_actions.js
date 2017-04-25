@@ -7,7 +7,7 @@ export const RECEIVE_SAUCE_COMPANIES= 'RECEIVE_SAUCE_COMPANIES';
 export const REMOVE_SAUCE= 'REMOVE_SAUCE';
 
 
-const receiveSauces = sauces => ({
+export const receiveSauces = sauces => ({
   type: RECEIVE_ALL_SAUCES,
   sauces
 });

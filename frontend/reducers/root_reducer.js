@@ -6,6 +6,7 @@ import SauceReducer from './sauce_reducer';
 import SauceCompaniesReducer from './sauce_companies_reducer';
 import CheckinsReducer from './checkins_reducer';
 import CheckinReducer from './checkin_reducer';
+import UserReducer from './user_reducer';
 
  const RootReducer = combineReducers({
   session: SessionReducer,
@@ -14,7 +15,8 @@ import CheckinReducer from './checkin_reducer';
   sauce: SauceReducer,
   companies: SauceCompaniesReducer,
   checkins: CheckinsReducer,
-  checkin: CheckinReducer
+  checkin: CheckinReducer,
+  user: UserReducer
 });
 
 
