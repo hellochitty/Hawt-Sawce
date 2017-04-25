@@ -5,6 +5,8 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login(@user)
+      @checkins = @user.checkins if @user.checkins
+      @sauces = @user.sauces.uniq if @user.sauces
       render 'api/users/show'
     else
       render json: {login:['Invalid username/password combination']}, status: 401

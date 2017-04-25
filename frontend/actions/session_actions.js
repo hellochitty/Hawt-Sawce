@@ -16,7 +16,7 @@ const receiveCurrentUser = currentUser => ({
 
 export const login = user => dispatch => {
   return SessionAPIUtil.login(user)
-    .then((res) => dispatch(receiveCurrentUser(res)),
+    .then((res) => dispatch(receiveCurrentUser(res["user"])),
       (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 

@@ -4,10 +4,18 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login(@user)
+
       render 'api/users/show'
     else
       render json: @user.errors.messages, status: 422
     end
+  end
+
+  def find_by_id
+    @user = User.find(params[:id])
+    @checkins = @user.checkins if @user.checkins
+    @sauces = @user.sauces.uniq if @user.sauces
+    render :show
   end
 
   def user_signup_params

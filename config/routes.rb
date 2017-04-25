@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resource :user, only: [:create]
+    match 'users/:id' => 'users#find_by_id', :via => :get
     resource :session, only: [:create, :destroy, :show]
     resources :sauces, only: [:index, :show, :create, :update, :destroy]
     resources :sauce_companies, only: [:index]
