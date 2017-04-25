@@ -110,17 +110,19 @@ class User extends React.Component {
 
     return(
       <div className= "user-profile-outer">
-        <div className= "user-profile">
-          <div className= "user-header">
-            <div className="profile-picture">
-              <img src="https://s-media-cache-ak0.pinimg.com/736x/eb/5c/78/eb5c78657282a7c7715939aac4553dcb.jpg" />
+          <div className= "user-profile-background">
+            <div className= "user-profile">
+            <div className= "user-header">
+              <div className="profile-picture">
+                <img src="https://s-media-cache-ak0.pinimg.com/736x/eb/5c/78/eb5c78657282a7c7715939aac4553dcb.jpg" />
+              </div>
+              <div className="profile-text">
+                <h2>{this.props.user.username}</h2>
+                <p>placeholder for description</p>
+                {editButton}
+              </div>
             </div>
-            <div className="profile-text">
-              <h2>{this.props.user.username}</h2>
-              <p>placeholder for description</p>
-              {editButton}
-            </div>
-          </div>
+        </div>
 
         </div>
         <div className="user-profile-body">

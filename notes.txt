@@ -1,0 +1,4 @@
+bugs
+
+-copy paste error, linking action type to a different actions
+-rails precompile for production heroku not supporting jpeg
