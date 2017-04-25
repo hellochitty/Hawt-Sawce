@@ -5,7 +5,9 @@ nav{
   flex-direction: row;
   align-items: center;
   height: 60px;
-
+  position: fixed;
+  width: 100%;
+  z-index:1000;
 }
 
 
@@ -14,7 +16,7 @@ nav{
 #nav-contents{
   display: flex;
   width: 900px;
-  margin: auto;
+  margin: 0 auto;
   // margin-top: 1%;
   justify-content: space-between;
   align-items:center;
