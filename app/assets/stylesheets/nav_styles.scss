@@ -100,20 +100,20 @@ nav{
   margin: 0 auto;
   min-width: 900px;
   min-height: 700px;
- background: url("https://cdn.gearpatrol.com/wp-content/uploads/2015/07/Hot-Sauce-Test-Gear-Patrol-Lead-1440.jpg");
- background-size: cover;
- background-repeat: no-repeat;
- -webkit-filter: blur(2px);
--moz-filter: blur(2px);
--o-filter: blur(2px);
--ms-filter: blur(2px);
-filter: blur(2px);
-position: fixed;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-z-index: -1;
+  background: url("https://cdn.gearpatrol.com/wp-content/uploads/2015/07/Hot-Sauce-Test-Gear-Patrol-Lead-1440.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .index-background-color{
@@ -157,6 +157,7 @@ z-index: -1;
   border-radius: 50%;
   overflow: hidden;
   transition: .3s ease;
+  box-shadow: 3px 5px 6px 1px rgba(0,0,0,0.30);
 }
 
 .nav-picture-image {
@@ -166,7 +167,7 @@ z-index: -1;
 }
 
 .nav-picture:hover {
-  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.80);
+  box-shadow: 3px 5px 6px 1px rgba(0,0,0,0.50);
 }
 
 
