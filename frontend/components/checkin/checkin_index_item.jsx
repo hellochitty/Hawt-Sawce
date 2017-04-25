@@ -27,7 +27,7 @@ const CheckinIndexItem = ({checkin}) => {
       <div className='checkin-index-item'>
         <div className='checkin-index-item-content'>
           <div className='checkin-index-item-profile'>
-            <h3><h2 className="inline-link" >{checkin.user}</h2> is getting spicy with <Link to={`/home/sauces/${checkin.sauce_id}`}>
+            <h3><Link to={`/home/users/${checkin.user_id}`}><h2 className="inline-link" >{checkin.user}</h2></Link> is getting spicy with <Link to={`/home/sauces/${checkin.sauce_id}`}>
             <h2 className="inline-link" >{checkin.sauce}</h2></Link></h3>
             {comment}
             <table className="sauce-stats">
