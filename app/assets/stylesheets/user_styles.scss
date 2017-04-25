@@ -8,10 +8,8 @@
 
 
 .user-profile-background{
-  background-color: white;
   width: 100%;
-  height: 350px;
-
+  height: 380px;
   box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.30);
   position: relative;
   background-repeat:no-repeat;
@@ -33,9 +31,9 @@
 
 
 .user-header{
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(253, 216, 53, 0.6);
   width: 900px;
-  display: flex;
+  height: 130px;
 }
 
 .profile-picture{
@@ -43,6 +41,11 @@
   height: 100px;
   border-radius: 50%;
   overflow: hidden;
+  position: absolute;
+  bottom: 70px;
+  left: 40px;
+  border: 5px solid white;
+  z-index: 900;
 }
 
 .profile-picture > img {
@@ -50,12 +53,12 @@
   height: auto;
 }
 
-
-.user-profile-body{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.profile-text{
+  margin-left: 180px;
+  padding-top: 10px;
 }
+
+
 
 
 .body-1-3{
