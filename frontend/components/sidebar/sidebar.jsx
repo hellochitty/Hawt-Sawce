@@ -25,7 +25,8 @@ const Sidebar = (props) => {
   }else{
     return (
       <div className="profile-sidebar-container">
-        Log-in to see more
+        <h2 className= "place-holder-text">Log-In or Sign-Up</h2>
+        <h2 className= "place-holder-text">to See More!</h2>
       </div>
     );
   }
