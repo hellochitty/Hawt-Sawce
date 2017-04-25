@@ -19,6 +19,8 @@ class Checkin < ApplicationRecord
   has_attached_file :image, default_url: "doge.jpeg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  attr_accessor :image_file_name
+
   belongs_to :user,
     class_name: 'User',
     foreign_key: :user_id,
