@@ -142,7 +142,8 @@ class Sauce extends React.Component{
         icon={<i className="fa fa-check-circle fa-1x" aria-hidden="true"></i>}
         label="Check-In"
         onTouchTap={this.handleOpen}/> : null;
-
+    let checkinsHeader;
+      checkinsHeader= (this.props.checkins.length > 0) ? "Check-Ins" : "Be the first to check-in!";
       let editSauceButton;
       if (this.props.session.currentUser){
         editSauceButton =  (
@@ -262,7 +263,7 @@ class Sauce extends React.Component{
               </div>
             </div>
             <div className="sauce-checkins">
-              <h2 id="subsection-heading">Check-Ins</h2>
+              <h2 id="subsection-heading">{checkinsHeader}</h2>
               {this.props.checkins.map(checkin => (
               <CheckinIndexItem checkin={checkin} key={checkin.id} />
               ))}
