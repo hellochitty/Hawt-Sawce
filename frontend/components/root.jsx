@@ -81,8 +81,8 @@ const Root = ({ store }) => {
               <Route path ="sauces/new" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
               <Route path ="sauces/:sauce_id" component={ SauceContainer } />
               <Route path ="sauces/:sauce_id/edit" component={ SauceFormContainer } onEnter={_redirectUnlessLoggedIn} />
-              <Route path ="checkins/:checkin_id" component={ CheckinContainer } />
-              <Route path ="users/:user_id" component={ UserContainer } />
+              <Route path ="checkins/:checkin_id" component={ CheckinContainer }/>
+              <Route path ="users/:user_id" component={ UserContainer }/>
             </Route>
           </Router>
         </MuiThemeProvider>

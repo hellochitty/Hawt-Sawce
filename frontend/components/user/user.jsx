@@ -89,22 +89,24 @@ class User extends React.Component {
 
 
     let editButton;
-      editButton = (this.props.currentUser.id === this.props.user.id) ?
-          <IconButton
-            className="edit-icon"
-            iconClassName="fa fa-pencil fa-3x"
-            touch={true}
-            iconStyle={{
-              width: 20,
-              height: 20
-            }}
-            style={{
-              width: 25,
-              height: 25,
-              padding: 0
-            }}
-            onClick={this.handleOpen}
-            /> : null;
+      if (this.props.currentUser){
+        editButton = (this.props.currentUser.id === this.props.user.id) ?
+        <IconButton
+          className="edit-icon"
+          iconClassName="fa fa-pencil fa-3x"
+          touch={true}
+          iconStyle={{
+            width: 20,
+            height: 20
+          }}
+          style={{
+            width: 25,
+            height: 25,
+            padding: 0
+          }}
+          onClick={this.handleOpen}
+          /> : null;
+      }
 
     return(
       <div className= "user-profile-outer">
