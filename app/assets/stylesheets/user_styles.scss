@@ -29,9 +29,13 @@
   bottom: 0;
 }
 
+.user-profile-body{
+  display: flex;
+  justify-content: space-between;
+}
 
 .user-header{
-  background-color: rgba(253, 216, 53, 0.6);
+  background-color: rgba(253, 216, 53, .90);
   width: 900px;
   height: 130px;
 }
@@ -44,7 +48,7 @@
   position: absolute;
   bottom: 70px;
   left: 40px;
-  border: 5px solid white;
+  border: 5px solid $color-light-black;
   z-index: 900;
 }
 
@@ -66,6 +70,7 @@
   height: 100px;
   margin-top: 10px;
   background: white;
+  display: block;
 }
 
 
@@ -74,4 +79,5 @@
   width: 590px;
   height: auto;
   margin-top: 10px;
+  display: block;
 }
