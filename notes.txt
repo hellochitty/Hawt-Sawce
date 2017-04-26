@@ -2,3 +2,4 @@ bugs
 
 -copy paste error, linking action type to a different actions
 -rails precompile for production heroku not supporting jpeg
+-ensure_session_token_uniqueness was broken bc for the same user when updated, it sees its own session token and logs user out
