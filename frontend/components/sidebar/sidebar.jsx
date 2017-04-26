@@ -6,7 +6,7 @@ const Sidebar = (props) => {
     return(
       <div className="profile-sidebar-container">
         <div className="profile-sidebar">
-          <h1 className="text-center">{props.session.currentUser.username}</h1>
+          <h1 className="text-center">My Stats</h1>
 
           <div className="profile-sidebar-stats">
             <Link to={`home/users/${props.session.currentUser.id}`}>

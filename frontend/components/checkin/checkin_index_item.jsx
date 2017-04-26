@@ -27,10 +27,29 @@ const CheckinIndexItem = ({checkin}) => {
       <div className='checkin-index-item'>
         <div className='checkin-index-item-content'>
           <div className='checkin-index-item-profile'>
-            <h3><Link to={`/home/users/${checkin.user_id}`}><h2 className="inline-link" >{checkin.user}</h2></Link> is getting spicy with <Link to={`/home/sauces/${checkin.sauce_id}`}>
-            <h2 className="inline-link" >{checkin.sauce}</h2></Link></h3>
-            {comment}
-            <table className="sauce-stats">
+            <div className='checkin-index-item-profile-text'>
+              <div className="checkin-user-picture">
+                <Link to={`/home/users/${checkin.user_id}`}>
+                  <img className="checkin-user-image" src={checkin.user_image_url} />
+                </Link>
+              </div>
+              <Link to={`/home/users/${checkin.user_id}`}>
+                <p className="inline-link">
+                  {checkin.user}
+                </p>
+              </Link>
+              <h4 id="filler-text">got spicy with some</h4>
+              <Link to={`/home/sauces/${checkin.sauce_id}`}>
+                <p className="inline-link" >
+                  {checkin.sauce}
+                </p>
+              </Link>
+            </div>
+
+
+
+
+            <table className="checkin-stats">
               <tbody>
                 <tr>
                   <td>
@@ -58,6 +77,7 @@ const CheckinIndexItem = ({checkin}) => {
                 </tr>
               </tbody>
             </table>
+            {comment}
           </div>
           <div className='sauce-index-item-pic'>
             <img className="sauce-thumbnail" src={checkin.image_url} />

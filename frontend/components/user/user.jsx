@@ -207,7 +207,9 @@ class User extends React.Component {
             {body}
           </div>
           <div className="body-1-3">
-            side section stuff
+            <div className="user-sidebar">
+              Phase 2:)
+            </div>
           </div>
         </div>
 

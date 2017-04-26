@@ -8,13 +8,19 @@
 
 
 .overall-icon-checkin{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .heat-icon-checkin{
-  font-size: 35px;
+  font-size: 30px;
 }
 
+.checkin-stats{
+  width: 300px;
+  margin: 10px 50px;
+  text-align: center;
+  table-layout: fixed;
+}
 
 
 .checkin-index-item-outer{
@@ -57,4 +63,34 @@
 
 .dialog-title{
   margin-bottom: 20px;
+}
+
+.checkin-user-picture{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: .3s ease;
+}
+.checkin-user-picture:hover{
+  box-shadow: 3px 5px 6px 1px rgba(0,0,0,0.30);
+}
+
+.checkin-index-item-profile-text{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.checkin-index-item-profile-text > * {
+  margin-right: 8px;
+}
+
+.checkin-user-image {
+  width: auto;
+  height: 100%;
+}
+#filler-text{
+  font-size: 24px;
 }

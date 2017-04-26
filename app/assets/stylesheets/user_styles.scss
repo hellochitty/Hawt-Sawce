@@ -114,11 +114,11 @@
 }
 
 .pic-add-image{
-  color: $color-alt-text;
+  color: $color-main;
 }
 
 .pic-add-image:hover{
-  color: $color-main-highlight;
+  color: $color-alt-text;
 
 }
 
@@ -143,6 +143,10 @@
   overflow: hidden;
   position: absolute;
   z-index: -1;
+}
+
+.user-sidebar{
+  padding: 20px;
 }
 
 
