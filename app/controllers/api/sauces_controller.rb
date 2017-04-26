@@ -51,9 +51,18 @@ class Api::SaucesController < ApplicationController
     end
   end
 
+  def order
+    if params[:id].to_i == 1
+      @sauces = Sauce.order(scoville_units: :asc)
+      render :order
+    else
+      render json: {base:['Invalid order']}, status: 404
+    end
+  end
+
   private
   def sauce_params
     params.require(:sauce).permit(:name, :company, :description, :scoville_units, :image_url, :image)
   end
-  
+
 end
