@@ -61,12 +61,14 @@ class SauceIndex extends React.Component{
                   targetOrigin= {{"horizontal":"right","vertical":"top"}}
                   autoWidth={false}>
                   <MenuItem value={1} primaryText="Newest Sawce" />
-                  <MenuItem value={2} primaryText="Oldest Sawce" />
-                  <MenuItem value={3} primaryText="Highest Scoville" />
-                  <MenuItem value={4} primaryText="Lowest Scoville" />
-                  <MenuItem value={5} primaryText="Most Checked In" />
+                  <MenuItem value={3} primaryText="Highest Scoville (SHU)" />
                   <MenuItem value={7} primaryText="Highest Overall Rating" />
+                  <MenuItem value={9} primaryText="Highest Heat Rating" />
+                  <MenuItem value={5} primaryText="Most Checked In" />
+                  <MenuItem value={2} primaryText="Oldest Sawce" />
+                  <MenuItem value={4} primaryText="Lowest Scoville (SHU)" />
                   <MenuItem value={8} primaryText="Lowest Overall Rating" />
+                  <MenuItem value={10} primaryText="Lowest Heat Rating" />
                 </DropDownMenu>
             </div>
             {addSauceButton}

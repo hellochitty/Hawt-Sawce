@@ -60,7 +60,7 @@ class Api::SaucesController < ApplicationController
   # 8- avg rating asc
 
   def order
-    if (1..8) === params[:id].to_i
+    if (1..10) === params[:id].to_i
       case params[:id].to_i
       when 1
         @sauces = Sauce.order(id: :desc)
@@ -90,6 +90,18 @@ class Api::SaucesController < ApplicationController
                       .group("sauces.id")
                         .having("COUNT(checkins.id)>0")
                           .order("AVG(checkins.overall_rating) ASC")
+      when 9
+        @sauces = Sauce
+                    .joins("LEFT OUTER JOIN checkins ON checkins.sauce_id = sauces.id")
+                      .group("sauces.id")
+                        .having("COUNT(checkins.id)>0")
+                          .order("AVG(checkins.heat_rating) DESC")
+      when 10
+        @sauces = Sauce
+                    .joins("LEFT OUTER JOIN checkins ON checkins.sauce_id = sauces.id")
+                      .group("sauces.id")
+                        .having("COUNT(checkins.id)>0")
+                          .order("AVG(checkins.heat_rating) ASC")
       end
       render :order
     else
