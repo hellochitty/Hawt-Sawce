@@ -17,7 +17,7 @@ const Sidebar = (props) => {
             <Link to={`home/users/${props.session.currentUser.id}`}>
             <div className="user-sidebar-stat">
               <p className="stat-value">{props.session.currentUser.num_sauces}</p>
-              <p className="stat-label">Sauces</p>
+              <p className="stat-label">Sawces</p>
             </div>
             </Link>
           </div>

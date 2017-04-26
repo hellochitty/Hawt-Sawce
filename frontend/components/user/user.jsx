@@ -186,7 +186,7 @@ class User extends React.Component {
                     </div>
                     <div className="user-profile-stat stat-button" onClick={() => this.handleTabSwitch("sauces")}>
                       <p className="stat-value">{this.props.user.num_sauces}</p>
-                      <p className="stat-label">Sauces</p>
+                      <p className="stat-label">Sawces</p>
                     </div>
                     <div className="user-profile-stat">
                       <p className="stat-value">100</p>
@@ -194,7 +194,7 @@ class User extends React.Component {
                     </div>
                     <div className="user-profile-stat">
                       <p className="stat-value"><FormattedDate   value={this.props.user.join_date}/></p>
-                      <p className="stat-label">Saucy Since</p>
+                      <p className="stat-label">Sawcy Since</p>
                     </div>
                   </div>
               </div>
