@@ -30,14 +30,25 @@ class User extends React.Component {
     this.handleEditClick = this.handleEditClick.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
     this.handleSubmitClick = this.handleSubmitClick.bind(this);
+    this.handlePicAdd = this.handlePicAdd.bind(this);
+    this.handleUpdateFile = this.handleUpdateFile.bind(this);
   }
 
   componentWillReceiveProps(newProps){
     if (this.props.params.user_id !== newProps.params.user_id){
       this.props.getUser(newProps.params.user_id);
     }else{
-      if (newProps.user.description){
-        this.setState({description: newProps.user.description});
+      if (newProps.user.description || newProps.user.image_url){
+        if (newProps.user.description && newProps.user.image_url){
+          this.setState({
+            description: newProps.user.description,
+            image_url: newProps.user.image_url
+          });
+        }else if(newProps.user.description){
+          this.setState({description: newProps.user.description});
+        }else{
+          this.setState({image_url: newProps.user.image_url});
+        }
       }
     }
   }
@@ -78,6 +89,25 @@ class User extends React.Component {
     this.handleCloseClick();
   }
 
+  handlePicAdd(e){
+    console.log("ihittheclicker");
+    this.handleUpdateFile(e);
+  }
+
+  handleUpdateFile(e){
+    let reader = new FileReader();
+    let file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ imageUrl: reader.result, imageFile: file});
+    }.bind(this);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
   render(){
     let body;
     if (this.state.activeTab === "checkins"){
@@ -89,9 +119,14 @@ class User extends React.Component {
         <SauceIndexItem sauce={sauce} key={sauce.id}/>
       ))}</div>;
     }
-
-
-
+  let picEdit;
+  if (this.props.currentUser){
+    if(this.props.currentUser.id === this.props.user.id){
+      picEdit = <p className="profile-pic-add" onClick={() => this.handlePicAdd()}>
+        <i className="fa fa-upload fa-1x pic-add-image" aria-hidden="true"></i>
+        </p>;
+    }
+  }
 
     let description;
       if (this.props.currentUser){
@@ -123,6 +158,7 @@ class User extends React.Component {
 
         <div className= "user-profile-background">
           <div className="profile-picture">
+            {picEdit}
             <img src={this.props.user.image_url} />
           </div>
           <div className= "user-profile">
