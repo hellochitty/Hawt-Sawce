@@ -10,22 +10,6 @@ const receiveUser = user => ({
   user
 });
 
-//thunk actions
-// export const getUser = userId => dispatch => {
-//   return UserAPIUtil.fetchUser(userId)
-//     .then((res) => console.log(res.sauces));
-// };
-
-
-// export const getUser = userId => dispatch => {
-//   return UserAPIUtil.fetchUser(userId)
-//     .then((res) => dispatch(receiveUser(res.user)),
-//       (err) => dispatch(receiveErrors(err.responseJSON)))
-//     .then((res) => dispatch(receiveSauces(res.sauces)),
-//         (err) => dispatch(receiveErrors(err.responseJSON)))
-//     .then((res) => dispatch(receiveCheckins(res.checkins)),
-//         (err) => dispatch(receiveErrors(err.responseJSON)));
-// };
 
 
 export const getUser = userId => dispatch => {
@@ -34,6 +18,17 @@ export const getUser = userId => dispatch => {
       (res) => {
       dispatch(receiveSauces(res.sauces));
       dispatch(receiveCheckins(res.checkins));
+      dispatch(receiveUser(res.user));
+      },
+      (err) => dispatch(receiveErrors(err.responseJSON))
+    );
+};
+
+
+export const updateUser = user => dispatch => {
+  return UserAPIUtil.updateUser(user)
+    .then(
+      (res) => {
       dispatch(receiveUser(res.user));
       },
       (err) => dispatch(receiveErrors(err.responseJSON))

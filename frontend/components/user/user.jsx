@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { lodash } from 'lodash';
-import {FormattedRelative} from 'react-intl';
+import {FormattedDate} from 'react-intl';
 //material-ui components
 import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -24,6 +24,7 @@ class User extends React.Component {
       imageFile: null,
       imageUrl: null
     };
+    console.log(this.state);
     this.handleChange = this.handleChange.bind(this);
     this.handleTabSwitch = this.handleTabSwitch.bind(this);
     this.handleEditClick = this.handleEditClick.bind(this);
@@ -35,8 +36,8 @@ class User extends React.Component {
     if (this.props.params.user_id !== newProps.params.user_id){
       this.props.getUser(newProps.params.user_id);
     }else{
-      if (newProps.description){
-        this.setState({description: newProps.description});
+      if (newProps.user.description){
+        this.setState({description: newProps.user.description});
       }
     }
   }
@@ -70,7 +71,10 @@ class User extends React.Component {
   }
 
   handleSubmitClick(){
-
+    const user = {};
+    user["id"] = this.props.params.user_id;
+    user["description"] = this.state.description;
+    this.props.updateUser(user);
     this.handleCloseClick();
   }
 
@@ -95,7 +99,7 @@ class User extends React.Component {
           if(this.state.editMode){
             description =
               <div>
-                <input type="text" value={this.state.description} onChange={this.handleChange}/>
+                <input className="description-input" type="text" value={this.state.description} onChange={this.handleChange}/>
                 <p className="inline-link-small" onClick={this.handleSubmitClick}><i className="fa fa-plus link-image" aria-hidden="true"></i></p>
                 <p className="inline-link-small" onClick={this.handleCloseClick}><i className="fa  fa-times link-image" aria-hidden="true"></i></p>
               </div>;
@@ -103,17 +107,15 @@ class User extends React.Component {
             //update to this.state.description
             description =
               <div>
-                holder
+                {this.state.description}
                 <p className="inline-link-small" onClick={this.handleEditClick}><i className="fa fa-pencil link-image" aria-hidden="true"></i></p>
               </div>;
           }
         }else{
-          //update to this.state.description
-          description = "idk";
+          description = <div>{this.state.description}</div>;
         }
       }else{
-        //update to this.state.description
-        description = "lol";
+        description = <div>{this.state.description}</div>;
       }
 
     return(
@@ -130,23 +132,23 @@ class User extends React.Component {
                 <h2>{this.props.user.username}</h2>
                 {description}
                   <div className="user-profile-stats">
-                    <div onClick={() => this.handleTabSwitch("checkins")}>
-                      <h4>{this.props.user.num_checkins}</h4>
-                      <h4>Total Checkins</h4>
+                    <div className="user-profile-stat stat-button" onClick={() => this.handleTabSwitch("checkins")}>
+                      <h4 className="stat-value">{this.props.user.num_checkins}</h4>
+                      <h4 className="stat-label">Checkins</h4>
                     </div>
-                    <div onClick={() => this.handleTabSwitch("sauces")}>
-                      <h4>{this.props.user.num_sauces}</h4>
-                      <h4>Sauces</h4>
+                    <div className="user-profile-stat stat-button" onClick={() => this.handleTabSwitch("sauces")}>
+                      <h4 className="stat-value">{this.props.user.num_sauces}</h4>
+                      <h4 className="stat-label">Sauces</h4>
                     </div>
-                    <div>
-                      <h4>Bookmarks</h4>
+                    <div className="user-profile-stat">
+                      <h4 className="stat-value">100</h4>
+                      <h4 className="stat-label">Bookmarks</h4>
                     </div>
-                    <div>
-                      <h4>Saucy Since</h4>
+                    <div className="user-profile-stat">
+                      <h4 className="stat-value"><FormattedDate value={this.props.user.join_date}/></h4>
+                      <h4 className="stat-label">Saucy Since</h4>
                     </div>
                   </div>
-
-
               </div>
             </div>
           </div>

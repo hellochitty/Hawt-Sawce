@@ -71,6 +71,34 @@
   width: 400px;
 }
 
+.description-input{
+  width: 350px;
+}
+
+.stat-button{
+  box-shadow: 8px 6px 30px 1px rgba(0,0,0,0.30);
+}
+
+.stat-button:hover{
+  background-color:$color-main;
+  color:$color-alt-text;
+  cursor: pointer;
+}
+
+.user-profile-stat{
+  background-color:$color-main;
+  color:$color-alt-text;
+  width: 90px;
+}
+
+.stat-value{
+  text-align: center;
+}
+
+.stat-label{
+  text-align: center;
+}
+
 
 .body-1-3{
   width: 280px;
