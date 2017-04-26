@@ -33,11 +33,17 @@ class SauceIndex extends React.Component{
     if (this.props.session.currentUser){
       addSauceButton =  (
         <div id="add-sauce-button">
-          <RaisedButton onClick={this.redirect}  label="+ Sauce"/>
+          <RaisedButton onClick={this.redirect}  label="+ Sawce"/>
         </div>
       );
     }
 
+    let sauces;
+    if (this.props.sauces[0]){
+      sauces = this.props.sauces.map(sauce => (
+        <SauceIndexItem sauce={sauce} key={sauce.id}/>
+      ));
+    }
 
 
     return(
@@ -45,8 +51,8 @@ class SauceIndex extends React.Component{
         <div className="col-2-3">
           <div className="sauce-index-header">
             <div className="sauce-index-header-text">
-              <h1>Sauces</h1>
-              <h5>Check out our sauces!</h5>
+              <h1>Sawces</h1>
+              <h5>All the sawce!</h5>
                 <DropDownMenu
                   value={this.state.value}
                   onChange={this.handleChange}
@@ -54,18 +60,18 @@ class SauceIndex extends React.Component{
                   anchorOrigin= {{"horizontal":"right","vertical":"bottom"}}
                   targetOrigin= {{"horizontal":"right","vertical":"top"}}
                   autoWidth={false}>
-                  <MenuItem value={1} primaryText="Newest Sauce" />
-                  <MenuItem value={2} primaryText="Oldest Sauce" />
+                  <MenuItem value={1} primaryText="Newest Sawce" />
+                  <MenuItem value={2} primaryText="Oldest Sawce" />
                   <MenuItem value={3} primaryText="Highest Scoville" />
                   <MenuItem value={4} primaryText="Lowest Scoville" />
+                  <MenuItem value={5} primaryText="Most Checked In" />
+                  <MenuItem value={7} primaryText="Highest Overall Rating" />
+                  <MenuItem value={8} primaryText="Lowest Overall Rating" />
                 </DropDownMenu>
             </div>
             {addSauceButton}
           </div>
-
-          {this.props.sauces.map(sauce => (
-            <SauceIndexItem sauce={sauce} key={sauce.id}/>
-          ))}
+          {sauces}
         </div>
         <div className="col-1-3">
           <SidebarContainer />

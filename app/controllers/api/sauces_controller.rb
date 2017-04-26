@@ -54,8 +54,13 @@ class Api::SaucesController < ApplicationController
   # 2- oldest
   # 3- scoville desc
   # 4- scoville asc
+  # 5- checkins desc
+  # 6- checkins asc
+  # 7- avg rating desc
+  # 8- avg rating asc
+
   def order
-    if (1..4) === params[:id].to_i
+    if (1..8) === params[:id].to_i
       case params[:id].to_i
       when 1
         @sauces = Sauce.order(id: :desc)
@@ -65,6 +70,26 @@ class Api::SaucesController < ApplicationController
         @sauces = Sauce.order(scoville_units: :desc)
       when 4
         @sauces = Sauce.order(scoville_units: :asc)
+      when 5
+        @sauces = Sauce
+                    .joins("LEFT OUTER JOIN checkins ON checkins.sauce_id = sauces.id")
+                      .group("sauces.id").order("COUNT(checkins.id) DESC")
+      when 6
+        @sauces = Sauce
+                    .joins("LEFT OUTER JOIN checkins ON checkins.sauce_id = sauces.id")
+                      .group("sauces.id").order("COUNT(checkins.id) ASC")
+      when 7
+        @sauces = Sauce
+                    .joins("LEFT OUTER JOIN checkins ON checkins.sauce_id = sauces.id")
+                      .group("sauces.id")
+                        .having("COUNT(checkins.id)>0")
+                          .order("AVG(checkins.overall_rating) DESC")
+      when 8
+        @sauces = Sauce
+                    .joins("LEFT OUTER JOIN checkins ON checkins.sauce_id = sauces.id")
+                      .group("sauces.id")
+                        .having("COUNT(checkins.id)>0")
+                          .order("AVG(checkins.overall_rating) ASC")
       end
       render :order
     else
