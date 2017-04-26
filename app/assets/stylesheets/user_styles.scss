@@ -77,26 +77,32 @@
 
 .stat-button{
   box-shadow: 8px 6px 30px 1px rgba(0,0,0,0.30);
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 
 .stat-button:hover{
-  background-color:$color-main;
   color:$color-alt-text;
   cursor: pointer;
+  background-color: $color-main-highlight;
 }
 
 .user-profile-stat{
   background-color:$color-main;
   color:$color-alt-text;
-  width: 90px;
+  min-width: 90px;
 }
 
-.stat-value{
+.stat-value, .stat-value>span {
   text-align: center;
+  color: $color-alt-text;
+  padding: 5px 10px 0px 10px;
 }
 
 .stat-label{
+  color: $color-alt-text;
   text-align: center;
+  padding: 0px 10px 5px 10px;
+  font-size: 12px;
 }
 
 

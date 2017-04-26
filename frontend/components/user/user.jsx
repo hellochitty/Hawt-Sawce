@@ -67,7 +67,7 @@ class User extends React.Component {
   }
 
   handleCloseClick(){
-    this.setState({editMode: false});
+    this.setState({editMode: false, description: this.props.user.description});
   }
 
   handleSubmitClick(){
@@ -133,20 +133,20 @@ class User extends React.Component {
                 {description}
                   <div className="user-profile-stats">
                     <div className="user-profile-stat stat-button" onClick={() => this.handleTabSwitch("checkins")}>
-                      <h4 className="stat-value">{this.props.user.num_checkins}</h4>
-                      <h4 className="stat-label">Checkins</h4>
+                      <p className="stat-value">{this.props.user.num_checkins}</p>
+                      <p className="stat-label">Checkins</p>
                     </div>
                     <div className="user-profile-stat stat-button" onClick={() => this.handleTabSwitch("sauces")}>
-                      <h4 className="stat-value">{this.props.user.num_sauces}</h4>
-                      <h4 className="stat-label">Sauces</h4>
+                      <p className="stat-value">{this.props.user.num_sauces}</p>
+                      <p className="stat-label">Sauces</p>
                     </div>
                     <div className="user-profile-stat">
-                      <h4 className="stat-value">100</h4>
-                      <h4 className="stat-label">Bookmarks</h4>
+                      <p className="stat-value">100</p>
+                      <p className="stat-label">Bookmarks</p>
                     </div>
                     <div className="user-profile-stat">
-                      <h4 className="stat-value"><FormattedDate value={this.props.user.join_date}/></h4>
-                      <h4 className="stat-label">Saucy Since</h4>
+                      <p className="stat-value"><FormattedDate   value={this.props.user.join_date}/></p>
+                      <p className="stat-label">Saucy Since</p>
                     </div>
                   </div>
               </div>
