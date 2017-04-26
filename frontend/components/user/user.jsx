@@ -18,20 +18,26 @@ class User extends React.Component {
     this.state = {
       activeTab: "checkins",
       open: false,
-      description: this.props.description,
+      description: "",
+      editMode: false,
       image_url: "",
       imageFile: null,
       imageUrl: null
     };
-    this.handleOpen = this.handleOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleTabSwitch = this.handleTabSwitch.bind(this);
+    this.handleEditClick = this.handleEditClick.bind(this);
+    this.handleCloseClick = this.handleCloseClick.bind(this);
+    this.handleSubmitClick = this.handleSubmitClick.bind(this);
   }
 
   componentWillReceiveProps(newProps){
     if (this.props.params.user_id !== newProps.params.user_id){
       this.props.getUser(newProps.params.user_id);
+    }else{
+      if (newProps.description){
+        this.setState({description: newProps.description});
+      }
     }
   }
 
@@ -39,24 +45,12 @@ class User extends React.Component {
     this.props.getUser(this.props.params.user_id);
   }
 
-  //for modal
-  handleOpen(){
-    this.setState({open: true});
-  }
-  handleClose(){
-    this.setState({
-      open: false,
-      description: this.props.description,
-      image_url: "",
-      imageFile: null,
-      imageUrl: null
-    });
-  }
-
   handleChange(e){
+    console.log(this.state.description);
     this.setState({
-      description: e.target.value,
+      description: e.currentTarget.value,
     });
+    console.log(this.state.description);
   }
 
   handleTabSwitch(text){
@@ -65,6 +59,19 @@ class User extends React.Component {
     }else if (text === "sauces"){
       this.setState({activeTab: "sauces"});
     }
+  }
+
+  handleEditClick(){
+    this.setState({editMode: true});
+  }
+
+  handleCloseClick(){
+    this.setState({editMode: false});
+  }
+
+  handleSubmitClick(){
+
+    this.handleCloseClick();
   }
 
   render(){
@@ -80,45 +87,38 @@ class User extends React.Component {
     }
 
 
-    //actions for modal
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      <FlatButton
-        label="Update"
-        primary={true}
-        keyboardFocused={true}
-
-      />,
-    ];
 
 
-
-    let editButton;
+    let description;
       if (this.props.currentUser){
-        editButton = (this.props.currentUser.id === this.props.user.id) ?
-        <IconButton
-          className="edit-icon"
-          iconClassName="fa fa-pencil fa-3x"
-          touch={true}
-          iconStyle={{
-            width: 20,
-            height: 20
-          }}
-          style={{
-            width: 25,
-            height: 25,
-            padding: 0
-          }}
-          onClick={this.handleOpen}
-          /> : null;
+        if(this.props.currentUser.id === this.props.user.id){
+          if(this.state.editMode){
+            description =
+              <div>
+                <input type="text" value={this.state.description} onChange={this.handleChange}/>
+                <p className="inline-link-small" onClick={this.handleSubmitClick}><i className="fa fa-plus link-image" aria-hidden="true"></i></p>
+                <p className="inline-link-small" onClick={this.handleCloseClick}><i className="fa  fa-times link-image" aria-hidden="true"></i></p>
+              </div>;
+          }else{
+            //update to this.state.description
+            description =
+              <div>
+                holder
+                <p className="inline-link-small" onClick={this.handleEditClick}><i className="fa fa-pencil link-image" aria-hidden="true"></i></p>
+              </div>;
+          }
+        }else{
+          //update to this.state.description
+          description = "idk";
+        }
+      }else{
+        //update to this.state.description
+        description = "lol";
       }
 
     return(
       <div className= "user-profile-outer">
+
         <div className= "user-profile-background">
           <div className="profile-picture">
             <img src="https://s-media-cache-ak0.pinimg.com/736x/eb/5c/78/eb5c78657282a7c7715939aac4553dcb.jpg" />
@@ -126,9 +126,9 @@ class User extends React.Component {
           <div className= "user-profile">
             <div className= "user-header">
               <div className="profile-text">
-                {editButton}
+
                 <h2>{this.props.user.username}</h2>
-                <p>placeholder for description</p>
+                {description}
                   <div className="user-profile-stats">
                     <div onClick={() => this.handleTabSwitch("checkins")}>
                       <h4>{this.props.user.num_checkins}</h4>
@@ -160,28 +160,6 @@ class User extends React.Component {
             side section stuff
           </div>
         </div>
-
-        <Dialog
-          actions={actions}
-          modal={false}
-          open={this.state.open}
-          onRequestClose={this.handleClose}
-          contentStyle={{
-            width: '400px',
-            maxWidth: 'none',
-          }}
-          >
-          <form>
-            <h2 className="text-center dialog-title">Update your profile!</h2>
-            <TextField
-              onChange
-              floatingLabelText="Description"
-              value={this.state.description}
-              onChange={this.handleChange}
-              fullWidth={true}
-              />
-          </form>
-        </Dialog>
 
       </div>
     );
