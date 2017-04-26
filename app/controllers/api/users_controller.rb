@@ -32,6 +32,6 @@ class Api::UsersController < ApplicationController
   end
 
   def user_update_params
-    params.require(:user).permit(:description)
+    params.require(:user).permit(:description, :image)
   end
 end

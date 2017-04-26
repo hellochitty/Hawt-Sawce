@@ -25,8 +25,8 @@ export const getUser = userId => dispatch => {
 };
 
 
-export const updateUser = user => dispatch => {
-  return UserAPIUtil.updateUser(user)
+export const updateUser = (user, id) => dispatch => {
+  return UserAPIUtil.updateUser(user, id)
     .then(
       (res) => {
       dispatch(receiveUser(res.user));

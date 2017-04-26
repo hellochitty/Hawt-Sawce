@@ -23,7 +23,7 @@ const mapStateToProps = ({user, checkins, sauces, session}, ownProps)=> {
 
 const mapDispatchToProps = dispatch =>({
   getUser: (userId) => dispatch(getUser(userId)),
-  updateUser: (user) => dispatch(updateUser(user))
+  updateUser: (user, id) => dispatch(updateUser(user, id))
 });
 
 

@@ -31,6 +31,7 @@ class User extends React.Component {
     this.handleCloseClick = this.handleCloseClick.bind(this);
     this.handleSubmitClick = this.handleSubmitClick.bind(this);
     this.handlePicAdd = this.handlePicAdd.bind(this);
+    this.handlePicSubmit = this.handlePicSubmit.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -49,6 +50,12 @@ class User extends React.Component {
           this.setState({image_url: newProps.user.image_url});
         }
       }
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if (this.state.imageFile && prevState.imageFile !== this.state.imageFile){
+      this.handlePicSubmit();
     }
   }
 
@@ -81,10 +88,10 @@ class User extends React.Component {
   }
 
   handleSubmitClick(){
-    const user = {};
-    user["id"] = this.props.params.user_id;
-    user["description"] = this.state.description;
-    this.props.updateUser(user);
+    let formData = new FormData();
+    formData.append("user[id]", this.props.params.user_id);
+    formData.append("user[description]", this.state.description);
+    this.props.updateUser(formData, this.props.params.user_id);
     this.handleCloseClick();
   }
 
@@ -98,10 +105,16 @@ class User extends React.Component {
 
     if (file) {
       reader.readAsDataURL(file);
-      debugger;
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
+  }
+
+  handlePicSubmit(){
+    console.log("ihitthesubmitter");
+    let formData = new FormData();
+    formData.append("user[image]", this.state.imageFile);
+    this.props.updateUser(formData, this.props.params.user_id);
   }
 
 
