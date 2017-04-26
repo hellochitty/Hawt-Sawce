@@ -62,7 +62,11 @@
   margin-left: 180px;
   padding-top: 10px;
 }
+.description-input{
+  width: 350px;
+}
 
+//stats bar
 .user-profile-stats{
   margin-top: 10px;
   display: flex;
@@ -71,12 +75,8 @@
   width: 400px;
 }
 
-.description-input{
-  width: 350px;
-}
-
 .stat-button{
-  box-shadow: 8px 6px 30px 1px rgba(0,0,0,0.30);
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.30);
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 

@@ -18,13 +18,14 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
     if @user.update(user_update_params)
       render 'api/users/show_one'
     else
       render json: @user.errors.messages, status: 422
     end
   end
+
+  private
 
   def user_signup_params
     params.require(:user).permit(:username, :password, :email)

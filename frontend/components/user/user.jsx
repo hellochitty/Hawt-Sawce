@@ -134,7 +134,7 @@ class User extends React.Component {
                   <div className="user-profile-stats">
                     <div className="user-profile-stat stat-button" onClick={() => this.handleTabSwitch("checkins")}>
                       <p className="stat-value">{this.props.user.num_checkins}</p>
-                      <p className="stat-label">Checkins</p>
+                      <p className="stat-label">Check-Ins</p>
                     </div>
                     <div className="user-profile-stat stat-button" onClick={() => this.handleTabSwitch("sauces")}>
                       <p className="stat-value">{this.props.user.num_sauces}</p>

@@ -2,10 +2,6 @@ json.set! :user do
   json.partial! 'api/users/user', user: @user
 end
 
-# json.sauces @sauces do |sauce|
-#   json.partial! 'api/sauces/sauce', sauce: sauce
-# end
-
 json.sauces do
   if @sauces.present?
     @sauces.each do |sauce|
