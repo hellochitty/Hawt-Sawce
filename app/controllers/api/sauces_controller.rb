@@ -50,10 +50,22 @@ class Api::SaucesController < ApplicationController
       render json: {delete:['Sauce Does Not Exist']}, status: 404
     end
   end
-
+  # 1- newest
+  # 2- oldest
+  # 3- scoville desc
+  # 4- scoville asc
   def order
-    if params[:id].to_i == 1
-      @sauces = Sauce.order(scoville_units: :asc)
+    if (1..4) === params[:id].to_i
+      case params[:id].to_i
+      when 1
+        @sauces = Sauce.order(id: :desc)
+      when 2
+        @sauces = Sauce.order(id: :asc)
+      when 3
+        @sauces = Sauce.order(scoville_units: :desc)
+      when 4
+        @sauces = Sauce.order(scoville_units: :asc)
+      end
       render :order
     else
       render json: {base:['Invalid order']}, status: 404
