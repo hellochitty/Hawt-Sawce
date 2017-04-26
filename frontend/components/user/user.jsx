@@ -31,7 +31,6 @@ class User extends React.Component {
     this.handleCloseClick = this.handleCloseClick.bind(this);
     this.handleSubmitClick = this.handleSubmitClick.bind(this);
     this.handlePicAdd = this.handlePicAdd.bind(this);
-    this.handleUpdateFile = this.handleUpdateFile.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -91,10 +90,6 @@ class User extends React.Component {
 
   handlePicAdd(e){
     console.log("ihittheclicker");
-    this.handleUpdateFile(e);
-  }
-
-  handleUpdateFile(e){
     let reader = new FileReader();
     let file = e.currentTarget.files[0];
     reader.onloadend = function() {
@@ -107,6 +102,7 @@ class User extends React.Component {
       this.setState({ imageUrl: "", imageFile: null });
     }
   }
+
 
   render(){
     let body;
@@ -122,8 +118,10 @@ class User extends React.Component {
   let picEdit;
   if (this.props.currentUser){
     if(this.props.currentUser.id === this.props.user.id){
-      picEdit = <p className="profile-pic-add" onClick={() => this.handlePicAdd()}>
-        <i className="fa fa-upload fa-1x pic-add-image" aria-hidden="true"></i>
+      picEdit =
+      <p className="profile-pic-add" onClick={() => this.handlePicAdd()}>
+        <input type="file" id="upload-image" className="input-pic" onChange={this.handleUpdateFile}/>
+        <label htmlFor="upload-image" for="file"><i className="fa fa-upload fa-1x pic-add-image" aria-hidden="true"></i></label>
         </p>;
     }
   }
