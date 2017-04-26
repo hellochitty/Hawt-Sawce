@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { getSauces } from '../../actions/sauce_actions';
+import { getSauces, getSaucesOrder } from '../../actions/sauce_actions';
 import SauceIndex from './sauce_index.jsx';
 
-const mapStateToProps = ({sauces, session}) => {
-  const holder = [];
-  Object.keys(sauces).forEach((key)=> holder.push(sauces[key]));
+const mapStateToProps = ({sauces, saucesOrder, session}) => {
+  const holder = saucesOrder.map((sauceId) => sauces[sauceId]);
+  // Object.keys(sauces).forEach((key)=> holder.push(sauces[key]));
   return {
     sauces: holder,
     session: session
@@ -12,7 +12,8 @@ const mapStateToProps = ({sauces, session}) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  getSauces: () => dispatch(getSauces())
+  getSauces: () => dispatch(getSauces()),
+  getSaucesOrder: (orderId) => dispatch(getSaucesOrder(orderId))
 });
 
 

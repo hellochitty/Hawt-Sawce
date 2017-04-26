@@ -16,10 +16,12 @@ class SauceIndex extends React.Component{
 
   componentDidMount(){
     this.props.getSauces();
+    this.props.getSaucesOrder(1);
   }
 
   handleChange(event, index, value){
     this.setState({value});
+    this.props.getSaucesOrder(value);
   }
 
   redirect(){
