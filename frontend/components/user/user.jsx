@@ -98,6 +98,7 @@ class User extends React.Component {
 
     if (file) {
       reader.readAsDataURL(file);
+      debugger;
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
@@ -119,9 +120,9 @@ class User extends React.Component {
   if (this.props.currentUser){
     if(this.props.currentUser.id === this.props.user.id){
       picEdit =
-      <p className="profile-pic-add" onClick={() => this.handlePicAdd()}>
-        <input type="file" id="upload-image" className="input-pic" onChange={this.handleUpdateFile}/>
-        <label htmlFor="upload-image" for="file"><i className="fa fa-upload fa-1x pic-add-image" aria-hidden="true"></i></label>
+      <p className="profile-pic-add">
+        <input type="file" id="upload-image" className="input-pic" onChange={this.handlePicAdd}/>
+        <label htmlFor="upload-image"><i className="fa fa-upload fa-1x pic-add-image" aria-hidden="true"></i></label>
         </p>;
     }
   }
