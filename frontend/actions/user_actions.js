@@ -3,12 +3,19 @@ import {receiveErrors} from './util_actions';
 import {receiveSauces} from './sauce_actions';
 import {receiveCheckins} from './checkin_actions';
 export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_USER_UPDATES = 'RECEIVE_USER_UPDATES';
 
 //action creators
 const receiveUser = user => ({
   type: RECEIVE_USER,
   user
 });
+
+const receiveUserUpdates = user => ({
+  type: RECEIVE_USER_UPDATES,
+  image_url: user.image_url
+});
+
 
 
 
@@ -30,6 +37,7 @@ export const updateUser = (user, id) => dispatch => {
     .then(
       (res) => {
       dispatch(receiveUser(res.user));
+      dispatch(receiveUserUpdates(res.user));
       },
       (err) => dispatch(receiveErrors(err.responseJSON))
     );
