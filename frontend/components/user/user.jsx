@@ -123,7 +123,7 @@ class User extends React.Component {
 
         <div className= "user-profile-background">
           <div className="profile-picture">
-            <img src="https://s-media-cache-ak0.pinimg.com/736x/eb/5c/78/eb5c78657282a7c7715939aac4553dcb.jpg" />
+            <img src={this.props.user.image_url} />
           </div>
           <div className= "user-profile">
             <div className= "user-header">

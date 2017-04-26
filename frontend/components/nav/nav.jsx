@@ -52,7 +52,7 @@ class Nav extends React.Component {
             <div id="nav-links">
               <p id="nav-text">Hi, {this.props.currentUser.username}</p>
               <div className="nav-picture" onClick={this.handleTouchTap}>
-                <img className="nav-picture-image" src="https://s-media-cache-ak0.pinimg.com/736x/eb/5c/78/eb5c78657282a7c7715939aac4553dcb.jpg" />
+                <img className="nav-picture-image" src={this.props.currentUser.image_url} />
               </div>
               <div>
                 <Popover
