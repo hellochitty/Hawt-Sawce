@@ -29,6 +29,13 @@ export const deleteSauce = (sauceId) => {
   });
 };
 
+export const fetchSaucesOrder = (orderId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/sauces/order/${orderId}`
+  });
+};
+
 // export const addSauce = (sauce) => {
 //   return $.ajax({
 //     method: 'POST',

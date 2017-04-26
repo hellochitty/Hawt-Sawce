@@ -6,6 +6,7 @@ import Root from './components/root';
 // import { getSauces, getSauce, getSauceCompanies } from './actions/sauce_actions';
 // import { getCheckins, getCheckin, deleteCheckin } from './actions/checkin_actions';
 import { getUser } from './actions/user_actions';
+import { getSaucesOrder } from './actions/sauce_actions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -21,14 +22,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
   // window.login = login;
   // window.logout = logout;
   window.store = store;
-  window.getUser = getUser;
+  window.getSaucesOrder = getSaucesOrder;
   // window.getCheckins = getCheckins;
   // window.getCheckin = getCheckin;
   // window.deleteCheckin = deleteCheckin;
 
 });
-//test with store.
-
-// window.login = login;
-// window.logout = logout;
-// window.signup = signup;
