@@ -19,6 +19,7 @@
 class Sauce < ApplicationRecord
   validates :name, uniqueness: { scope: :company_id }
   validates :name, :company_id, presence: true
+  validates_inclusion_of :scoville_units, :in => 0..3000000, message: "too far off the charts"
   has_attached_file :image, default_url: "doge.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
