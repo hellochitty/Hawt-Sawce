@@ -8,7 +8,7 @@ const CheckinsReducer = (oldState= {}, action) => {
 
   switch(action.type){
     case RECEIVE_ALL_CHECKINS:
-      return action.checkins;
+      return action.checkins || {};
     case RECEIVE_CHECKIN:{
       let newState = merge({}, oldState);
       newState[action.checkin.id] = action.checkin;

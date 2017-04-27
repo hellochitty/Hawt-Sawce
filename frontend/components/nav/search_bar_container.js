@@ -7,7 +7,7 @@ const mapStateToProps = ({searchResults}) => {
   const holder = [];
   Object.keys(searchResults).forEach((key)=> holder.push(searchResults[key]));
   if (holder.length === 0){
-    holder.push({text:"no results :(", value:"/home"});
+    holder.push({text:"no results", value:"/home"});
   }
   return {
     searchResults: holder
