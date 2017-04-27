@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import SearchBar from './search_bar.jsx';
+import SearchBarContainer from './search_bar_container.js';
 
 class Nav extends React.Component {
   constructor(props){
@@ -55,7 +55,7 @@ class Nav extends React.Component {
               </div>
               <div className="sub-nav-link"><Link to="/home/sauces" activeClassName="active">SAWCES</Link></div>
                 <div id="nav-search">
-                  <SearchBar />
+                  <SearchBarContainer />
                 </div>
             </div>
 
