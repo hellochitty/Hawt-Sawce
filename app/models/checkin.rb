@@ -20,7 +20,7 @@ class Checkin < ApplicationRecord
   validates :overall_rating, :heat_rating, :user_id, :sauce_id, presence: true
   validates :overall_rating, :inclusion => {:in => [1,2,3,4,5]}
   validates :heat_rating, :inclusion => {:in => [1,2,3,4,5]}
-  has_attached_file :image, default_url: "doge.jpg"
+  has_attached_file :image, default_url: "hotsauce.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   attr_accessor :image_file_name
