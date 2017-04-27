@@ -11,9 +11,12 @@ class Nav extends React.Component {
     super(props);
     this.state = {
       open: false,
+      searchText: "",
     };
     this.handleTouchTap = this.handleTouchTap.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
+    this.handleNewRequest = this.handleNewRequest.bind(this);
+    this.handleUpdateInput = this.handleUpdateInput.bind(this);
   }
   handleTouchTap(event){
    // This prevents ghost click.
@@ -30,6 +33,18 @@ class Nav extends React.Component {
    });
  }
 
+ handleNewRequest(i){
+   this.props.router.push(i.value);
+   this.setState({
+     searchText: '',
+   });
+ }
+ handleUpdateInput(searchText){
+   this.setState({
+      searchText: searchText,
+    });
+ }
+
   render(){
     if(this.props.currentUser){
       const onLogout = () => {
@@ -40,16 +55,16 @@ class Nav extends React.Component {
       this.props.router.push(`/home/users/${this.props.currentUser.id}`);
     };
 
-    const dataSource1 = [
+    const dataSource = [
       {
         text: 'sauce-1',
         value: ("/home/sauces/145")
-  },
-  {
-    text: 'sauce 2',
-    value: ("/home/sauces/146")
-  },
-];
+      },
+      {
+        text: 'sauce 2',
+        value: ("/home/sauces/146")
+      },
+    ];
 
       return (
         <nav>
@@ -61,10 +76,12 @@ class Nav extends React.Component {
               <div className="sub-nav-link"><Link to="/home/sauces" activeClassName="active">SAWCES</Link></div>
                 <div id="nav-search">
                   <AutoComplete
+                    searchText={this.state.searchText}
+                    onUpdateInput={this.handleUpdateInput}
                     hintText="Search for stuff"
-                    dataSource={dataSource1}
+                    dataSource={dataSource}
                     fullWidth={true}
-                    onNewRequest={(i)=> this.props.router.push(i.value)}
+                    onNewRequest={this.handleNewRequest}
                     />
                 </div>
             </div>
