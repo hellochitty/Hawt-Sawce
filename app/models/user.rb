@@ -23,6 +23,10 @@ class User < ApplicationRecord
   has_attached_file :image, default_url: "avatar.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  include PgSearch
+  multisearchable :against => [:username]
+
+
   has_many :checkins,
     class_name: 'Checkin',
     foreign_key: :user_id,

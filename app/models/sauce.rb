@@ -23,6 +23,15 @@ class Sauce < ApplicationRecord
   has_attached_file :image, default_url: "hotsauce.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  include PgSearch
+  multisearchable :against => [:name]
+
+  PgSearch.multisearch_options = {
+  :using => [:tsearch, :trigram],
+  :ignoring => :accents
+  }
+
+
   belongs_to :company,
     class_name: 'SauceCompany',
     foreign_key: :company_id,
