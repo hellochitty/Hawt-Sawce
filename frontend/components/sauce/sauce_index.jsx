@@ -52,7 +52,7 @@ class SauceIndex extends React.Component{
           <div className="sauce-index-header">
             <div className="sauce-index-header-text">
               <h1>Sawces</h1>
-              <h5>All the sawce!</h5>
+              <h3>All the sawce!</h3>
                 <DropDownMenu
                   value={this.state.value}
                   onChange={this.handleChange}

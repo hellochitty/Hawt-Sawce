@@ -15,7 +15,7 @@ const CheckinIndexItem = ({checkin}) => {
     " is gettin' a capsaicin rush from "
   ];
   let comment;
-  comment = (checkin.comment) ? (<h4>{`"`}<i>{checkin.comment}</i>{`"`}</h4>) : null;
+  comment = (checkin.comment) ? (<h3>{`" `}<i>{checkin.comment}</i>{` "`}</h3>) : null;
 
   var intlData = {
     "locales": "en-US"
@@ -25,29 +25,32 @@ const CheckinIndexItem = ({checkin}) => {
   return (
     <div className='checkin-index-item-outer'>
       <div className='checkin-index-item'>
+
         <div className='checkin-index-item-content'>
           <div className='checkin-index-item-profile'>
-            <div className='checkin-index-item-profile-text'>
+            <div className='checkin-index-item-profile-header'>
+
               <div className="checkin-user-picture">
                 <Link to={`/home/users/${checkin.user_id}`}>
                   <img className="checkin-user-image" src={checkin.user_image_url} />
                 </Link>
               </div>
-              <Link to={`/home/users/${checkin.user_id}`}>
-                <p className="inline-link">
-                  {checkin.user}
-                </p>
-              </Link>
-              <h4 id="filler-text">got spicy with some</h4>
-              <Link to={`/home/sauces/${checkin.sauce_id}`}>
-                <p className="inline-link" >
-                  {checkin.sauce}
-                </p>
-              </Link>
+
+              <div className='checkin-index-item-profile-text'>
+                <Link to={`/home/users/${checkin.user_id}`}>
+                  <p className="inline-link-checkin">
+                    {checkin.user}
+                  </p>
+                </Link>
+                <h4 id="filler-text">got spicy with some</h4>
+                <Link to={`/home/sauces/${checkin.sauce_id}`}>
+                  <p className="inline-link-checkin" >
+                    {checkin.sauce}
+                  </p>
+                </Link>
+              </div>
+
             </div>
-
-
-
 
             <table className="checkin-stats">
               <tbody>
@@ -79,10 +82,9 @@ const CheckinIndexItem = ({checkin}) => {
             </table>
             {comment}
           </div>
-          <div className='sauce-index-item-pic'>
-            <img className="sauce-thumbnail" src={checkin.image_url} />
-          </div>
         </div>
+
+
         <div className='checkin-index-item-footer'>
           <FormattedRelative value={time} />
           <Link to={`/home/checkins/${checkin.id}`}><h5 id="basic-link">View Detailed Check-In</h5></Link>
@@ -94,4 +96,7 @@ const CheckinIndexItem = ({checkin}) => {
   );
 };
 
+// <div className='sauce-index-item-pic'>
+//   <img className="sauce-thumbnail" src={checkin.image_url} />
+// </div>
 export default CheckinIndexItem;

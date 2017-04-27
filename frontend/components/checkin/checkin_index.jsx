@@ -25,7 +25,7 @@ class CheckinIndex extends React.Component{
           <div className="sauce-index-header">
             <div className="sauce-index-header-text">
               <h1>Check-Ins</h1>
-              <h5>Global Check-Ins</h5>
+              <h3>Global Check-Ins</h3>
             </div>
           </div>
           {this.props.checkins.map(checkin => (
