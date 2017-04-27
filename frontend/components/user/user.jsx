@@ -56,6 +56,8 @@ class User extends React.Component {
   componentDidUpdate(prevProps, prevState){
     if (this.state.imageFile && prevState.imageFile !== this.state.imageFile){
       this.handlePicSubmit();
+    }else if (prevProps.user.description !== this.props.user.description){
+      this.setState({description: this.props.user.description});
     }
   }
 
