@@ -31,6 +31,7 @@ class SearchBar extends React.Component {
   }
 
   handleUpdateInput(searchText){
+    this.props.search(searchText);
     this.setState({
        searchText: searchText,
      });
@@ -46,7 +47,7 @@ class SearchBar extends React.Component {
         searchText={this.state.searchText}
         onUpdateInput={this.handleUpdateInput}
         hintText="Search..."
-        dataSource={this.state.dataSource}
+        dataSource={this.props.searchResults}
         fullWidth={true}
         onNewRequest={this.handleNewRequest}
         />
