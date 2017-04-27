@@ -32,8 +32,8 @@ class SearchBar extends React.Component {
       <i class="fa fa-search" aria-hidden="true"></i>
     );
 
-    console.log("----HIT SEARCH RESULTS----");
-    console.log(this.props.searchResults);
+    // console.log("----HIT SEARCH RESULTS----");
+    // console.log(this.props.searchResults);
 
     return(
       <AutoComplete
