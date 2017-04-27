@@ -43,11 +43,11 @@ class Nav extends React.Component {
     const dataSource1 = [
       {
         text: 'sauce-1',
-        value: ("/home/checkins")
+        value: ("/home/sauces/145")
   },
   {
     text: 'sauce 2',
-    value: ("/home/checkins")
+    value: ("/home/sauces/146")
   },
 ];
 
@@ -64,7 +64,7 @@ class Nav extends React.Component {
                     hintText="Search for stuff"
                     dataSource={dataSource1}
                     fullWidth={true}
-                    onNewRequest={(i)=> console.log(i)}
+                    onNewRequest={(i)=> this.props.router.push(i.value)}
                     />
                 </div>
             </div>
