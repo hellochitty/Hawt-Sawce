@@ -1,4 +1,3 @@
 json.array! @results do |result|
-  json.extract! result, :id
-  # json.merge! result.attributes
+  json.extract! result, :text, :value
 end

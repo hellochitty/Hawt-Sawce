@@ -5,10 +5,14 @@ class Api::SearchesController < ApplicationController
     @results = results.map{|result|
       if result.searchable_type == "User"
         {
-          value: 
+          text: result.content,
+          value: "/home/users/#{result.searchable_id}"
         }
       elsif result.searchable_type == "Sauce"
-
+        {
+          text:  result.content,
+          value: "/home/users/#{result.searchable_id}"
+        }
       end
     }
     debugger
