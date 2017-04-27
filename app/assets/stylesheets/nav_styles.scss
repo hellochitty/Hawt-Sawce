@@ -1,5 +1,6 @@
 nav{
-  background-color: rgba(213, 0, 0, 0.95);
+  background-color: $color-alt-text;
+  // background-color: rgba(213, 0, 0, 0.95);
   color: $color-alt-text;
   display: flex;
   flex-direction: row;
@@ -57,13 +58,14 @@ nav{
   color: black;
 }
 
-  // #nav-title{
-  //   margin: 5px 0;
-  //   // color: $color-alt-text;
-  // }
+  #nav-title{
+    // margin: 5px 0;
+    font-size: 20px;
+  }
 
 #nav-text{
-  color: $color-alt-text;
+  color: $color-main-text;
+  font-size: 16px;
   margin: 0px;
   padding: 0 10px;
 }
@@ -74,17 +76,18 @@ nav{
 }
 
 .sub-nav-link > *:hover{
-  color: $color-main-highlight;
+  color: $color-main;
 
 }
 .sub-nav-link > * {
   font-weight:100;
   padding: 20% 20px;
   margin: 10px;
+  font-size: 16px;
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 .active{
-  color: $color-main-highlight;
+  color: $color-main;
 }
 
 //sidebar

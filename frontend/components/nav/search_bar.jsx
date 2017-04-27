@@ -7,17 +7,7 @@ class SearchBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      searchText: "",
-      dataSource:[
-        {
-          text: 'sauce-1',
-          value: ("/home/sauces/145")
-        },
-        {
-          text: 'sauce 2',
-          value: ("/home/sauces/146")
-        },
-      ]
+      searchText: ""
       };
     this.handleNewRequest = this.handleNewRequest.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
@@ -41,6 +31,9 @@ class SearchBar extends React.Component {
     const searchText = (
       <i class="fa fa-search" aria-hidden="true"></i>
     );
+
+    console.log("----HIT SEARCH RESULTS----");
+    console.log(this.props.searchResults);
 
     return(
       <AutoComplete

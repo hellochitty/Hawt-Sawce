@@ -6,6 +6,8 @@ import SearchBar from './search_bar';
 const mapStateToProps = ({searchResults}) => {
   const holder = [];
   Object.keys(searchResults).forEach((key)=> holder.push(searchResults[key]));
+  console.log("----HIT CONTAINER----");
+  console.log(searchResults);
   if (holder.length === 0){
     holder.push({text:"no results", value:"/home"});
   }
