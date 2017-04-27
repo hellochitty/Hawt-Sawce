@@ -26,11 +26,6 @@ class Sauce < ApplicationRecord
   include PgSearch
   multisearchable :against => [:name]
 
-  PgSearch.multisearch_options = {
-  :using => [:tsearch, :trigram],
-  :ignoring => :accents
-  }
-
 
   belongs_to :company,
     class_name: 'SauceCompany',

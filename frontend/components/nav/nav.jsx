@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-
+import AutoComplete from 'material-ui/AutoComplete';
 
 class Nav extends React.Component {
   constructor(props){
@@ -40,6 +40,17 @@ class Nav extends React.Component {
       this.props.router.push(`/home/users/${this.props.currentUser.id}`);
     };
 
+    const dataSource1 = [
+      {
+        text: 'sauce-1',
+        value: ("/home/checkins")
+  },
+  {
+    text: 'sauce 2',
+    value: ("/home/checkins")
+  },
+];
+
       return (
         <nav>
           <div id="nav-contents">
@@ -48,7 +59,16 @@ class Nav extends React.Component {
               <div className="logo">
               </div>
               <div className="sub-nav-link"><Link to="/home/sauces" activeClassName="active">SAWCES</Link></div>
+                <div id="nav-search">
+                  <AutoComplete
+                    hintText="Search for stuff"
+                    dataSource={dataSource1}
+                    fullWidth={true}
+                    onNewRequest={(i)=> console.log(i)}
+                    />
+                </div>
             </div>
+
             <div id="nav-links">
               <p id="nav-text">Hi, {this.props.currentUser.username}</p>
               <div className="nav-picture" onClick={this.handleTouchTap}>
