@@ -12,6 +12,16 @@ class Nav extends React.Component {
     this.state = {
       open: false,
       searchText: "",
+      dataSource:[
+        {
+          text: 'sauce-1',
+          value: ("/home/sauces/145")
+        },
+        {
+          text: 'sauce 2',
+          value: ("/home/sauces/146")
+        },
+      ]
     };
     this.handleTouchTap = this.handleTouchTap.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
@@ -55,16 +65,10 @@ class Nav extends React.Component {
       this.props.router.push(`/home/users/${this.props.currentUser.id}`);
     };
 
-    const dataSource = [
-      {
-        text: 'sauce-1',
-        value: ("/home/sauces/145")
-      },
-      {
-        text: 'sauce 2',
-        value: ("/home/sauces/146")
-      },
-    ];
+
+    const searchText = (
+      <i class="fa fa-search" aria-hidden="true"></i>
+    );
 
       return (
         <nav>
@@ -78,8 +82,8 @@ class Nav extends React.Component {
                   <AutoComplete
                     searchText={this.state.searchText}
                     onUpdateInput={this.handleUpdateInput}
-                    hintText="Search for stuff"
-                    dataSource={dataSource}
+                    hintText="Search..."
+                    dataSource={this.state.dataSource}
                     fullWidth={true}
                     onNewRequest={this.handleNewRequest}
                     />
