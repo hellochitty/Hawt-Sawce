@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     match 'sauces/order/:id' => 'sauces#order', :via => :get
     resources :sauce_companies, only: [:index]
     resources :checkins, only: [:index, :show, :destroy, :create]
+    get '/search', to: 'searches#search'
   end
 end

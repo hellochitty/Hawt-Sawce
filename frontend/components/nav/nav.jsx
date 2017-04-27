@@ -4,30 +4,18 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import AutoComplete from 'material-ui/AutoComplete';
+import SearchBar from './search_bar.jsx';
 
 class Nav extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       open: false,
-      searchText: "",
-      dataSource:[
-        {
-          text: 'sauce-1',
-          value: ("/home/sauces/145")
-        },
-        {
-          text: 'sauce 2',
-          value: ("/home/sauces/146")
-        },
-      ]
     };
     this.handleTouchTap = this.handleTouchTap.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleNewRequest = this.handleNewRequest.bind(this);
-    this.handleUpdateInput = this.handleUpdateInput.bind(this);
   }
+
   handleTouchTap(event){
    // This prevents ghost click.
    event.preventDefault();
@@ -43,17 +31,7 @@ class Nav extends React.Component {
    });
  }
 
- handleNewRequest(i){
-   this.props.router.push(i.value);
-   this.setState({
-     searchText: '',
-   });
- }
- handleUpdateInput(searchText){
-   this.setState({
-      searchText: searchText,
-    });
- }
+
 
   render(){
     if(this.props.currentUser){
@@ -66,9 +44,7 @@ class Nav extends React.Component {
     };
 
 
-    const searchText = (
-      <i class="fa fa-search" aria-hidden="true"></i>
-    );
+
 
       return (
         <nav>
@@ -79,14 +55,7 @@ class Nav extends React.Component {
               </div>
               <div className="sub-nav-link"><Link to="/home/sauces" activeClassName="active">SAWCES</Link></div>
                 <div id="nav-search">
-                  <AutoComplete
-                    searchText={this.state.searchText}
-                    onUpdateInput={this.handleUpdateInput}
-                    hintText="Search..."
-                    dataSource={this.state.dataSource}
-                    fullWidth={true}
-                    onNewRequest={this.handleNewRequest}
-                    />
+                  <SearchBar />
                 </div>
             </div>
 
