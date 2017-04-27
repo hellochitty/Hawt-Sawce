@@ -8,6 +8,7 @@ import CheckinsReducer from './checkins_reducer';
 import CheckinReducer from './checkin_reducer';
 import UserReducer from './user_reducer';
 import SaucesOrderReducer from './sauces_order_reducer';
+import SearchResultsReducer from './search_results_reducer';
 
  const RootReducer = combineReducers({
   session: SessionReducer,
@@ -18,7 +19,8 @@ import SaucesOrderReducer from './sauces_order_reducer';
   companies: SauceCompaniesReducer,
   checkins: CheckinsReducer,
   checkin: CheckinReducer,
-  user: UserReducer
+  user: UserReducer,
+  searchResults: SearchResultsReducer
 });
 
 

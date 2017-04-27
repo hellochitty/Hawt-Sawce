@@ -7,6 +7,7 @@ import Root from './components/root';
 // import { getCheckins, getCheckin, deleteCheckin } from './actions/checkin_actions';
 import { getUser } from './actions/user_actions';
 import { getSaucesOrder } from './actions/sauce_actions';
+import { search } from './actions/search_actions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   // window.logout = logout;
   window.store = store;
   window.getSaucesOrder = getSaucesOrder;
+  window.search = search;
   // window.getCheckins = getCheckins;
   // window.getCheckin = getCheckin;
   // window.deleteCheckin = deleteCheckin;
