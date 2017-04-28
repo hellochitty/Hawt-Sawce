@@ -3,7 +3,7 @@ import { getSauces, getSaucesOrder } from '../../actions/sauce_actions';
 import SauceIndex from './sauce_index.jsx';
 
 const mapStateToProps = ({sauces, saucesOrder, session}) => {
-  const holder = saucesOrder.map((sauceId) => sauces[sauceId]);
+  const holder = saucesOrder.map((sauceId) => sauces[sauceId]) || [];
   // Object.keys(sauces).forEach((key)=> holder.push(sauces[key]));
   return {
     sauces: holder,

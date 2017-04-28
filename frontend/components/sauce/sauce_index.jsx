@@ -19,6 +19,12 @@ class SauceIndex extends React.Component{
     this.props.getSaucesOrder(1);
   }
 
+  componentWillReceiveProps(newProps){
+    if (newProps.sauces.some((elem) => elem === undefined) || newProps.sauces.length === 0){
+      this.props.getSauces();
+    }
+  }
+
   handleChange(event, index, value){
     this.setState({value});
     this.props.getSaucesOrder(value);
@@ -39,11 +45,24 @@ class SauceIndex extends React.Component{
     }
 
     let sauces;
-    if (this.props.sauces[0]){
+    // if (this.props.sauces[0]){
+    //   debugger;
+    //   sauces = this.props.sauces.map(sauce => (
+    //     <SauceIndexItem sauce={sauce} key={sauce.id}/>
+    //   ));
+    // }
+
+    if (this.props.sauces.some((elem) => elem === undefined) || this.props.sauces.length === 0){
+      sauces = [];
+    }else if (this.props.sauces[0]){
       sauces = this.props.sauces.map(sauce => (
         <SauceIndexItem sauce={sauce} key={sauce.id}/>
       ));
+    }else{
+      sauces = [];
     }
+
+
 
 
     return(
