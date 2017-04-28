@@ -40,3 +40,11 @@ export const addCheckin = (formData) => {
     data: formData
   });
 };
+
+export const addComment = (comment) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/comments',
+    data: {comment}
+  });
+};

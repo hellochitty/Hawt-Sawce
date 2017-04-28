@@ -133,7 +133,7 @@
 
 .comment-item{
   padding: 20px;
-  width: 100%;
+  width: 460px;
   overflow-wrap: break-word;
 }
 
@@ -146,4 +146,28 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+.comment-item-header{
+  display: flex;
+  align-items: center;
+}
+.comment-item-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.profile-link{
+  display:block;
+  color: $color-main;
+  font-size: 24px;
+  margin-left: 10px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+}
+
+.profile-link:hover{
+  color: $color-main-highlight;
+  cursor: pointer;
 }

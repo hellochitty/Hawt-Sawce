@@ -6,7 +6,7 @@ class Api::CheckinsController < ApplicationController
 
   def show
     @checkin = Checkin.find(params[:id])
-    @comments = @checkin.comments
+    @comments = @checkin.comments.order(created_at: :desc)
     render :show
   end
 

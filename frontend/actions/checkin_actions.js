@@ -41,3 +41,9 @@ export const addCheckin = (checkin) => dispatch => {
     .then((res) => dispatch(receiveCheckin(res)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
+
+export const addComment = (comment) => dispatch => {
+  return CheckinAPIUtil.addComment(comment)
+    .then((res) => dispatch(receiveCheckin(res)),
+    (err) => dispatch(receiveErrors(err.responseJSON)));
+};

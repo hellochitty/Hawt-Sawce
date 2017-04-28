@@ -97,7 +97,12 @@ class Checkin extends React.Component {
             </div>
           </div>
           <div className="comments">
-            <Comments currentUser={this.props.session.currentUser} comments={this.props.checkin.comments}/>
+            <Comments
+              currentUser={this.props.session.currentUser}
+              comments={this.props.checkin.comments}
+              addComment={this.props.addComment}
+              checkinId={this.props.checkin.id}
+            />
           </div>
       </div>
     );
