@@ -4,6 +4,7 @@ import {receiveSauces} from './sauce_actions';
 import {receiveCheckins} from './checkin_actions';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USER_UPDATES = 'RECEIVE_USER_UPDATES';
+export const RECEIVE_USER_DETAILS = 'RECEIVE_USER_DETAILS';
 
 //action creators
 const receiveUser = user => ({
@@ -16,16 +17,30 @@ const receiveUserUpdates = user => ({
   image_url: user.image_url
 });
 
+//special action creator
+const receiveUserDetails = res => ({
+  type: RECEIVE_USER_DETAILS,
+  res
+});
 
 
 
+// export const getUser = userId => dispatch => {
+//   return UserAPIUtil.fetchUser(userId)
+//     .then(
+//       (res) => {
+//       dispatch(receiveSauces(res.sauces));
+//       dispatch(receiveCheckins(res.checkins));
+//       dispatch(receiveUser(res.user));
+//       },
+//       (err) => dispatch(receiveErrors(err.responseJSON))
+//     );
+// };
 export const getUser = userId => dispatch => {
   return UserAPIUtil.fetchUser(userId)
     .then(
       (res) => {
-      dispatch(receiveSauces(res.sauces));
-      dispatch(receiveCheckins(res.checkins));
-      dispatch(receiveUser(res.user));
+      dispatch(receiveUserDetails(res));
       },
       (err) => dispatch(receiveErrors(err.responseJSON))
     );

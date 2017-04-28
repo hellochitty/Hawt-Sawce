@@ -65,6 +65,7 @@ class User extends React.Component {
     this.props.getUser(this.props.params.user_id);
   }
 
+
   handleChange(e){
     console.log(this.state.description);
     this.setState({
@@ -98,7 +99,6 @@ class User extends React.Component {
   }
 
   handlePicAdd(e){
-    console.log("ihittheclicker");
     let reader = new FileReader();
     let file = e.currentTarget.files[0];
     reader.onloadend = function() {

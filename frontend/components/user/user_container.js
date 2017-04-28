@@ -5,6 +5,7 @@ import User from './user.jsx';
 const mapStateToProps = ({user, checkins, sauces, session}, ownProps)=> {
   const checkinsHolder = [];
   const saucesHolder = [];
+
   Object.keys(checkins).forEach((key)=> {
     checkinsHolder.push(checkins[key]);
     });
