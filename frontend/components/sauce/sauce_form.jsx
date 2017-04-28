@@ -116,7 +116,7 @@ class SauceForm extends React.Component{
         label="Delete"
         onClick={this.handleDelete}
         type="submit"/>  : null;
-    
+
     let addImage;
     if (this.state.image_url !== ""){
       addImage =(
@@ -134,7 +134,7 @@ class SauceForm extends React.Component{
       addImage = (
         <div >
         <input type="file" id="upload-image" className="input-file" onChange={this.handleUpdateFile}/>
-        <label htmlFor="upload-image" for="file">+ Image</label>
+        <label htmlFor="upload-image" htmlFor="file">+ Image</label>
         </div>);
     }
     // const previousImagePreview = (this.state.image_url !== null) ?

@@ -6,6 +6,7 @@ class Api::CheckinsController < ApplicationController
 
   def show
     @checkin = Checkin.find(params[:id])
+    @comments = @checkin.comments
     render :show
   end
 

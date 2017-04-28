@@ -109,3 +109,41 @@
   font-size: 24px;
   display: inline;
 }
+
+.checkin-main{
+  margin: 0 auto;
+}
+#checkin-comment{
+  margin: 10px 0px;
+}
+//comments styles
+
+.comments{
+  margin: 10px auto 0px auto;
+  width: 500px;
+}
+
+
+.comment-item-outer{
+  background-color: white;
+  margin-top: 10px;
+  width: 100%;
+  box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.30);
+}
+
+.comment-item{
+  padding: 20px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.comment-form{
+  padding: 20px;
+  width: 460px;
+  overflow-wrap: break-word;
+}
+.comment-form-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}

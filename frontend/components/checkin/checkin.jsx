@@ -4,6 +4,7 @@ import { lodash } from 'lodash';
 var Rating = require('react-rating');
 import {FormattedRelative} from 'react-intl';
 import RaisedButton from 'material-ui/RaisedButton';
+import Comments from './comments';
 
 
 class Checkin extends React.Component {
@@ -42,57 +43,62 @@ class Checkin extends React.Component {
         /> : null;
     let comment;
     if (this.props.checkin.comment){
-      comment = <h4><i>{'"'}{this.props.checkin.comment}{'"'}</i></h4>;
+      comment = <h4 id="checkin-comment"><i>{'"'}{this.props.checkin.comment}{'"'}</i></h4>;
     }
 
     return(
-      <div id="sauce-form">
-        <div className="checkin-view">
-          <h1 className="text-center">Check-In</h1>
-          <div className="checkin-details">
-            <div id="flex-row">
-              <div className="checkin-details-content-text">
-                <p className="inline-link" >{this.props.checkin.user}</p> got spicy with some <Link to={`/home/sauces/${this.props.checkin.sauce_id}`}>
-                  <p className="inline-link" >{this.props.checkin.sauce}</p></Link>
-                  {comment}
-                <table className="sauce-stats">
-                  <tbody>
-                    <tr>
-                      <td><h4>Overall Rating</h4></td>
-                      <td><h4>Heat Rating</h4></td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <Rating
-                          initialRate={this.props.checkin.overall_rating}
-                          readonly
-                          empty="fa fa-star-o fa-1x empty"
-                          full="fa fa-star fa-1x overall-full"
-                          className="overall-icon"
-                          />
-                      </td>
-                      <td>
-                        <Rating
-                          initialRate={this.props.checkin.heat_rating}
-                          readonly
-                          empty="fa fa-thermometer-empty fa-2x empty"
-                          full="fa fa-thermometer-full fa-2x heat-full"
-                          />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+      <div className= "checkin-main">
+        <div id="sauce-form">
+          <div className="checkin-view">
+            <h1 className="text-center">Check-In</h1>
+            <div className="checkin-details">
+              <div id="flex-row">
+                <div className="checkin-details-content-text">
+                  <p className="inline-link" >{this.props.checkin.user}</p> got spicy with some <Link to={`/home/sauces/${this.props.checkin.sauce_id}`}>
+                    <p className="inline-link" >{this.props.checkin.sauce}</p></Link>
+                    {comment}
+                    <table className="sauce-stats">
+                      <tbody>
+                        <tr>
+                          <td><h4>Overall Rating</h4></td>
+                          <td><h4>Heat Rating</h4></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <Rating
+                              initialRate={this.props.checkin.overall_rating}
+                              readonly
+                              empty="fa fa-star-o fa-1x empty"
+                              full="fa fa-star fa-1x overall-full"
+                              className="overall-icon"
+                              />
+                          </td>
+                          <td>
+                            <Rating
+                              initialRate={this.props.checkin.heat_rating}
+                              readonly
+                              empty="fa fa-thermometer-empty fa-2x empty"
+                              full="fa fa-thermometer-full fa-2x heat-full"
+                              />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="checkin-details-content-image">
+                    <img className="sauce-thumbnail" src={this.props.checkin.image_url} />
+                  </div>
+                </div>
+                <div className="checkin-index-item-footer">
+                  <FormattedRelative value={time} />
+                  {removalButton}
+                </div>
               </div>
-              <div className="checkin-details-content-image">
-                <img className="sauce-thumbnail" src={this.props.checkin.image_url} />
-              </div>
-            </div>
-            <div className="checkin-index-item-footer">
-              <FormattedRelative value={time} />
-              {removalButton}
             </div>
           </div>
-        </div>
+          <div className="comments">
+            <Comments currentUser={this.props.session.currentUser} comments={this.props.checkin.comments}/>
+          </div>
       </div>
     );
   }

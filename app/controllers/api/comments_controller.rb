@@ -4,6 +4,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       @checkin = Checkin.find(:checkin_id)
+      @comments = @checkin.comments
       render 'api/checkins/show'
     else
       render json: @comment.errors.messages, status: 422
