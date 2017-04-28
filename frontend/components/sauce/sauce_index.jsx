@@ -15,23 +15,34 @@ class SauceIndex extends React.Component{
   }
 
   componentDidMount(){
+    console.log("didmount");
     this.props.getSauces();
     this.props.getSaucesOrder(1);
   }
 
   componentWillReceiveProps(newProps){
+    console.log("didreceiveprop");
+    console.log(newProps.sauces);
     if (newProps.sauces.some((elem) => elem === undefined) || newProps.sauces.length === 0){
+      console.log(newProps.sauces.some((elem) => elem === undefined));
+      console.log(newProps.sauces.length === 0);
+      console.log("didreceiveprop will trigger getSauces");
       this.props.getSauces();
     }
   }
 
   handleChange(event, index, value){
+    console.log("handlechangetrigger");
     this.setState({value});
     this.props.getSaucesOrder(value);
   }
 
   redirect(){
     this.props.router.push("/home/sauces/new");
+  }
+
+  componentWillUnmount(){
+    console.log("unmounting");
   }
 
   render(){
