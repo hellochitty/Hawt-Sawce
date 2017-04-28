@@ -36,4 +36,11 @@ class Checkin < ApplicationRecord
     foreign_key: :sauce_id,
     primary_key: :id,
     inverse_of: :checkins
+
+  has_many :comments,
+    class_name: 'Comment',
+    foreign_key: :checkin_id,
+    primary_key: :id,
+    inverse_of: :checkin,
+    dependent: :destroy
 end
