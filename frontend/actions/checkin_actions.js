@@ -47,3 +47,9 @@ export const addComment = (comment) => dispatch => {
     .then((res) => dispatch(receiveCheckin(res)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
+
+export const removeComment = (comment) => dispatch => {
+  return CheckinAPIUtil.removeComment(comment)
+    .then((res) => dispatch(removeComment(res)),
+    (err) => dispatch(receiveErrors(err.responseJSON)));
+};

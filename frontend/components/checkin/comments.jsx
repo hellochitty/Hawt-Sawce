@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import CommentItem from './comment_item';
 
+
 class comments extends React.Component{
   constructor(props){
     super(props);
@@ -34,7 +35,12 @@ class comments extends React.Component{
       if (this.props.comments){
         commentsDisplay =
         this.props.comments.map(
-          (comment)=> <CommentItem key={comment.id} currentUserId={this.props.currentUser.id} comment={comment} />);
+          (comment)=> <CommentItem
+            key={comment.id}
+            checkinId={this.props.checkinId}
+            currentUserId={this.props.currentUser.id}
+            removeComment={this.props.removeComment}
+            comment={comment} />);
         }
         return(
           <div className="comments-display">

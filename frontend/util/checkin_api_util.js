@@ -48,3 +48,14 @@ export const addComment = (comment) => {
     data: {comment}
   });
 };
+
+export const removeComment = (comment) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/comments/${comment.comment_id}`,
+    data: {
+        comment_id: comment.comment_id,
+        checkin_id: comment.checkin_id,
+    }
+  });
+};

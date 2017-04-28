@@ -102,6 +102,7 @@ class Checkin extends React.Component {
               comments={this.props.checkin.comments}
               addComment={this.props.addComment}
               checkinId={this.props.checkin.id}
+              removeComment={this.props.removeComment}
             />
           </div>
       </div>
