@@ -10,8 +10,15 @@ HawtSawce is built using a RoR backend, PostgreSQL backend, and React/Redux fron
 
 ## Features
 
-### Search
-The search bar feature of the app utilizes pg_search multi-search on the backend to complete the search, and a material-ui autocomplete component to display results. A key challenge here was to understand how to use pg_search in order to query multiple tables, and then send back different information to the front-end based on the table queried. An additional struggle was using the material-ui autocomplete dropdown to show search results. To maintain style consistency, I had to use this material-ui component to render my search in a way that was consistent with existing elements. As the standard usage of this dropdown dictates a somewhat static list of items which will then be autocompleted, I had to extend it to both dynamically update as the user enters information and re-route the user to a different page upon click. My strategy to solve these problems was to break everything down step by step, get one step working and then move on to the next.
+### Sawce Sorting
+The Sawce sorting feature was a really interesting component to build. The dropdown itself was implemented using Material-Ui. The challenges here were to determine whether the sorting should be done in the frontend or backend, and also how to design the sort to most efficiently run the sort.
+Here’s how it works:
+
+1. On each dropdown click, an AJAX request is sent to my backend with a code representing the sort option selected.
+2. The rails backend then does the appropriate ActiveRecord query which hits the database.
+3. The response sent back to the front-end is an array containing the IDs of the sawces sorted in the correct order, and this result is then stored in my front-end store.
+4. All of the sawces are already in the store due to an AJAX call made during the ‘componentDidMount’ lifecycle step. These are stored in a hash, with the keys being the sauce_ids, and the values being the entire sawce object.
+5. With the sawces already in state, the sawces can then be displayed in order by doing an O(n) lookup using the array of IDs and the hash of sawces.
 
 ### UI
 While not specifically a feature, numerous UI components were challenges to source and implement. There were a number of libraries I learned and implemented in order to have a crisp and functional UI. Among these included material-ui, react-intl, and react-rating. After deciding to use a library, it is time-intensive and often quite difficult to choose one. Reading the documentation leads to a long phase of experimentation to learn how to implement the components, to determine whether or not they fit your usecase, and to imagine if it will continue to work for future usecases.

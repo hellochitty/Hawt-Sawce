@@ -62,3 +62,6 @@ the API.
 [state]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/sample-state.md
 [api]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/api-endpoints.md
 [components]: https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/component-hierarchy.md
+
+
+The search bar feature of the app utilizes pg_search multi-search on the backend to complete the search, and a material-ui autocomplete component to display results. A key challenge here was to understand how to use pg_search in order to query multiple tables, and then send back different information to the front-end based on the table queried. An additional struggle was using the material-ui autocomplete dropdown to show search results. To maintain style consistency, I had to use this material-ui component to render my search in a way that was consistent with existing elements. As the standard usage of this dropdown dictates a somewhat static list of items which will then be autocompleted, I had to extend it to both dynamically update as the user enters information and re-route the user to a different page upon click. My strategy to solve these problems was to break everything down step by step, get one step working and then move on to the next.
