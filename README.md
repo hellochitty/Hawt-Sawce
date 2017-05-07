@@ -37,7 +37,25 @@ While not specifically a feature, numerous UI components were challenges to sour
 Below is an implementation of search with the Material-UI Autocomplete, which is used to display results in the frontend, with pg-search (multisearch) being used in the backend for the cross table search.
 <br>
 <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/search.gif" alt="Search" width="400">
-
+```javascript
+import AutoComplete from 'material-ui/AutoComplete';
+render(){
+  const searchText = (
+    <i class="fa fa-search" aria-hidden="true"></i>
+  );
+  return(
+    <AutoComplete
+      searchText={this.state.searchText}
+      onUpdateInput={this.handleUpdateInput}
+      hintText="Search..."
+      dataSource={this.props.searchResults}
+      fullWidth={true}
+      onNewRequest={this.handleNewRequest}
+      />
+  );
+}
+```
+<br>
 ## Future Directions for the Projects
 ### Bookmarks
 Bookmarking is an important function of any discovery app. Users not only want to rate sauces that they have tasted, but will also want to pin sauces that they want to taste in the future.
