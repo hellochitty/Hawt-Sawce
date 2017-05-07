@@ -55,7 +55,7 @@ render(){
   );
 }
 ```
-<br>
+
 ## Future Directions for the Projects
 ### Bookmarks
 Bookmarking is an important function of any discovery app. Users not only want to rate sauces that they have tasted, but will also want to pin sauces that they want to taste in the future.
