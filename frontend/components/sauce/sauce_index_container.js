@@ -4,7 +4,6 @@ import SauceIndex from './sauce_index.jsx';
 
 const mapStateToProps = ({sauces, saucesOrder, session}) => {
   const holder = saucesOrder.map((sauceId) => sauces[sauceId]) || [];
-  // Object.keys(sauces).forEach((key)=> holder.push(sauces[key]));
   return {
     sauces: holder,
     session: session

@@ -22,6 +22,15 @@ Here’s how it works:
 3. The response sent back to the front-end is an array containing the IDs of the sawces sorted in the correct order, and this result is then stored in my front-end store.
 4. All of the sawces are already in the store due to an AJAX call made during the ‘componentDidMount’ lifecycle step. These are stored in a hash, with the keys being the sauce_ids, and the values being the entire sawce object.
 5. With the sawces already in state, the sawces can then be displayed in order by doing an O(n) lookup using the array of IDs and the hash of sawces.
+```javascript
+const mapStateToProps = ({sauces, saucesOrder, session}) => {
+  const holder = saucesOrder.map((sauceId) => sauces[sauceId]) || [];
+  return {
+    sauces: holder,
+    session: session
+  };
+};
+```
 
 ### UI
 While not specifically a feature, numerous UI components were challenges to source and implement. There were a number of libraries I learned and implemented in order to have a crisp and functional UI. Among these included material-ui, react-intl, and react-rating. After deciding to use a library, it is time-intensive and often quite difficult to choose one. Reading the documentation leads to a long phase of experimentation to learn how to implement the components, to determine whether or not they fit your usecase, and to imagine if it will continue to work for future usecases.
