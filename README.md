@@ -12,6 +12,7 @@ HawtSawce is built using a RoR backend, PostgreSQL backend, and React/Redux fron
 
 ### Sawce Sorting
 The Sawce sorting feature was a really interesting component to build. The dropdown itself was implemented using Material-Ui. The challenges here were to determine whether the sorting should be done in the frontend or backend, and also how to design the sort to most efficiently run the sort.
+<br>
 <img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/hawt_sawce_sorting.gif" alt="Hawt Sawce Sorting" width="400">
 
 Here’s how it works:
