@@ -34,6 +34,9 @@ const mapStateToProps = ({sauces, saucesOrder, session}) => {
 
 ### UI
 While not specifically a feature, numerous UI components were challenges to source and implement. There were a number of libraries I learned and implemented in order to have a crisp and functional UI. Among these included material-ui, react-intl, and react-rating. After deciding to use a library, it is time-intensive and often quite difficult to choose one. Reading the documentation leads to a long phase of experimentation to learn how to implement the components, to determine whether or not they fit your usecase, and to imagine if it will continue to work for future usecases.
+Below is an implementation of search with the Material-UI Autocomplete, which is used to display results in the frontend, with pg-search (multisearch) being used in the backend for the cross table search.
+<br>
+<img src="https://github.com/hellochitty/Hawt-Sawce/blob/master/docs/search.gif" alt="Search" width="400">
 
 ## Future Directions for the Projects
 ### Bookmarks
