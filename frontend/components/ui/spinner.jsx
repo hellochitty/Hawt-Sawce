@@ -1,8 +1,6 @@
 import React from 'react';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 
-
-
 const Spinner = () => (
   <div>
     <RefreshIndicator

@@ -15,24 +15,17 @@ class SauceIndex extends React.Component{
   }
 
   componentDidMount(){
-    console.log("didmount");
     this.props.getSauces();
     this.props.getSaucesOrder(1);
   }
 
   componentWillReceiveProps(newProps){
-    console.log("didreceiveprop");
-    console.log(newProps.sauces);
     if (newProps.sauces.some((elem) => elem === undefined) || newProps.sauces.length === 0){
-      console.log(newProps.sauces.some((elem) => elem === undefined));
-      console.log(newProps.sauces.length === 0);
-      console.log("didreceiveprop will trigger getSauces");
       this.props.getSauces();
     }
   }
 
   handleChange(event, index, value){
-    console.log("handlechangetrigger");
     this.setState({value});
     this.props.getSaucesOrder(value);
   }
@@ -42,7 +35,6 @@ class SauceIndex extends React.Component{
   }
 
   componentWillUnmount(){
-    console.log("unmounting");
   }
 
   render(){
@@ -56,13 +48,6 @@ class SauceIndex extends React.Component{
     }
 
     let sauces;
-    // if (this.props.sauces[0]){
-    //   debugger;
-    //   sauces = this.props.sauces.map(sauce => (
-    //     <SauceIndexItem sauce={sauce} key={sauce.id}/>
-    //   ));
-    // }
-
     if (this.props.sauces.some((elem) => elem === undefined) || this.props.sauces.length === 0){
       sauces = [];
     }else if (this.props.sauces[0]){
@@ -72,9 +57,6 @@ class SauceIndex extends React.Component{
     }else{
       sauces = [];
     }
-
-
-
 
     return(
       <div className="main">

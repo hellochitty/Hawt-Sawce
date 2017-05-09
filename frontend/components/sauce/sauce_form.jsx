@@ -17,8 +17,6 @@ class SauceForm extends React.Component{
       imageFile: null,
       imageUrl: null
     };
-    //note: image_url is coming in from jbuilder view
-    //imageFile and imageUrl are from current upload pic file
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdateInput = this.handleUpdateInput.bind(this);
@@ -137,10 +135,6 @@ class SauceForm extends React.Component{
         <label htmlFor="upload-image" htmlFor="file">+ Image</label>
         </div>);
     }
-    // const previousImagePreview = (this.state.image_url !== null) ?
-    // <img className="img-upload-preview" src={this.state.image_url}/> : null;
-    // const currentImagePreview = (this.state.imageUrl !== null) ?
-    //   <img className="img-upload-preview" src={this.state.imageUrl}/> : null;
 
     return (
       <div id="sauce-form">

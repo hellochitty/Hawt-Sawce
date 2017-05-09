@@ -1,12 +1,10 @@
 //util
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-//internal
 //ui
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
-
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -87,14 +85,11 @@ class SessionForm extends React.Component {
       );
     }
 
-
-
     return(
       <div className="session-form">
       <div className="session-form-inputs">
         <h2>{text}</h2>
         <form onSubmit={this.handleSubmit}>
-
           <TextField
             hintText=""
             floatingLabelText="Username"
@@ -121,10 +116,7 @@ class SessionForm extends React.Component {
           {guestLogin}
           <br/ >
           <Link to={link}><FlatButton label={link.slice(1)} /> </Link>
-
         </form>
-
-
       </div>
       </div>
     );

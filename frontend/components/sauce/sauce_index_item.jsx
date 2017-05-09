@@ -55,10 +55,7 @@ const SauceIndexItem = ({sauce}) => {
             </tbody>
           </table>
         </div>
-
-
       </div>
-
     </Link>
   );
 };

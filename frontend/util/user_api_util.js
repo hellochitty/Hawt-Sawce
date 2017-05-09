@@ -5,16 +5,6 @@ export const fetchUser = (userId) => {
   });
 };
 
-
-// export const updateUser = (user) => {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `/api/users/${user.id}`,
-//     data: {user}
-//   });
-// };
-
-
 export const updateUser = (formData, id) => {
   return $.ajax({
     method: 'PATCH',

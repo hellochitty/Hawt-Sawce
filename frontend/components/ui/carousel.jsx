@@ -10,8 +10,6 @@ const Carousel = (props) => {
     slidesToScroll: 1
   };
 
-
-
   return (
     <Slider {...settings}>
       <div><img className="sauce-thumbnail" src={props.images[0]}/></div>
@@ -21,8 +19,6 @@ const Carousel = (props) => {
       <div><img className="sauce-thumbnail"  src={props.images[5]}/></div>
     </Slider>
   );
-
-
 };
 
 export default Carousel;

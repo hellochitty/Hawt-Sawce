@@ -5,15 +5,12 @@ export const fetchSauces = () => {
   });
 };
 
-
 export const fetchSauce = (sauceId) => {
   return $.ajax({
     method: 'GET',
     url: `/api/sauces/${sauceId}`
   });
 };
-
-
 
 export const fetchSauceCompanies = () => {
   return $.ajax({
@@ -36,14 +33,6 @@ export const fetchSaucesOrder = (orderId) => {
   });
 };
 
-// export const addSauce = (sauce) => {
-//   return $.ajax({
-//     method: 'POST',
-//     url: '/api/sauces',
-//     data: {sauce}
-//   });
-// };
-
 export const addSauce = (formData) => {
   return $.ajax({
      url: '/api/sauces',
@@ -54,15 +43,6 @@ export const addSauce = (formData) => {
      data: formData
   });
 };
-
-
-// export const updateSauce = (sauce) => {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `/api/sauces/${sauce.id}`,
-//     data: {sauce}
-//   });
-// };
 
 export const updateSauce = (formData, id) => {
   return $.ajax({

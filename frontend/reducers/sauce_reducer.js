@@ -10,9 +10,7 @@ const _defaultState = {
 };
 
 const SauceReducer = (oldState= _defaultState, action) => {
-
   Object.freeze(oldState);
-
   switch(action.type){
     case RECEIVE_SAUCE:
       return action.sauce;

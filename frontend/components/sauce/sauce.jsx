@@ -203,6 +203,7 @@ class Sauce extends React.Component{
     }
     let time = sauce.created_at || "12-12-2016";
     let carousel;
+    //carousel to be implemented at a later time
     // if(this.props.userImages){
     //   carousel = <Carousel images={this.props.userImages} />;
     // }

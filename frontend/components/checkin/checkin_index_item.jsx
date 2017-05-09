@@ -96,7 +96,4 @@ const CheckinIndexItem = ({checkin}) => {
   );
 };
 
-// <div className='sauce-index-item-pic'>
-//   <img className="sauce-thumbnail" src={checkin.image_url} />
-// </div>
 export default CheckinIndexItem;

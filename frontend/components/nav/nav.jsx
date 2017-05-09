@@ -31,9 +31,7 @@ class Nav extends React.Component {
    });
  }
 
-
-
-  render(){
+ render(){
     if(this.props.currentUser){
       const onLogout = () => {
         this.props.logout().then( () => this.props.router.push("/"));
@@ -42,9 +40,6 @@ class Nav extends React.Component {
       this.handleRequestClose();
       this.props.router.push(`/home/users/${this.props.currentUser.id}`);
     };
-
-
-
 
       return (
         <nav>

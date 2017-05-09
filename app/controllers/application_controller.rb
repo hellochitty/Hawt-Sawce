@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -24,9 +23,6 @@ class ApplicationController < ActionController::Base
     @current_user = nil
   end
 
-
-
-  # QUESTION: where does this base go? and is this what we will be using as a before
   def require_logged_in
     render json: { base: ['invalid credentials'] }, status: 401 unless current_user
   end

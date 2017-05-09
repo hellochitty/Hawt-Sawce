@@ -1,5 +1,4 @@
 class Api::SaucesController < ApplicationController
-
   def index
     @sauces = Sauce.all.includes(:company)
     render :index
@@ -113,5 +112,4 @@ class Api::SaucesController < ApplicationController
   def sauce_params
     params.require(:sauce).permit(:name, :company, :description, :scoville_units, :image_url, :image)
   end
-
 end

@@ -5,7 +5,6 @@ export const fetchCheckins = () => {
   });
 };
 
-
 export const fetchCheckin = (checkinId) => {
   return $.ajax({
     method: 'GET',
@@ -13,22 +12,12 @@ export const fetchCheckin = (checkinId) => {
   });
 };
 
-
 export const removeCheckin = (checkinId) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/checkins/${checkinId}`
   });
 };
-
-
-// export const addCheckin = (checkin) => {
-//   return $.ajax({
-//     method: 'POST',
-//     url: '/api/checkins',
-//     data: {checkin}
-//   });
-// };
 
 export const addCheckin = (formData) => {
   return $.ajax({

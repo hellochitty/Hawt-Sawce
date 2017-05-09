@@ -1,5 +1,4 @@
 class Api::CommentsController < ApplicationController
-
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -26,5 +25,4 @@ class Api::CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:user_id, :checkin_id, :body)
   end
-
 end

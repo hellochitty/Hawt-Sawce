@@ -24,7 +24,6 @@ class User extends React.Component {
       imageFile: null,
       imageUrl: null
     };
-    console.log(this.state);
     this.handleChange = this.handleChange.bind(this);
     this.handleTabSwitch = this.handleTabSwitch.bind(this);
     this.handleEditClick = this.handleEditClick.bind(this);
@@ -67,11 +66,9 @@ class User extends React.Component {
 
 
   handleChange(e){
-    console.log(this.state.description);
     this.setState({
       description: e.currentTarget.value,
     });
-    console.log(this.state.description);
   }
 
   handleTabSwitch(text){
@@ -113,12 +110,10 @@ class User extends React.Component {
   }
 
   handlePicSubmit(){
-    console.log("ihitthesubmitter");
     let formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
     this.props.updateUser(formData, this.props.params.user_id);
   }
-
 
   render(){
     let body;
@@ -153,7 +148,6 @@ class User extends React.Component {
                 <p className="inline-link-small" onClick={this.handleCloseClick}><i className="fa  fa-times link-image" aria-hidden="true"></i></p>
               </div>;
           }else{
-            //update to this.state.description
             description =
               <div>
                 {this.state.description}
@@ -169,7 +163,6 @@ class User extends React.Component {
 
     return(
       <div className= "user-profile-outer">
-
         <div className= "user-profile-background">
           <div className="profile-picture">
             {picEdit}
@@ -178,7 +171,6 @@ class User extends React.Component {
           <div className= "user-profile">
             <div className= "user-header">
               <div className="profile-text">
-
                 <h2>{this.props.user.username}</h2>
                 {description}
                   <div className="user-profile-stats">
@@ -203,7 +195,6 @@ class User extends React.Component {
             </div>
           </div>
         </div>
-
         <div className="user-profile-body">
           <div className="body-2-3">
             {body}
@@ -219,12 +210,9 @@ class User extends React.Component {
             </div>
           </div>
         </div>
-
       </div>
     );
   }
-
-
 }
 
 export default User;

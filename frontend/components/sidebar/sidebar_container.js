@@ -7,8 +7,6 @@ const mapStateToProps = ({session}) => {
   };
 };
 
-
-
 export default connect(
   mapStateToProps
 )(Sidebar);

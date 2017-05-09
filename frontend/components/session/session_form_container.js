@@ -5,7 +5,6 @@ import SessionForm from './session_form.jsx';
 
 const mapStateToProps = (state, ownProps) =>  {
   const formType = (ownProps.location.pathname === '/login');
-
   return {
   loggedIn: Boolean(state.session.currentUser),
   errors: state.errors,
@@ -21,8 +20,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     clearErrors: () => dispatch(clearErrors())
   };
 };
-
-
 
 export default connect(
   mapStateToProps,

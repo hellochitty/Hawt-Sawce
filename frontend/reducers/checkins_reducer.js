@@ -1,13 +1,9 @@
 import { RECEIVE_ALL_CHECKINS, RECEIVE_CHECKIN, REMOVE_CHECKIN } from '../actions/checkin_actions';
 import { RECEIVE_USER_DETAILS } from '../actions/user_actions';
-
 import { merge } from 'lodash';
 
-
 const CheckinsReducer = (oldState= {}, action) => {
-
   Object.freeze(oldState);
-
   switch(action.type){
     case RECEIVE_ALL_CHECKINS:
       return action.checkins || {};
@@ -27,5 +23,4 @@ const CheckinsReducer = (oldState= {}, action) => {
       return oldState;
   }
 };
-
 export default CheckinsReducer;

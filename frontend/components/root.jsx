@@ -50,8 +50,6 @@ const muiTheme = getMuiTheme({
   }
 });
 
-
-
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
   let currentUser = store.getState().session.currentUser;
@@ -90,6 +88,5 @@ const Root = ({ store }) => {
     </Provider>
   );
 };
-
 
 export default Root;

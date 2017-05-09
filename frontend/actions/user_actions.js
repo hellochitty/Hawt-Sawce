@@ -23,19 +23,6 @@ const receiveUserDetails = res => ({
   res
 });
 
-
-
-// export const getUser = userId => dispatch => {
-//   return UserAPIUtil.fetchUser(userId)
-//     .then(
-//       (res) => {
-//       dispatch(receiveSauces(res.sauces));
-//       dispatch(receiveCheckins(res.checkins));
-//       dispatch(receiveUser(res.user));
-//       },
-//       (err) => dispatch(receiveErrors(err.responseJSON))
-//     );
-// };
 export const getUser = userId => dispatch => {
   return UserAPIUtil.fetchUser(userId)
     .then(

@@ -9,16 +9,13 @@ class commentItem extends React.Component{
   }
 
   handleDelete(){
-    console.log("hi this is me");
     let submission = {
       comment_id: this.props.comment.id,
       checkin_id: this.props.checkinId,
     };
-    console.log(submission);
     this.props.removeComment(submission);
   }
 
-// onClick={this.handleDelete.bind(this)}
   render(){
       var intlData = {
         "locales": "en-US"

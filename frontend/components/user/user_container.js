@@ -21,12 +21,10 @@ const mapStateToProps = ({user, checkins, sauces, session}, ownProps)=> {
   });
 };
 
-
 const mapDispatchToProps = dispatch =>({
   getUser: (userId) => dispatch(getUser(userId)),
   updateUser: (user, id) => dispatch(updateUser(user, id))
 });
-
 
 export default connect(
   mapStateToProps,

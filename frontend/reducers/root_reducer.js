@@ -23,5 +23,4 @@ import SearchResultsReducer from './search_results_reducer';
   searchResults: SearchResultsReducer
 });
 
-
 export default RootReducer;

@@ -34,7 +34,6 @@ const receiveSaucesOrder = order => ({
 });
 
 export const getSauces = () => dispatch => {
-  console.log("got sauces");
   return SauceAPIUtil.fetchSauces()
     .then((res) => dispatch(receiveSauces(res)));
 };

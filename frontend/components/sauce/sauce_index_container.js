@@ -15,7 +15,6 @@ const mapDispatchToProps = dispatch => ({
   getSaucesOrder: (orderId) => dispatch(getSaucesOrder(orderId))
 });
 
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps
