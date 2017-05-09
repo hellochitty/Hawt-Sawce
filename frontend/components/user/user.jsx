@@ -211,7 +211,7 @@ class User extends React.Component {
           <div className="body-1-3">
             <div className="user-sidebar-outer">
               <div className="user-sidebar">
-                <h3 className="sidebar-title">Buy Sauce</h3>
+                <h3 className="sidebar-title">Sawce Vendors</h3>
                 <h3 className="text-center"><a className="sponsored-links" target="_blank" href="https://www.hotsaucedepot.com/">Hot Sauce Depot</a></h3>
                 <h3 className="text-center"><a className="sponsored-links" target="_blank" href="http://www.hotsauce.com/">HotSauce.com</a></h3>
                 <h3 className="text-center"><a className="sponsored-links" target="_blank" href="http://heatonist.com/">Heatonist</a></h3>
