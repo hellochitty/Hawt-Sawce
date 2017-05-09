@@ -1,8 +1,6 @@
 # HAWT SAWCE
 
-[HawtSawce live][heroku]
-
-[heroku]: http://www.herokuapp.com
+[HawtSawce live](http://hawtsawceapp.com)
 
 HawtSawce is a full-stack web app inspired by Untappd. We seek to create a community for hot sauce lovers globally by connecting hot sauces lovers to each other and to new sauces. The app provides functionality to add hot sauces, checkin/review them, search for sauces, and add comments to checkins and reviews.
 
